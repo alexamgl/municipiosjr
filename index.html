@@ -21,6 +21,20 @@
         .card-title, .card-text {
             color: #212529; /* Color del texto original (gris oscuro) */
         }
+        .horizontal-card {
+            display: flex;
+            align-items: center;
+            height: auto; /* Dejar que la altura se ajuste al contenido */
+        }
+        .horizontal-card img {
+            width: 150px; /* Ancho de la imagen */
+            height: auto; /* Altura automática para mantener la proporción */
+            object-fit: cover; /* Ajustar imagen al contenedor */
+            margin-right: 15px; /* Espacio entre la imagen y el texto */
+        }
+        .horizontal-card .card-body {
+            flex-grow: 1; /* Hacer que el cuerpo de la tarjeta tome el resto del espacio */
+        }
     </style>
 </head>
 <body>
@@ -83,6 +97,67 @@
                     </div>
                 </div>
             </a>
+        </div>
+    </div>
+
+    <!-- Título para las tarjetas horizontales -->
+    <h2 class="mt-5 text-center">TRÁMITES</h2>
+
+    <!-- Tarjetas horizontales -->
+    <div class="row mt-4">
+        <div class="col-md-6 mb-3">
+            <div class="card horizontal-card">
+                <img src="https://via.placeholder.com/150" alt="Imagen 1">
+                <div class="card-body">
+                    <h5 class="card-title">Título de Tarjeta 1</h5>
+                    <p class="card-text">Descripción de la tarjeta 1 con detalles importantes.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <div class="card horizontal-card">
+                <img src="https://via.placeholder.com/150" alt="Imagen 2">
+                <div class="card-body">
+                    <h5 class="card-title">Título de Tarjeta 2</h5>
+                    <p class="card-text">Descripción de la tarjeta 2 con detalles importantes.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <div class="card horizontal-card">
+                <img src="https://via.placeholder.com/150" alt="Imagen 3">
+                <div class="card-body">
+                    <h5 class="card-title">Título de Tarjeta 3</h5>
+                    <p class="card-text">Descripción de la tarjeta 3 con detalles importantes.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <div class="card horizontal-card">
+                <img src="https://via.placeholder.com/150" alt="Imagen 4">
+                <div class="card-body">
+                    <h5 class="card-title">Título de Tarjeta 4</h5>
+                    <p class="card-text">Descripción de la tarjeta 4 con detalles importantes.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <div class="card horizontal-card">
+                <img src="https://via.placeholder.com/150" alt="Imagen 5">
+                <div class="card-body">
+                    <h5 class="card-title">Título de Tarjeta 5</h5>
+                    <p class="card-text">Descripción de la tarjeta 5 con detalles importantes.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <div class="card horizontal-card">
+                <img src="https://via.placeholder.com/150" alt="Imagen 6">
+                <div class="card-body">
+                    <h5 class="card-title">Título de Tarjeta 6</h5>
+                    <p class="card-text">Descripción de la tarjeta 6 con detalles importantes.</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
