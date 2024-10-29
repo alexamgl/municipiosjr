@@ -1,0 +1,102 @@
+<!-- footer.html -->
+<footer class="footer">
+    <div class="container-fluid d-flex justify-content-between align-items-start">
+        <div class="footer-logo">
+            <a href="#">
+                <img src="images/HERÁLDICA 2024-2027-02_white.png" alt="Logotipo" width="150" height="auto">
+            </a>
+        </div>
+        <div class="footer-columns d-flex">
+            <div class="footer-column me-4">
+                <h5 style="font-weight: bold;">Sitios de Interés</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">DIF Municipal</a></li>
+                    <li><a href="#">IMM</a></li>
+                    <li><a href="#">JAPAM</a></li>
+                    <li><a href="#">Gobierno del Estado</a></li>
+                    <li style="font-weight: normal;"><a href="#">Gobierno Federal</a></li>
+                </ul>
+            </div>
+            <div class="footer-column me-4">
+                <h5 style="font-weight: bold;">Contáctanos</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Blvd. Paso de los Guzmán No. 24, Barrio de la Concepción.
+                        C.P. 76803, San Juan del Río Querétaro.
+                        Teléfono: (427) 689 0012</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h5 style="font-weight: bold;">Legal</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" style="font-weight: normal;">Aviso de Privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .footer {
+        padding: 40px 20px; /* Aumentar el espaciado vertical */
+        background-color: #191970; /* Color de fondo azul marino */
+        color: white;
+        width: 100%;
+        position: relative;
+        left: 0;
+        right: 0;
+        margin: 0;
+        display: flex; /* Usar flex para alinear el contenido */
+        justify-content: center; /* Centrar horizontalmente */
+        align-items: center; /* Centrar verticalmente */
+    }
+
+    .footer-logo {
+        flex: 0 0 auto;
+        margin: 0 250px; /* Ajustar margen para centrar más */
+    }
+
+    .footer-columns {
+        display: flex;
+        flex-wrap: wrap; /* Permitir que las columnas se envuelvan si es necesario */
+        justify-content: center; /* Centrar las columnas */
+        margin-left: 20px; /* Ajustar este valor para mover el texto a la izquierda */
+    }
+
+    .footer-column {
+        flex: 1;
+        margin: 0 15px; /* Espaciado entre columnas */
+    }
+
+    .footer-logo img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .footer-column a {
+        text-decoration: none;
+        color: white;
+        display: block;
+        margin: 5px 0; /* Espaciado entre enlaces */
+        transition: color 0.3s; /* Transición suave para el color */
+    }
+
+    .footer-column a:hover {
+        color: #a1c3f0; /* Cambia el color del texto al pasar el mouse */
+        text-decoration: underline; /* Subrayado al pasar el mouse */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .footer-columns {
+            flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+            align-items: flex-start; /* Alinear elementos a la izquierda */
+            margin-left: 0; /* Eliminar margen en pantallas pequeñas */
+        }
+    }
+</style>
