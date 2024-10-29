@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Ejemplo de Navbar</title>
+    <title>Ejemplo de Tarjetas</title>
+    <style>
+        .card-icon {
+            font-size: 50px;
+            color: #e67425;
+        }
+    </style>
 </head>
 <body>
 
@@ -13,8 +19,53 @@
 
 <!-- Contenido principal de la página -->
 <div class="container mt-4">
-    <h1>Bienvenido a mi página</h1>
-    <p>Este es un ejemplo de cómo cargar un navbar desde un archivo HTML separado.</p>
+    <h1 class="text-center">Ejemplo de Tarjetas</h1>
+    <div class="row mt-4">
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <div class="card-icon">
+                        <i class="bi bi-house"></i> <!-- Icono de casa -->
+                    </div>
+                    <h5 class="card-title">Casa</h5>
+                    <p class="card-text">Una breve descripción sobre la casa y sus características.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <div class="card-icon">
+                        <i class="bi bi-person"></i> <!-- Icono de persona -->
+                    </div>
+                    <h5 class="card-title">Usuario</h5>
+                    <p class="card-text">Información relevante sobre el usuario y sus preferencias.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <div class="card-icon">
+                        <i class="bi bi-gear"></i> <!-- Icono de engranaje -->
+                    </div>
+                    <h5 class="card-title">Configuración</h5>
+                    <p class="card-text">Opciones de configuración y personalización del sistema.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <div class="card-icon">
+                        <i class="bi bi-info-circle"></i> <!-- Icono de información -->
+                    </div>
+                    <h5 class="card-title">Información</h5>
+                    <p class="card-text">Detalles importantes y actualizaciones sobre el servicio.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
@@ -28,5 +79,8 @@
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Agregar Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
 </body>
 </html>
