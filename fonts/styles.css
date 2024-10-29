@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'Gilam';
+    src: url('fonts/GilamHeavy.otf') format('truetype');
+    font-weight: 900; /* Heavy */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilam';
+    src: url('fonts/GilamBold.otf') format('truetype');
+    font-weight: bold; /* Bold */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilam';
+    src: url('fonts/GilamBook.otf') format('truetype');
+    font-weight: normal; /* Book */
+    font-style: normal;
+}
+
+/* Ejemplo de uso */
+body {
+    font-family: 'Gilam', sans-serif;
+}
