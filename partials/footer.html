@@ -33,6 +33,9 @@
             </div>
         </div>
     </div>
+    <div class="footer-bottom text-center">
+        <p>Municipio de San Juan del Río. Todos los derechos reservados. © 2024</p>
+    </div>
 </footer>
 
 <style>
@@ -43,18 +46,34 @@
     }
 
     .footer {
-        padding: 40px 20px; /* Aumentar el espaciado vertical */
-        background-color: #0b3b59; /* Color de fondo azul marino */
-        color: white;
-        width: 100%;
-        position: relative;
-        left: 0;
-        right: 0;
-        margin: 0;
-        display: flex; /* Usar flex para alinear el contenido */
-        justify-content: center; /* Centrar horizontalmente */
-        align-items: center; /* Centrar verticalmente */
-    }
+    padding: 40px 20px; /* Aumentar el espaciado vertical */
+    background-color: #0b3b59; /* Color de fondo azul marino */
+    color: white;
+    width: 100%;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: 0;
+    display: flex; /* Usar flex para alinear el contenido */
+    flex-direction: column; /* Cambiar a columna para que footer-bottom esté al final */
+    align-items: center; /* Centrar horizontalmente */
+}
+
+.footer-columns {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que las columnas se envuelvan si es necesario */
+    justify-content: center; /* Centrar las columnas */
+    margin-left: 20px; /* Ajustar este valor para mover el texto a la izquierda */
+    margin-bottom: 20px; /* Espacio inferior para separar del footer-bottom */
+}
+
+.footer-bottom {
+    margin-top: auto; /* Empujar el footer-bottom hacia abajo */
+    padding: 10px 0; /* Espacio interno */
+    color: white; /* Color del texto */
+    font-size: 14px; /* Tamaño de fuente */
+    text-align: center; /* Centrar el texto */
+}
 
     .footer-logo {
         flex: 0 0 auto;
@@ -98,5 +117,12 @@
             align-items: flex-start; /* Alinear elementos a la izquierda */
             margin-left: 0; /* Eliminar margen en pantallas pequeñas */
         }
+    }
+    /* Estilo para el pie de página */
+    .footer-bottom {
+        margin-top: 20px; /* Espacio superior para separar del contenido anterior */
+        padding: 10px 0; /* Espacio interno */
+        color: white; /* Color del texto */
+        font-size: 14px; /* Tamaño de fuente */
     }
 </style>
