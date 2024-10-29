@@ -1,37 +1,88 @@
 <!-- navbar.html -->
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">
+            <img src="images/LOGO SJR HORIZONTAL 2_Mesa de trabajo 1.png" alt="Logotipo" width="155" height="98" class="d-inline-block align-text-top">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    <a class="nav-link" href="#">Trámites</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Características</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Precios</a>
+                    <a class="nav-link" href="#">Transparencia</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Más
+                    <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dependencias
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Acción</a></li>
-                        <li><a class="dropdown-item" href="#">Otra acción</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Algo más aquí</a></li>
+                        <div class="dropdown-columns">
+                            <li><a class="dropdown-item" href="#">Secretaría del Ayuntamiento</a></li>
+                            <li><a class="dropdown-item" href="#">Secretaría de Gobierno</a></li>
+                            <li><a class="dropdown-item" href="#">Secretaría de Finanzas</a></li>
+                            <li><a class="dropdown-item" href="#">Secretaría de Administración</a></li>
+                            <li><a class="dropdown-item" href="#">Secretaría de Desarrollo Integral y Económico</a></li>
+                            <li><a class="dropdown-item" href="#">Secretaría de Seguridad Pública y Municipal</a></li>
+                            <li><a class="dropdown-item" href="#">Secretaría de Desarrollo Agropecuario</a></li>
+                            <li><a class="dropdown-item" href="#">Secretaría de Obras Públicas Municipales</a></li>
+                            <li><a class="dropdown-item" href="#">Secretaría de Desarrollo Social</a></li>
+                            <li><a class="dropdown-item" href="#">Secretaría de Servicios Públicos Municipales</a></li>
+                        </div>
                     </ul>
                 </li>
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Buscar</button>
-            </form>
         </div>
     </div>
 </nav>
+
+<style>
+    /* CSS para mostrar el menú desplegable al pasar el mouse */
+    .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    /* CSS para aumentar el espacio entre las opciones del menú superior */
+    .navbar-nav .nav-item {
+        margin-left: 30px; /* Ajusta el valor según sea necesario */
+    }
+
+    /* Estilos para el menú desplegable */
+    .dropdown-menu {
+        min-width: 400px; /* Ancho mínimo del menú desplegable */
+        max-width: calc(100vw - 20px); /* Asegúrate de que no se desborde de la pantalla */
+        padding: 10px 0; /* Espacio vertical dentro del menú */
+        z-index: 1000; /* Asegurarse de que el menú se muestre por encima de otros elementos */
+        position: absolute; /* Cambiado a absolute para mejor posicionamiento */
+        right: 0; /* Alineado a la derecha */
+        transform: translateY(10px); /* Ajusta la posición vertical si es necesario */
+        overflow: hidden; /* Evitar scroll */
+        display: none; /* Ocultar inicialmente */
+    }
+
+    .dropdown-columns {
+        display: grid; /* Usar grid para las columnas */
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+        padding: 0; /* Sin padding adicional */
+        margin: 0; /* Sin margen adicional */
+        width: 100%; /* Asegúrate de que ocupe el 100% del ancho del menú */
+    }
+
+    .dropdown-item {
+        padding: 10px 20px; /* Espacio interno para cada opción */
+        color: #333; /* Color del texto */
+    }
+
+    .dropdown-item:hover {
+        background-color: #f8f9fa; /* Color de fondo al pasar el mouse */
+        color: #000; /* Color del texto al pasar el mouse */
+    }
+
+    /* Separador en el menú desplegable */
+    .dropdown-divider {
+        margin: 5px 0; /* Espacio alrededor del separador */
+    }
+</style>
