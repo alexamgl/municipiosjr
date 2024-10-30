@@ -66,12 +66,20 @@
             margin: 0; /* Elimina el margen por defecto del párrafo */
             font-size: 14px; /* Ajusta el tamaño de la fuente */
         }
+        .header-with-line {
+    border-bottom: 2px solid #0b3b59; /* Color y grosor de la línea */
+    display: inline-block; /* Asegura que la línea esté solo debajo del texto */
+    padding-bottom: 10px; /* Espacio entre el texto y la línea */
+}
     </style>
 </head>
 <body>
 
 <!-- Aquí se cargará el navbar -->
 <div id="navbarContainer"></div>
+<br> 
+<div class="text-center"> <h2 class="text-center header-with-line" style="font-weight: 900; color: #0b3b59;">GABINETE PRESIDENCIAL</h2></div>
+<br>
 <div class="container_full">
     <div class="image">
         <img src="images/gabinete/ROBERTO CARLOS CABRERA VALENCIA.png" class="rounded-image large-image" alt="Imagen del Presidente Municipal">
@@ -207,7 +215,7 @@
             <p>ERNESTO MORA RICO</p>
         </div>
     </div>
-</div>  <br>br
+</div>  <br>
 <div id="footerContainer"></div>
 
 <script>
