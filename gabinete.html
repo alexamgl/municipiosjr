@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Gabinete</title>
+    <style>
+.container_full {
+            display: flex;
+            align-items: center;
+            margin: 20px auto; /* Centra el contenedor */
+            padding: 15px;
+            border: 2px solid #007BFF; /* Color del contorno */
+            border-radius: 8px; /* Bordes redondeados */
+            transition: background-color 0.3s; /* Transición suave para el hover */
+            max-width: 380px; /* Ancho máximo del contenedor */
+            height: 130px;
+        }
+        .container_normal {
+            display: flex;
+            align-items: center;
+            margin: 20px auto; /* Centra el contenedor */
+            padding: 10px;
+            border: 2px solid #007BFF; /* Color del contorno */
+            border-radius: 8px; /* Bordes redondeados */
+            transition: background-color 0.3s; /* Transición suave para el hover */
+            max-width: 300px; /* Ancho máximo del contenedor */
+        }
+        .container:hover {
+            background-color: #f0f8ff; /* Color de fondo al pasar el mouse */
+        }
+        .image {
+            flex: 0 0 auto; /* No permite que la imagen crezca */
+            margin-right: 10px; /* Espacio entre la imagen y el texto */
+        }
+        .text {
+            flex: 1; /* Permite que el texto use el espacio restante */
+        }
+        .rounded-image {
+    border-radius: 50%; /* Hace que la imagen sea redondeada */
+    overflow: hidden; /* Asegura que el contenido excedente se oculte */
+}
+.large-image {
+    width: 300px; /* Tamaño más grande para la primera imagen */
+    height: auto; /* Tamaño más grande para la primera imagen */
+}
+        img {
+            max-width: 75px; /* Ajusta el tamaño de la imagen */
+            height: auto; /* Mantiene la proporción de la imagen */
+        }
+        h1 {
+            margin: 0; /* Elimina el margen por defecto del encabezado */
+            font-size: 18px; /* Ajusta el tamaño de la fuente */
+        }
+        p {
+            margin: 0; /* Elimina el margen por defecto del párrafo */
+            font-size: 14px; /* Ajusta el tamaño de la fuente */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Aquí se cargará el navbar -->
+<div id="navbarContainer"></div>
+<div class="container_full">
+    <div class="image">
+        <img src="images/gabinete/ROBERTO CARLOS CABRERA VALENCIA.png" class="rounded-image large-image" alt="Imagen del Presidente Municipal">
+    </div>
+    <div class="text-center">
+        <h1>PRESIDENTE MUNICIPAL</h1>
+        <p>ROBERTO CARLOS CABRERA VALENCIA</p>
+    </div>
+</div>
+<div class="d-flex">
+    <div class="container_normal">
+        <div class="image">
+            <img src="images/gabinete/MIGUEL ÁNGEL SUBIAS CONSTANDCE.png" class="rounded-image" alt="Imagen del Presidente Municipal">
+        </div>
+        <div class="text">
+            <h1>Secretaría Particular</h1>
+            <p>MIGUEL ÁNGEL SUBIAS CONSTANDCE</p>
+        </div>
+    </div>
+    <div class="container_normal">
+        <div class="image">
+            <img src="images/gabinete/GABRIEL NICOLÁS FIGUEROA URIBE.png" class="rounded-image" alt="Imagen del Presidente Municipal">
+        </div>
+        <div class="text">
+            <h1>Jefe de Gabinete</h1>
+            <p>GABRIEL NICOLÁS FIGUEROA URIBE</p>
+        </div>
+    </div>
+</div>
+<div class="d-flex">
+    <div class="container_normal">
+        <div class="image">
+            <img src="images/gabinete/YANELLY FAUSTINO SANTOS.png" class="rounded-image" alt="Imagen del Presidente Municipal">
+        </div>
+        <div class="text">
+            <h1>Jefatura de la Oficina de la Presidencia Municipal</h1>
+            <p>YANELLY FAUSTINO SANTOS</p>
+        </div>
+    </div>
+    <div class="container_normal">
+        <div class="image">
+            <img src="images/gabinete/OSCAR ALCÁNTARA PEÑA.png" class="rounded-image" alt="Imagen del Presidente Municipal">
+        </div>
+        <div class="text">
+            <h1>Secretaría del Ayuntamiento</h1>
+            <p>OSCAR ALCÁNTARA PEÑA</p>
+        </div>
+    </div>
+    <div class="container_normal">
+        <div class="image">
+            <img src="images/gabinete/ABEL ESPINOZA SUÁREZ.png" class="rounded-image" alt="Imagen del Presidente Municipal">
+        </div>
+        <div class="text">
+            <h1>Secretaría de Gobierno</h1>
+            <p>ABEL ESPINOZA SUÁREZ</p>
+        </div>
+    </div>
+</div>
+<div class="d-flex">
+    <div class="container_normal">
+        <div class="image">
+            <img src="images/gabinete/FERNANDO DAMIÁN OCEGUERA.png" class="rounded-image" alt="Imagen del Presidente Municipal">
+        </div>
+        <div class="text">
+            <h1>Secretaría de Finanzas</h1>
+            <p>FERNANDO DAMIÁN OCEGUERA</p>
+        </div>
+    </div>
+    <div class="container_normal">
+        <div class="image">
+            <img src="images/gabinete/JOSÉ MIGUEL VALENCIA MOLINA.png" class="rounded-image" alt="Imagen del Presidente Municipal">
+        </div>
+        <div class="text">
+            <h1>Secretaría de Administración</h1>
+            <p>JOSÉ MIGUEL VALENCIA MOLINA</p>
+        </div>
+    </div>
+    <div class="container_normal">
+        <div class="image">
+            <img src="images/gabinete/MARÍA GUADALUPE GÓMEZ RODRÍGUEZ.png" class="rounded-image" alt="Imagen del Presidente Municipal">
+        </div>
+        <div class="text">
+            <h1>Secretaría de Desarrollo Integral y Económico</h1>
+            <p>MARÍA GUADALUPE GÓMEZ RODRÍGUEZ</p>
+        </div>
+    </div>
+</div>
+<div class="d-flex">
+    <div class="container_normal">
+        <div class="image">
+            <img src="images/gabinete/ORLANDO CHÁVEZ LANDAVERDE.png" class="rounded-image" alt="Imagen del Presidente Municipal">
+        </div>
+        <div class="text">
+            <h1>Secretaría de Seguridad Pública Municipal</h1>
+            <p>ORLANDO CHÁVEZ LANDAVERDE</p>
+        </div>
+    </div>
+    <div class="container_normal">
+        <div class="image">
+            <img src="images/gabinete/ADRIÁN MIRANDA BÁRCENAS.png" class="rounded-image" alt="Imagen del Presidente Municipal">
+        </div>
+        <div class="text">
+            <h1>Secretaría de Desarrollo Agropecuario</h1>
+            <p>ADRIÁN MIRANDA BÁRCENAS</p>
+        </div>
+    </div>
+    <div class="container_normal">
+        <div class="image">
+            <img src="images/gabinete/EDITH ÁLVAREZ FLORES.png" class="rounded-image" alt="Imagen del Presidente Municipal">
+        </div>
+        <div class="text">
+            <h1>Secretaría de Obras Públicas Municipales</h1>
+            <p>EDITH ÁLVAREZ FLORES</p>
+        </div>
+    </div>
+</div>
+<div class="d-flex">
+    <div class="container_normal">
+        <div class="image">
+            <img src="images/gabinete/BIBIANA RODRÍGUEZ MONTES.png" class="rounded-image" alt="Imagen del Presidente Municipal">
+        </div>
+        <div class="text">
+            <h1>Secretaría de Desarrollo Social</h1>
+            <p>BIBIANA RODRÍGUEZ MONTES</p>
+        </div>
+    </div>
+    <div class="container_normal">
+        <div class="image">
+            <img src="images/gabinete/ERNESTO MORA RICO.png" class="rounded-image" alt="Imagen del Presidente Municipal">
+        </div>
+        <div class="text">
+            <h1>Secretaría de Servicios Públicos Municipales</h1>
+            <p>ERNESTO MORA RICO</p>
+        </div>
+    </div>
+</div>  
+<div id="footerContainer"></div>
+
+<script>
+    fetch('partials/navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbarContainer').innerHTML = data;
+        })
+        .catch(error => console.error('Error al cargar el navbar:', error));
+    fetch('partials/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footerContainer').innerHTML = data;
+        })
+        .catch(error => console.error('Error al cargar el footer:', error));
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+</body>
+</html>
