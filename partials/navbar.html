@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img src="images/LOGO SJR HORIZONTAL 2_Mesa de trabajo 1.png" alt="Logotipo" width="215" height="140" class="d-inline-block align-text-top">
+            <img src="images/LOGO SJR HORIZONTAL 2_Mesa de trabajo 1.png" alt="Logotipo" width="215" height="auto" class="d-inline-block align-text-top">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -50,6 +50,31 @@
         margin-left: 30px; /* Ajusta el valor según sea necesario */
     }
 
+    /* Añadir margen superior a la lista de navegación */
+    .navbar-nav {
+        margin-top: 55px; /* Ajusta este valor según sea necesario */
+    }
+    /* Efecto de línea azul al pasar el mouse sobre las opciones del navbar */
+.navbar-nav .nav-link {
+    position: relative; /* Asegúrate de que el elemento sea relativo para posicionar el pseudo-elemento */
+}
+
+.navbar-nav .nav-link::before {
+    content: ''; /* Necesario para el pseudo-elemento */
+    position: absolute; /* Posicionamiento absoluto */
+    width: 100%; /* Ancho completo */
+    height: 3px; /* Altura de la línea */
+    background-color: blue; /* Color de la línea */
+    bottom: 100%; /* Posicionar la línea encima del enlace */
+    left: 0; /* Alinear a la izquierda */
+    transform: scaleX(0); /* Inicialmente no visible */
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+.navbar-nav .nav-link:hover::before {
+    transform: scaleX(1); /* Muestra la línea al pasar el mouse */
+}
+
     /* Estilos para el menú desplegable */
     .dropdown-menu {
         min-width: 400px; /* Ancho mínimo del menú desplegable */
@@ -58,7 +83,7 @@
         z-index: 1000; /* Asegurarse de que el menú se muestre por encima de otros elementos */
         position: absolute; /* Cambiado a absolute para mejor posicionamiento */
         right: 0; /* Alineado a la derecha */
-        transform: translateY(10px); /* Ajusta la posición vertical si es necesario */
+        transform: translateY(2px); /* Ajusta la posición vertical si es necesario */
         overflow: hidden; /* Evitar scroll */
         display: none; /* Ocultar inicialmente */
     }
