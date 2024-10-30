@@ -53,6 +53,77 @@
 
 <!-- Aquí se cargará el navbar -->
 <div id="navbarContainer"></div>
+<!-- Mensaje emergente -->
+<div id="overlay"></div>
+<div id="popup">
+    <div class="text-center mb-3">
+        <i class="bi bi-exclamation-triangle-fill" style="color: #ffc107; font-size: 50px; margin-right: 10px;"></i>
+    </div>
+    <h3 style="font-weight: 900;">Sitio en Desarrollo</h3>
+    <p style="font-weight: bold;">Estamos trabajando para mejorar tu experiencia.</p>
+    <button onclick="closePopup()" class="close-button">Cerrar</button>
+</div>
+
+<script>
+    // Función para mostrar el mensaje emergente
+    function showPopup() {
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('popup').style.display = 'block';
+    }
+
+    // Función para cerrar el mensaje emergente
+    function closePopup() {
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('popup').style.display = 'none';
+    }
+
+    // Muestra el mensaje al cargar la página
+    window.onload = showPopup;
+</script>
+
+<style>
+    /* Estilo para el mensaje emergente */
+    #popup {
+        display: none;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        background-color: white;
+        border: 2px gray; /* Color del borde */
+        border-radius: 10px; /* Bordes redondeados */
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Sombra */
+        z-index: 1000;
+        text-align: center; /* Centrar el texto */
+    }
+    #overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+    .close-button {
+        background-color: #007BFF; /* Color de fondo */
+        color: white; /* Color del texto */
+        border: none; /* Sin borde */
+        padding: 10px 20px; /* Espaciado interno */
+        border-radius: 5px; /* Bordes redondeados */
+        cursor: pointer; /* Cambia el cursor al pasar el ratón */
+        transition: background-color 0.3s; /* Transición suave */
+        margin-top: 15px; /* Espacio arriba del botón */
+    }
+
+    .close-button:hover {
+        background-color: #0056b3; /* Color de fondo al pasar el ratón */
+    }
+</style>
+
+
 
 <!-- Banner de imágenes con carrusel -->
 <div id="carouselBanner" class="carousel slide" data-bs-ride="carousel">
@@ -84,7 +155,7 @@
 
 <!-- Contenido principal de la página -->
 <div class="container mt-4" id="tramites">
-    <h1 class="text-center" style="font-weight: 900; color: #0b3b59;">VISITAS FRECUENTES</h1>
+    <h1 class="text-center" style="font-weight: 900; color: #0b3b59;">CONSULTAS FRECUENTES</h1>
     <div class="row mt-4">
         <div class="col-md-3">
             <a href="#" class="text-decoration-none">
