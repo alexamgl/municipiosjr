@@ -17,19 +17,25 @@
             max-width: 380px; /* Ancho máximo del contenedor */
             height: 130px;
         }
+        .container_full:hover {
+    border-color: #66b3ff; /* Cambia el color del borde al pasar el mouse (azul claro) */
+    background-color: #f0f8ff; /* Opcional: cambia el fondo también */
+}
         .container_normal {
-            display: flex;
-            align-items: center;
-            margin: 20px auto; /* Centra el contenedor */
-            padding: 10px;
-            border: 2px solid #007BFF; /* Color del contorno */
-            border-radius: 8px; /* Bordes redondeados */
-            transition: background-color 0.3s; /* Transición suave para el hover */
-            max-width: 300px; /* Ancho máximo del contenedor */
-        }
-        .container:hover {
-            background-color: #f0f8ff; /* Color de fondo al pasar el mouse */
-        }
+    display: flex;
+    align-items: center;
+    margin: 20px auto; /* Centra el contenedor */
+    padding: 10px;
+    border: 2px solid #007BFF; /* Color del contorno */
+    border-radius: 8px; /* Bordes redondeados */
+    transition: background-color 0.3s, border-color 0.3s; /* Transición suave para el hover */
+    max-width: 300px; /* Ancho máximo del contenedor */
+}
+
+.container_normal:hover {
+    border-color: #66b3ff; /* Cambia el color del borde al pasar el mouse (azul claro) */
+    background-color: #f0f8ff; /* Opcional: cambia el fondo también */
+}
         .image {
             flex: 0 0 auto; /* No permite que la imagen crezca */
             margin-right: 10px; /* Espacio entre la imagen y el texto */
@@ -44,6 +50,9 @@
 .large-image {
     width: 300px; /* Tamaño más grande para la primera imagen */
     height: auto; /* Tamaño más grande para la primera imagen */
+}
+.first-card {
+    margin-bottom: 20px; /* Ajusta el valor según lo que necesites */
 }
         img {
             max-width: 75px; /* Ajusta el tamaño de la imagen */
@@ -73,7 +82,7 @@
     </div>
 </div>
 <div class="d-flex">
-    <div class="container_normal">
+    <div class="container_normal first-card"  style="margin-left: 280px;">
         <div class="image">
             <img src="images/gabinete/MIGUEL ÁNGEL SUBIAS CONSTANDCE.png" class="rounded-image" alt="Imagen del Presidente Municipal">
         </div>
@@ -82,7 +91,7 @@
             <p>MIGUEL ÁNGEL SUBIAS CONSTANDCE</p>
         </div>
     </div>
-    <div class="container_normal">
+    <div class="container_normal" style="margin-right: 280px;">
         <div class="image">
             <img src="images/gabinete/GABRIEL NICOLÁS FIGUEROA URIBE.png" class="rounded-image" alt="Imagen del Presidente Municipal">
         </div>
@@ -198,7 +207,7 @@
             <p>ERNESTO MORA RICO</p>
         </div>
     </div>
-</div>  
+</div>  <br>br
 <div id="footerContainer"></div>
 
 <script>
