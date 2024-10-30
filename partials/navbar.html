@@ -2,18 +2,27 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img src="images/LOGO SJR HORIZONTAL 2_Mesa de trabajo 1.png" alt="Logotipo" width="215" height="auto" class="d-inline-block align-text-top">
+            <img src="images/LOGO SJR HORIZONTAL 2_sinborde.png" alt="Logotipo" width="215" height="auto" class="img-fluid">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown" href="#" role="button" aria-expanded="false"><h5 style="font-weight: bold;">
+                        GOBIERNO </h5>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/gabinete.html" style="font-weight: normal;">Gabinete</a></li>
+                        <li><a class="dropdown-item" href="#" style="font-weight: normal;">H. Ayuntamiento</a></li>
+                    </ul>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/index.html#tramites"><h5 style="font-weight: bold;">TRÁMITES</h5></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><h5 style="font-weight: bold;">TRANSPARENCIA</h5></a>
+                    <a class="nav-link" href="https://www.uig.sanjuandelrio.gob.mx/" target="blank"><h5 style="font-weight: bold;">TRANSPARENCIA</h5></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown" href="#" role="button" aria-expanded="false"><h5 style="font-weight: bold;">
@@ -55,7 +64,7 @@
         margin-top: 55px; /* Ajusta este valor según sea necesario */
     }
     /* Efecto de línea azul al pasar el mouse sobre las opciones del navbar */
-.navbar-nav .nav-link {
+    .navbar-nav .nav-link {
     position: relative; /* Asegúrate de que el elemento sea relativo para posicionar el pseudo-elemento */
 }
 
@@ -75,39 +84,45 @@
     transform: scaleX(1); /* Muestra la línea al pasar el mouse */
 }
 
-    /* Estilos para el menú desplegable */
-    .dropdown-menu {
-        min-width: 400px; /* Ancho mínimo del menú desplegable */
-        max-width: calc(100vw - 20px); /* Asegúrate de que no se desborde de la pantalla */
-        padding: 10px 0; /* Espacio vertical dentro del menú */
-        z-index: 1000; /* Asegurarse de que el menú se muestre por encima de otros elementos */
-        position: absolute; /* Cambiado a absolute para mejor posicionamiento */
-        right: 0; /* Alineado a la derecha */
-        transform: translateY(2px); /* Ajusta la posición vertical si es necesario */
-        overflow: hidden; /* Evitar scroll */
-        display: none; /* Ocultar inicialmente */
-    }
+/* Estilos para el menú desplegable */
+.dropdown-menu {
+    min-width: 200px; /* Ancho mínimo del menú desplegable */
+    max-width: calc(100vw - 20px); /* Asegúrate de que no se desborde de la pantalla */
+    padding: 10px 0; /* Espacio vertical dentro del menú */
+    z-index: 1000; /* Asegurarse de que el menú se muestre por encima de otros elementos */
+    position: absolute; /* Cambiado a absolute para mejor posicionamiento */
+    right: 0; /* Alineado a la derecha */
+    transform: translateY(2px); /* Ajusta la posición vertical si es necesario */
+    overflow: hidden; /* Evitar scroll */
+    display: none; /* Ocultar inicialmente */
+}
 
-    .dropdown-columns {
-        display: grid; /* Usar grid para las columnas */
-        grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
-        padding: 0; /* Sin padding adicional */
-        margin: 0; /* Sin margen adicional */
-        width: 100%; /* Asegúrate de que ocupe el 100% del ancho del menú */
-    }
+/* Cambiar a display: block para el menú de "GOBIERNO" */
+.dropdown-columns {
+    display: block; /* Cambiado a block para mostrar en una sola columna para GOBIERNO */
+    padding: 0; /* Sin padding adicional */
+    margin: 0; /* Sin margen adicional */
+    width: 100%; /* Asegúrate de que ocupe el 100% del ancho del menú */
+}
 
-    .dropdown-item {
-        padding: 10px 20px; /* Espacio interno para cada opción */
-        color: #333; /* Color del texto */
-    }
+/* Estilos para el menú desplegable de "DEPENDENCIAS" */
+.dropdown-columns {
+    display: grid; /* Usar grid para las columnas en DEPENDENCIAS */
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+}
 
-    .dropdown-item:hover {
-        background-color: #f8f9fa; /* Color de fondo al pasar el mouse */
-        color: #000; /* Color del texto al pasar el mouse */
-    }
+.dropdown-item {
+    padding: 10px 20px; /* Espacio interno para cada opción */
+    color: #333; /* Color del texto */
+}
 
-    /* Separador en el menú desplegable */
-    .dropdown-divider {
-        margin: 5px 0; /* Espacio alrededor del separador */
-    }
+.dropdown-item:hover {
+    background-color: #f8f9fa; /* Color de fondo al pasar el mouse */
+    color: #000; /* Color del texto al pasar el mouse */
+}
+
+/* Separador en el menú desplegable */
+.dropdown-divider {
+    margin: 5px 0; /* Espacio alrededor del separador */
+}
 </style>
