@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Ejemplo de Tarjetas</title>
+    <title>Gabinete</title>
     <style>
         /* Estilos para la primera fila */
         .container-full {
@@ -15,7 +15,8 @@
             border: 2px solid #007BFF;
             border-radius: 8px;
             transition: background-color 0.3s, box-shadow 0.3s;
-            max-width: 500px; /* Ancho máximo mayor para la primera fila */
+            max-width: 400px; /* Ancho máximo reducido para la primera fila */
+            text-align: center; /* Centra el texto */
         }
     
         /* Estilos para las tarjetas normales */
@@ -29,6 +30,13 @@
             transition: background-color 0.3s, box-shadow 0.3s;
             width: 300px; /* Ancho fijo */
             height: 150px; /* Alto fijo */
+        }
+
+                /* Agregar efecto hover a todas las cards */
+                .container-full:hover,
+        .container-normal:hover {
+            background-color: #f0f8ff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
     
         .container:hover {
@@ -49,11 +57,11 @@
         }
     
         /* Asegurar que las imágenes sean circulares y uniformes */
-        img {
+        .card-image {
             width: 80px;
             height: 80px;
-            border-radius: 50%; /* Hace que las imágenes sean circulares */
-            object-fit: cover; /* Asegura que la imagen mantenga su aspecto */
+            border-radius: 50%;
+            object-fit: cover;
         }
     
         h1 {
@@ -80,7 +88,7 @@
 <!-- Primera fila (componente más grande) -->
 <div class="container-full">
     <div class="image">
-        <img src="images/gabinete/ROBERTO CARLOS CABRERA VALENCIA.png" alt="Imagen del Presidente Municipal">
+        <img src="images/gabinete/ROBERTO CARLOS CABRERA VALENCIA.png" alt="Imagen del Presidente Municipal" class="card-image">
     </div>
     <div class="text">
         <h1>PRESIDENTE MUNICIPAL</h1>
@@ -94,7 +102,7 @@
         <div class="col-md-6 mb-2">
             <div class="container-normal">
                 <div class="image">
-                    <img src="images/ayuntamiento/JOSÉ FRANCISCO LANDERAS LAYSECA.jpg" alt="Imagen del Presidente Municipal">
+                    <img src="images/ayuntamiento/JOSÉ FRANCISCO LANDERAS LAYSECA.jpg" alt="Imagen del Presidente Municipal" class="card-image">
                 </div>
                 <div class="text">
                     <h1>COMISION DE COMBATE A LA CORRUPCION</h1>
@@ -105,7 +113,7 @@
         <div class="col-md-6 mb-2">
             <div class="container-normal">
                 <div class="image">
-                    <img src="images/ayuntamiento/ROSALBA RUIZ RAMOS.png" alt="Imagen del Presidente Municipal">
+                    <img src="images/ayuntamiento/ROSALBA RUIZ RAMOS.png" alt="Imagen del Presidente Municipal" class="card-image">
                 </div>
                 <div class="text">
                     <h1>COMISION DE EDUCACION Y CULTURA</h1>
@@ -123,7 +131,7 @@
         <div class="col-md-4">
             <div class="container-normal">
                 <div class="image">
-                    <img src="images/ayuntamiento/ANA PAULA HIGUERA ALANÍS.jpg" alt="Imagen del Presidente Municipal">
+                    <img src="images/ayuntamiento/ANA PAULA HIGUERA ALANÍS.jpg" alt="Imagen del Presidente Municipal" class="card-image">
                 </div>
                 <div class="text">
                     <h1>COMISION DE ASUNTOS DE LA JUVENTUD</h1>
@@ -134,7 +142,7 @@
         <div class="col-md-4">
             <div class="container-normal">
                 <div class="image">
-                    <img src="images/ayuntamiento/ANTONIO JUAN CAMACHO RAMÍREZ.jpg" alt="Imagen del Presidente Municipal">
+                    <img src="images/ayuntamiento/ANTONIO JUAN CAMACHO RAMÍREZ.jpg" alt="Imagen del Presidente Municipal" class="card-image">
                 </div>
                 <div class="text">
                     <h1>COMISION DE DESARROLLO AGROPECUARIO</h1>
@@ -145,7 +153,7 @@
         <div class="col-md-4">
             <div class="container-normal">
                 <div class="image">
-                    <img src="images/ayuntamiento/GILBERTO EDMUNDO UGALDE DE ALBA.jpg" alt="Imagen del Presidente Municipal">
+                    <img src="images/ayuntamiento/GILBERTO EDMUNDO UGALDE DE ALBA.jpg" alt="Imagen del Presidente Municipal" class="card-image">
                 </div>
                 <div class="text">
                     <h1>COMISION DE SALUD PUBLICA</h1>
@@ -159,7 +167,7 @@
         <div class="col-md-4">
             <div class="container-normal">
                 <div class="image">
-                    <img src="images/ayuntamiento/GEORGINA MARGARITA CHÁVEZ GARCÍA.jpg" alt="Imagen del Presidente Municipal">
+                    <img src="images/ayuntamiento/GEORGINA MARGARITA CHÁVEZ GARCÍA.jpg" alt="Imagen del Presidente Municipal" class="card-image">
                 </div>
                 <div class="text">
                     <h1>COMISION DE GRUPOS VULNERABLES Y ASUNTOS INDIGENAS</h1>
@@ -170,7 +178,7 @@
         <div class="col-md-4">
             <div class="container-normal">
                 <div class="image">
-                    <img src="images/ayuntamiento/MARCIA SOLÓRZANO GALLEGO.jpg" alt="Imagen del Presidente Municipal">
+                    <img src="images/ayuntamiento/MARCIA SOLÓRZANO GALLEGO.jpg" alt="Imagen del Presidente Municipal" class="card-image">
                 </div>
                 <div class="text">
                     <h1>COMISION DE PARTICIPACION CIUDADANA</h1>
@@ -181,7 +189,7 @@
         <div class="col-md-4">
             <div class="container-normal">
                 <div class="image">
-                    <img src="images/ayuntamiento/NORMA ANGÉLICA DÍAZ MARTÍNEZ.jpg" alt="Imagen del Presidente Municipal">
+                    <img src="images/ayuntamiento/NORMA ANGÉLICA DÍAZ MARTÍNEZ.jpg" alt="Imagen del Presidente Municipal" class="card-image">
                 </div>
                 <div class="text">
                     <h1>COMISION DE MUJER Y FAMILIA</h1>
@@ -195,7 +203,7 @@
         <div class="col-md-4">
             <div class="container-normal">
                 <div class="image">
-                    <img src="images/ayuntamiento/OSCAR SANDOVAL GARCÍA.jpg" alt="Imagen del Presidente Municipal">
+                    <img src="images/ayuntamiento/OSCAR SANDOVAL GARCÍA.jpg" alt="Imagen del Presidente Municipal" class="card-image">
                 </div>
                 <div class="text">
                     <h1>COMISION TRABAJADORES MIGRANTES</h1>
@@ -206,7 +214,7 @@
         <div class="col-md-4">
             <div class="container-normal">
                 <div class="image">
-                    <img src="images/ayuntamiento/SILVIA MENESES ORTIZ.jpg" alt="Imagen del Presidente Municipal">
+                    <img src="images/ayuntamiento/SILVIA MENESES ORTIZ.jpg" alt="Imagen del Presidente Municipal" class="card-image">
                 </div>
                 <div class="text">
                     <h1>COMISION DE GESTORIA Y ATENCION CIUDADANA</h1>
@@ -217,7 +225,7 @@
         <div class="col-md-4">
             <div class="container-normal">
                 <div class="image">
-                    <img src="images/ayuntamiento/VANIA CAMACHO GALVÁN.jpg" alt="Imagen del Presidente Municipal">
+                    <img src="images/ayuntamiento/VANIA CAMACHO GALVÁN.jpg" alt="Imagen del Presidente Municipal" class="card-image">
                 </div>
                 <div class="text">
                     <h1>COMISION DE TRANSPORTE Y VIALIDAD</h1>
@@ -230,7 +238,7 @@
         <div class="col-md-4">
             <div class="container-normal">
                 <div class="image">
-                    <img src="images/ayuntamiento/VÍCTOR MANUEL ROCHA BASURTO.jpg" alt="Imagen del Presidente Municipal">
+                    <img src="images/ayuntamiento/VÍCTOR MANUEL ROCHA BASURTO.jpg" alt="Imagen del Presidente Municipal" class="card-image">
                 </div>
                 <div class="text">
                     <h1>COMISION DE IGUALDAD DE GENERO Y DERECHOS HUMANOS</h1>
@@ -241,7 +249,7 @@
         <div class="col-md-4">
             <div class="container-normal">
                 <div class="image">
-                    <img src="images/ayuntamiento/ARTURO JAVIER CALVARIO RAMÍREZ.jpg" alt="Imagen del Presidente Municipal">
+                    <img src="images/ayuntamiento/ARTURO JAVIER CALVARIO RAMÍREZ.jpg" alt="Imagen del Presidente Municipal" class="card-image">
                 </div>
                 <div class="text">
                     <h1>COMISION DE COMERCIO Y TURISMO</h1>
@@ -252,7 +260,7 @@
         <div class="col-md-4">
             <div class="container-normal">
                 <div class="image">
-                    <img src="images/ayuntamiento/JOSÉ FRANCISCO LANDERAS LAYSECA.jpg" alt="Imagen del Presidente Municipal">
+                    <img src="images/ayuntamiento/JOSÉ FRANCISCO LANDERAS LAYSECA.jpg" alt="Imagen del Presidente Municipal" class="card-image">
                 </div>
                 <div class="text">
                     <h1>COMISION DE DESARROLLO ECONOMICO E INDUSTRIA</h1>
@@ -265,7 +273,7 @@
         <div class="col-md-4">
             <div class="container-normal">
                 <div class="image">
-                    <img src="images/ayuntamiento/ARTURO JAVIER CALVARIO RAMÍREZ.jpg" alt="Imagen del Presidente Municipal">
+                    <img src="images/ayuntamiento/ARTURO JAVIER CALVARIO RAMÍREZ.jpg" alt="Imagen del Presidente Municipal" class="card-image">
                 </div>
                 <div class="text">
                     <h1>COMISION DE DESARROLLO URBANO Y TECNOLOGIA</h1>
@@ -276,7 +284,7 @@
         <div class="col-md-4">
             <div class="container-normal">
                 <div class="image">
-                    <img src="images/ayuntamiento/ANA PAULA HIGUERA ALANÍS.jpg" alt="Imagen del Presidente Municipal">
+                    <img src="images/ayuntamiento/ANA PAULA HIGUERA ALANÍS.jpg" alt="Imagen del Presidente Municipal" class="card-image">
                 </div>
                 <div class="text">
                     <h1>COMISION DE OBRAS Y SERVICIOS PUBLICOS</h1>
@@ -287,7 +295,7 @@
         <div class="col-md-4">
             <div class="container-normal">
                 <div class="image">
-                    <img src="images/ayuntamiento/ROSALBA RUIZ RAMOS.png" alt="Imagen del Presidente Municipal">
+                    <img src="images/ayuntamiento/ROSALBA RUIZ RAMOS.png" alt="Imagen del Presidente Municipal" class="card-image">
                 </div>
                 <div class="text">
                     <h1>COMISION DE HACIENDA, PATRIMONIO Y CUENTA PUBLICA</h1>
@@ -300,7 +308,7 @@
         <div class="col-md-4">
             <div class="container-normal">
                 <div class="image">
-                    <img src="images/ayuntamiento/MARCIA SOLÓRZANO GALLEGO.jpg" alt="Imagen del Presidente Municipal">
+                    <img src="images/ayuntamiento/MARCIA SOLÓRZANO GALLEGO.jpg" alt="Imagen del Presidente Municipal" class="card-image">
                 </div>
                 <div class="text">
                     <h1>COMISION DE PARTICIPACION GOBERNACION</h1>
