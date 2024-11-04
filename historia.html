@@ -171,10 +171,106 @@
         </div>
         </div>
         <br><br>
-        <div><a href="" class="btn btn-primary">Ver más</a></div>
-
-
+        <div class="container mt-4 text-center">
+            <div><a href="#" class="btn btn-primary" id="showMoreCards">Ver más</a></div>
+        </div>
+        <div class="container mt-4 text-center" id="extraCards" style="display: none;">
+            <div class="row mt-4">
+                <div class="col-md-3">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <div class="card-icon">
+                                    <img src="images/historia/miniaturas/historia006.png" alt="Icono de agua" class="img-fluid">
+                                </div>
+                                <br>
+                                <h5 class="card-title" style="font-weight: bold; color: #0b3b59;">Un Camino Real</h5>
+                                <p class="card-text">A partir de 1531, San Juan del Río será ya un punto de referencia en los caminos del virreinato, por ser un paso obligado hacia las tierras del norte, un hecho que se...</p>
+                                <br><a href="informacion.html#caminoreal" class="btn btn-primary">Ver más</a>
+                            </div>
+                        </div>
+                    </a> 
+                </div>
+                <div class="col-md-3">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <div class="card-icon">
+                                    <img src="images/historia/miniaturas/historia007.png" alt="Icono de agua" class="img-fluid">
+                                </div>
+                                <br>
+                                <h5 class="card-title" style="font-weight: bold; color: #0b3b59;">Los Nuevos Productos y Servicios</h5>
+                                <p class="card-text">El Camino Real agilizó el transporte de mercancías y en San Juan del Río, durante la segunda mitad del siglo XVI, se incrementó la llegada...</p>
+                                <br><a href="informacion.html#ProductosServicios" class="btn btn-primary">Ver más</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <div class="card-icon">
+                                    <img src="images/historia/miniaturas/historia008.png" alt="Icono de agua" class="img-fluid">
+                                </div>
+                                <br>
+                                <h5 class="card-title" style="font-weight: bold; color: #0b3b59;">Un Pueblo en Construcción</h5>
+                                <p class="card-text">En los primeros años del siglo XVIII las castas en San Juan del Río eran evidentes, pues habitaban españoles, criollos, mestizos, indígenas y mulatos...</p>
+                                <br><a href="informacion.html#Pueblo" class="btn btn-primary">Ver más</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <div class="card-icon">
+                                    <img src="images/historia/miniaturas/historia009.png" alt="Icono de agua" class="img-fluid">
+                                </div>
+                                <br>
+                                <h5 class="card-title" style="font-weight: bold; color: #0b3b59;">El Ferrocarril Central</h5>
+                                <p class="card-text">Además de otorgarnos una nueva identidad nacional, el siglo XIX fue propicio para robustecer las vías de comunicación; San Juan del Río, establecido en un...</p>
+                                <br><a href="informacion.html#Ferrocarril" class="btn btn-primary">Ver más</a>
+                            </div>
+                        </div>
+                    </a>
+                </div> <br><br> <div></div>
+                <div class="col-md-3 mb-4">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <div class="card-icon">
+                                    <img src="images/historia/miniaturas/historia010.png" alt="Icono de agua" class="img-fluid">
+                                </div>
+                                <br>
+                                <h5 class="card-title" style="font-weight: bold; color: #0b3b59;">De Camino Real a Carretera Panamericana</h5>
+                                <p class="card-text">De la mano del porfiriato llegó el conflictivo siglo XX. Al término de la primera guerra mundial, los países de América retoman un ideal...</p>
+                                <br><a href="informacion.html#DeCaminoReal" class="btn btn-primary">Ver más</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 ">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <div class="card-icon">
+                                    <img src="images/historia/miniaturas/historia011.png" alt="Icono de agua" class="img-fluid">
+                                </div>
+                                <br>
+                                <h5 class="card-title" style="font-weight: bold; color: #0b3b59;">La Autopista Federal 57</h5>
+                                <p class="card-text">Entre excavadoras y una multitud de trabajadores de caminos laborando al pie del Cerro de La Cruz, inició 1958; otro año que marcó el desarrollo en el comercio de estas tierras...</p>
+                                <br><a href="informacion.html#Autopista" class="btn btn-primary">Ver más</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
 </div>
+
 <br><br>
 
 <div id="footerContainer"></div>
@@ -213,10 +309,19 @@
     };
 
     // Función para desplazarse suavemente hacia arriba
-    document.getElementById('backToTop').onclick = function() {
-        window.scrollTo({top: 0, behavior: 'smooth'});
-    };
+    document.querySelector('#showMoreCards').addEventListener('click', function(event) {
+        event.preventDefault(); // Evitar el comportamiento por defecto
+        const extraCards = document.getElementById('extraCards');
+        const isVisible = extraCards.style.display === 'block';
+
+        // Mostrar u ocultar el contenido adicional
+        extraCards.style.display = isVisible ? 'none' : 'block';
+        this.textContent = isVisible ? 'Ver más' : 'Ver menos';
+    });
+
+
 </script>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
