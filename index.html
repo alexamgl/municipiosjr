@@ -161,12 +161,14 @@
         }
 </style>
 
-
-<a class="weatherwidget-io" href="https://forecast7.com/es/20d40n99d99/san-juan-del-rio/" data-label_1="SAN JUAN DEL RÍO" data-label_2="Clima" data-font="Arial Rounded MT Bold" data-mode="Current" data-days="5" data-theme="pure" data-basecolor="#f8f9fa" data-textcolor="#0b3b59" >SAN JUAN DEL RÍO Clima</a>
+<!-- div para hacer que el contenido solo sea visible, no clickeable -->
+<div style="pointer-events: none;"> 
+    <a class="weatherwidget-io" href="https://forecast7.com/es/20d40n99d99/san-juan-del-rio/" data-label_1="SAN JUAN DEL RÍO" data-label_2="Clima" data-font="Arial Rounded MT Bold" data-mode="Current" data-days="5" data-theme="pure" data-basecolor="#f8f9fa" data-textcolor="#0b3b59">SAN JUAN DEL RÍO Clima</a>
+</div>
 <script>
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=document.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
 </script>
-  
+ 
 <!-- Banner de imágenes con carrusel -->
 <div id="carouselBanner" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
