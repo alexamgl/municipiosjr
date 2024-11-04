@@ -1,0 +1,31 @@
+
+
+.datos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    color: #0b3b59;
+    font-size: 1.0em;
+}
+
+.time, .weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.weather p {
+    margin: 0;
+    font-weight: bold;
+}
+
+#weather-info {
+    margin-top: 10px;
+}
