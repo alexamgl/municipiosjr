@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Historia</title>
+    <style>
+        body {
+            background-color: #f8f9fa; /* Fondo claro para un contraste suave */
+        }
+        .header-with-line {
+            border-bottom: 2px solid #0b3b59;
+            display: inline-block;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .content {
+            background: rgba(255, 255, 255, 0.8); /* Fondo blanco con transparencia */
+            border-radius: 10px; /* Bordes redondeados */
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+            max-width: 800px; /* Ancho máximo */
+        }
+        .hidden-content {
+            display: none; /* Ocultar contenido adicional inicialmente */
+        }
+        .row {
+            display: flex;
+            align-items: flex-start;
+        }
+        .image-container {
+            flex: 1; /* Permite que el contenedor de la imagen ocupe el espacio necesario */
+            text-align: center; /* Centrar imagen */
+            margin-right: 20px; /* Espacio entre imagen y texto */
+        }
+        .text-container {
+            flex: 2; /* Permite que el contenedor de texto ocupe el doble del espacio que la imagen */
+        }
+        #backToTop {
+    position: fixed;
+    bottom: 30px; /* Distancia desde el fondo */
+    right: 30px; /* Distancia desde la derecha */
+    display: none; /* Ocultar el botón por defecto */
+    background-color: #007BFF; /* Color de fondo azul */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 50%; /* Bordes redondeados */
+    width: 50px; /* Ancho del botón */
+    height: 50px; /* Altura del botón */
+    font-size: 24px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    transition: background-color 0.3s; /* Transición suave */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+#backToTop:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el ratón */
+}
+/* Estilos para las imágenes de los cards */
+.card-icon img {
+            width: 120px; /* Ancho estándar de los íconos */
+            height: 120px; /* Altura estándar de los íconos */
+            object-fit: cover;
+            margin-right: 15px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Aquí se cargará el navbar -->
+<div id="navbarContainer"></div>
+
+<div class="container mt-4 text-center" id="historia">
+    <h1 class="text-center header-with-line" style="font-weight: 900; color: #0b3b59;">HISTORIA</h1>
+    <div class="row">
+        <div class="image-container">
+            <img src="images/sjr.png" alt="Descripción de la imagen" class="img-fluid rounded">
+        </div>
+        <div class="text-container">
+            <div class="content" style="font-weight: normal;">
+                <p>En lo que ahora ocupa la superficie municipal de San Juan del Río, en la orilla del río que lleva el mismo nombre, se han encontrado vestigios de una antigua cultura, la Chupícuaro, legados que indican que la zona fue habitada hacia el año 400 a. C., que a su vez fue cuando inició la labor constructiva en dicho sitio. Los antiguos pobladores eran recolectores sedentarios, portadores de una cultura y una forma de vida compleja.</p>
+                <p>Iztacchichimecapan, junto con otros pueblos, formaban el Altépetl (unidad geográfica-política y económica integrada por varios pueblos que guardan un orden jerárquico), perteneciente a Jilotepec, el cual, a su vez, era tributario de la Triple Alianza, es decir de lo que fue la última confederación de estados indígenas ubicados en el Valle de México, los aztecas, a la caída de México Tenochtitlan el 13 de agosto de 1521.</p>
+                <button class="btn btn-primary mt-3" id="toggleContent">Ver más</button>
+                <div class="hidden-content mt-3">
+                    <p>Después de tener grandes avances en la agricultura, estos habitantes se agruparon en la región en torno al Cerro Techimacit...</p>
+                    <p>Las principales referencias históricas del siglo XVI, acerca del poblado de San Juan del Río, las encontramos en la Relación de Querétaro, documento escrito por Francisco Ramos de Cárdenas en el año 1582, donde menciona datos sobre la gente que habitaba en estas regiones, sus costumbres, lengua, etc.</p>
+ <p>En este documento se indica que San Juan del Río fue poblado poco después de la conquista de Tenochtitlan por otomíes procedentes de Jilotepec...</p>
+                    <p>Iztacchichimecapan, significa tierra de chichimecas blancos, y su cacique fue un indígena llamado Mexici quien posteriormente recibió el nombre cris­tiano de Juan al ser bautizado inmediato a la conquista española.</p>
+                    <p>“El pueblo de San Juan del Río fue fundado por un indio de la generación de los otomíes, natural del pueblo y cabecera de Jilotepec, que, habiendo recibido el agua del santo bautismo, lo llamaron Don Juan, y tomó por so­brenombre su nombre primero que tenía en su gentilidad, que era Mexici, que quiere decir ‘mexicano’, y, por otro nombre, ‘poquito’. Éste, viendo que los españoles habían ganado a México Tenochtitlan y su provincia de Jilotepec, acordó de retirarse hacia la tierra de los chichimecas, y pobló junto a un río, a donde ahora está poblado el dicho pueblo de San Juan, en don­de hay un cerrillo algo pelado que, en lengua mexicana, se nombra Iztac Chichimecapan, que quiere decir en lengua española ‘chichimecas blancos’ y, más cómodamente, ‘tierra blanca de chichimecos’; porque aquella tierra donde está asentado el pueblo de dicho San Juan es tierra blanca muy dura, que, con picos, no se puede romper si no es con dificultad…”</p>
+                    <p>En 1526, Mexici asentó a su gente en un lugar de tierra caliza y tepetatosa, junto a unos sabinos que estaban a las orillas del río, así que cuando los pacificadores llegaron al lugar, ya había desde años atrás gente conocida de ellos habitándolo, siendo el mismo Mexici quien rindiera a su pueblo ante la comitiva que venía en representación de la Corona Española.</p>
+                    <p>Según la leyenda, San Juan del Río fue fundado por los españoles el 24 de junio del año 1531, sin que mediara resistencia por parte de los indios para ello. Fue una conquista pacífica por parte de los europeos y sus aliados in­dígenas procedentes de Jilotepec, quienes llegaron días previos y aguarda­ron al día de San Juan Bautista para establecer el poblado. Para el momento de la llegada de los españoles, ya existía un pequeño núcleo poblacional establecido, por lo menos veinte años antes en estas tierras, persistente de uno mayor en épocas clásicas.</p>
+                    <p>Su fundación respondía a una necesidad estratégica. Marcaba una fron­tera de salvaguarda contra los chichimecas, al expansionismo virreinal y el traslado de la riqueza de fundos mineros del norte del país hacia la ciudad de México. El norte de Mesoamérica fue abandonado por parte de los grupos agrícolas a principios del segundo milenio y estos territorios fueron ocupados por grupos recolectores-cazadores conocidos como chichimecas, hasta la llegada de los españoles. Se puede considerar al río San Juan -para estos momentos de la fundación por los españoles- como la frontera entre estos grupos chichimecas y los agricultores localizados hacia el sur de este río.</p>
+                    <p>Pasada la conquista española de San Juan del Río, este se podía descri­bir así: “…est á ubicado en un terreno escabroso, compuesto de dos calles solamente, en donde los indios tienen construidas sus pequeñas casas, inmediatas a una peña redonda, desgajada por todas partes, y en la parte superior de ella hay un plan sobre el cual está construido a mano, un cerrito de piedras y tierra, como un pináculo donde está colocada una cruz, y hay tradición de que en tiempos de la gentilidad, era este el fuerte donde se acogían los indios Mecos, para defenderse de sus enemigos, y que por esto mismo se le llama a la peña TECHIMACIT”.</p>
+                    <p>La fundación de San Juan del Río por los españoles fue anterior a la fun­dación de Querétaro, sin embargo, al igual que aquella población, tiene sus orígenes en el periodo prehispánico.</p>
+                    <p>Entre 1536 y 1541, es lo más probable que se hayan establecido en San Juan del Río las autoridades españolas, fincando sus primeras casas y desarrollado el pueblo como tal. Comenzaron a darse las primeras mercedes de tierras a españoles en el territorio y empezó el desarrollo de los gobiernos de indios y españoles. Hasta que en 1558 se le da la categoría de Pueblo.</p>
+                    <p>Desde su fundación, San Juan del Río ocupó un lugar importante en el avance español hacia el norte, mismo que conservó al establecerse en 1578 la Alcaldía Mayor de Querétaro. Se convirtió en la segunda población en im­portancia en la jurisdicción por varias razones: debido a su ubicación en el camino entre la capital de la Nueva España y la “ruta de la plata”, así como para aquellos que querían internarse en la Sierra Gorda y, finalmente, por la riqueza agrícola de los valles que la circundan.</p>
+                    <p>“De esta manera llegaron al paraje. Después de andar varias leguas llegaron a un lugar donde está un río caudaloso, rodeado de sabinos y unos ojos de agua. Así mismo hay un cerro rodeado de peñas. Allí se acomodaron los veinticinco mil trescientos veintinueve soldados. El Capitán quedó arriba de la peña con todos los principales que le acompañaban, para esperar el día de San Juan Bautista y ponerle ese nombre al pueblo que se iba a fundar y ese mismo día celebrar la primera misa por primera vez en él.”</p>
+                    <p>Todos gritaron de viva voz: ¡PUEBLO DE SAN JUAN DEL RÍO, EN NOM­BRE DE DIOS NUESTRO SEÑOR, DEL CIELO Y DE LA TIERRA, QUEDAS FUNDADO!.</p>
+                    <p>“De verdad allí estuvieron juntos, estuvieron viviendo. Muchas huellas de lo que hicieron y que allí dejaron, todavía están allí, se ven…” informantes indios de Sahagún.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container mt-4 text-center" id="historia">
+    <h1 class="text-center" style="font-weight: 900; color: #0b3b59;">Ver más sobre San Juan del Río</h1>
+
+    <div class="row mt-4">
+        <div class="col-md-3">
+            <a href="informacion.html#geografia" class="text-decoration-none">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="card-icon">
+                            <img src="images/historia/historia002.png" alt="Icono de casa" class="img-fluid">
+                        </div>
+                        <br>
+                        <h5 class="card-title" style="font-weight: bold; color: #0b3b59;">La Geografía</h5>
+                        <p class="card-text">Desde el Cerro Gordo podemos observar hacia el poniente a la ciudad de San Juan del Río, grande e industriosa, la segunda más poblada...</p>
+                        <br><a href="informacion.html#geografia" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="informacion.html#CarreterasPrincipales" class="text-decoration-none">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="card-icon">
+                            <img src="images/historia/miniaturas/historia003.png" alt="Icono de pago" class="img-fluid">
+                        </div>
+                        <br>
+                        <h5 class="card-title" style="font-weight: bold; color: #0b3b59;">Carreteras Principales</h5>
+                        <p class="card-text">El municipio de San Juan es estratégico por muchas razones, una de las principales consiste en sus buenas vías de comunicación...</p> <br>
+                        <a href="informacion.html#CarreterasPrincipales" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="informacion.html#AgriculturaIndustria" class="text-decoration-none">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="card-icon">
+                            <img src="images/historia/miniaturas/historia004.png" alt="Icono de agua" class="img-fluid">
+                        </div>
+                        <br>
+                        <h5 class="card-title" style="font-weight: bold; color: #0b3b59;">Agricultura e Industria</h5>
+                        <p class="card-text">Aquí puedes realizar el pago de tu servicio.La agricultura en San Juan es muy próspera, y lo que más se siembra es el maíz para...</p>
+                        <br><a href="informacion.html#AgriculturaIndustria" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="informacion.html#Metropoli" class="text-decoration-none">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="card-icon">
+                            <img src="images/historia/miniaturas/historia005.png" alt="Icono de seguro" class="img-fluid">
+                        </div>
+                        <br>
+                        <h5 class="card-title" style="font-weight: bold; color: #0b3b59;">La Metrópoli</h5>
+                        <p class="card-text">Los caminos, en la historia de la humanidad, son condiciones que propician la comunicación y el comercio de un pueblo y han...</p>
+                        <br><a href="informacion.html#Metropoli" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </a>
+        </div>
+        </div>
+        <br><br>
+        <div><a href="" class="btn btn-primary">Ver más</a></div>
+
+
+</div>
+<br><br>
+
+<div id="footerContainer"></div>
+<button id="backToTop" class="btn" title="Volver arriba">
+    <i class="bi bi-arrow-up"></i>
+</button> 
+<script>
+    fetch('partials/navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbarContainer').innerHTML = data;
+        })
+        .catch(error => console.error('Error al cargar el navbar:', error));
+    fetch('partials/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footerContainer').innerHTML = data;
+        })
+        .catch(error => console.error('Error al cargar el footer:', error));
+
+    document.getElementById('toggleContent').addEventListener('click', function() {
+        const hiddenContent = document.querySelector('.hidden-content');
+        const isVisible = hiddenContent.style.display === 'block';
+
+        hiddenContent.style.display = isVisible ? 'none' : 'block';
+        this.textContent = isVisible ? 'Ver más' : 'Ocultar';
+    });
+    // Mostrar u ocultar el botón "Back to Top"
+    window.onscroll = function() {
+        const backToTopButton = document.getElementById('backToTop');
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    };
+
+    // Función para desplazarse suavemente hacia arriba
+    document.getElementById('backToTop').onclick = function() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    };
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+</body>
+</html>
