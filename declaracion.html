@@ -15,7 +15,7 @@
             border-radius: 10px;
         }
         .declaracion h2 {
-            color: #ef5196;
+            color: #0b3b59;
             font-weight: bold;
             margin-bottom: 15px;
         }
@@ -41,7 +41,7 @@
         }
         .container-full h1, .container-normal h1 {
             font-size: 1.2rem;
-            color: #ef5196;
+            color: #0b3b59;
         }
         .container-full p, .container-normal p {
             font-size: 1rem;
@@ -51,7 +51,7 @@
         /* Estilo del botón para descargar PDF */
         .btn-download {
             margin-top: 15px;
-            background-color: #ef5196;
+            background-color: #0b3b59;
             color: white;
         }
 
@@ -63,6 +63,62 @@
             .container-full img, .container-normal img {
                 max-width: 180px;
             }
+
+            .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Estilos para cada columna */
+.col-md-4 {
+    flex: 0 1 calc(33.333% - 20px); /* Ajusta el tamaño al 33% y agrega espacio entre columnas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo para las imágenes */
+.col-md-4 img {
+    width: 100%;
+    max-width: 150px; /* Limita el tamaño máximo de las imágenes */
+    border-radius: 50%; /* Imágenes circulares */
+    border: 3px solid #0b3b59; /* Borde alrededor de la imagen */
+    margin-bottom: 15px;
+}
+
+/* Estilo para el encabezado */
+.col-md-4 h1 {
+    font-size: 1.4rem;
+    color: #0b3b59;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Estilo para el párrafo */
+.col-md-4 p {
+    font-size: 1rem;
+    color: #212529;
+    margin-bottom: 20px;
+}
+
+/* Estilo para el botón de descarga */
+.btn {
+    background-color: #0b3b59;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0b3b59;
+}
         }
 
     </style>
@@ -95,7 +151,7 @@
     <div class="col-md-4">
         <div class="container-normal">
             <div class="image">
-                <img src="images/declaracion/yanelly.png" alt="Imagen de Óscar Sandoval García" class="card-image">
+                <img src="images/declaracion/yanelly.png" alt="Imagen de Yanelly Faustino Santos" class="card-image">
             </div>
             <div class="text">
                 <h1>Secretaría Particular
@@ -108,7 +164,7 @@
     <div class="col-md-4">
         <div class="container-normal">
             <div class="image">
-                <img src="images/declaracion/Martín Hernández Balderas.jpg" alt="Imagen de Silvia Meneses Ortiz" class="card-image">
+                <img src="images/declaracion/Martín Hernández Balderas.jpg" alt="Imagen de Martín Hernández Balderas" class="card-image">
             </div>
             <div class="text">
                 <h1>Jefe de Gabinete</h1>
@@ -120,7 +176,7 @@
     <div class="col-md-4">
         <div class="container-normal">
             <div class="image">
-                <img src="images/declaracion/Octaviano Sánchez Martínez.png" alt="Imagen de Vania Camacho Galván" class="card-image">
+                <img src="images/declaracion/Octaviano Sánchez Martínez.png" alt="Imagen de Octaviano Sánchez Martínez" class="card-image">
             </div>
             <div class="text">
                 <h1>Secretaría del Ayuntamiento</h1>
@@ -131,12 +187,11 @@
     </div>
 </div>
 
-
 <div class="row">
     <div class="col-md-4">
         <div class="container-normal">
             <div class="image">
-                <img src="images/declaracion/Bibiana Rodríguez Montes.png" alt="Imagen de Óscar Sandoval García" class="card-image">
+                <img src="images/declaracion/Bibiana Rodríguez Montes.png" alt="Imagen de Bibiana Rodríguez Montes" class="card-image">
             </div>
             <div class="text">
                 <h1>Secretaría de Gobierno
@@ -149,7 +204,7 @@
     <div class="col-md-4">
         <div class="container-normal">
             <div class="image">
-                <img src="images/declaracion/Fernando Damián Oceguera.png" alt="Imagen de Silvia Meneses Ortiz" class="card-image">
+                <img src="images/declaracion/Fernando Damián Oceguera.png" alt="Imagen de Fernando Damián Oceguera" class="card-image">
             </div>
             <div class="text">
                 <h1>Secretaría de Finanzas</h1>
@@ -161,7 +216,7 @@
     <div class="col-md-4">
         <div class="container-normal">
             <div class="image">
-                <img src="images/declaracion/Rubén Cíntora López.png" alt="Imagen de Vania Camacho Galván" class="card-image">
+                <img src="images/declaracion/Rubén Cíntora López.png" alt="Imagen de Rubén Cíntora López" class="card-image">
             </div>
             <div class="text">
                 <h1>Secretaría de Administración</h1>
@@ -176,7 +231,7 @@
     <div class="col-md-4">
         <div class="container-normal">
             <div class="image">
-                <img src="images/declaracion/Óscar Alcántara Peña.png" alt="Imagen de Óscar Sandoval García" class="card-image">
+                <img src="images/declaracion/Óscar Alcántara Peña.png" alt="Imagen de Óscar Alcántara Peña" class="card-image">
             </div>
             <div class="text">
                 <h1>Secretaría de Desarrollo Sustentable Municipal
@@ -189,7 +244,7 @@
     <div class="col-md-4">
         <div class="container-normal">
             <div class="image">
-                <img src="images/declaracion/Ángel Rangel Nieves.png" alt="Imagen de Silvia Meneses Ortiz" class="card-image">
+                <img src="images/declaracion/Ángel Rangel Nieves.png" alt="Imagen de Ángel Rangel Nieves" class="card-image">
             </div>
             <div class="text">
                 <h1>Secretaría de Seguridad Pública Municipal</h1>
@@ -201,13 +256,11 @@
     <div class="col-md-4">
         <div class="container-normal">
             <div class="image">
-                <img src="images/declaracion/Roberto Jiménez Salinas.png" alt="Imagen de Vania Camacho Galván" class="card-image">
+                <img src="images/declaracion/Roberto Jiménez Salinas.png" alt="Imagen de Roberto Jiménez Salinas" class="card-image">
             </div>
             <div class="text">
                 <h1>Secretaría de Desarrollo Agropecuario</h1>
-                <p>Roberto Jiménez Salinas
-
-                </p>
+                <p>Roberto Jiménez Salinas</p>
             </div>
             <a href="https://www.sanjuandelrio.gob.mx/files/2021_2024/DEC5D5/FINANZAS/FERNANDO%20DAMIAN%20OCEGUERA%20SECRETARIO.pdf" class="btn btn-download" download>Descargar PDF</a>
         </div>
@@ -218,7 +271,7 @@
     <div class="col-md-4">
         <div class="container-normal">
             <div class="image">
-                <img src="images/declaracion/Gregorio Mondragón Mendoza.png" alt="Imagen de Óscar Sandoval García" class="card-image">
+                <img src="images/declaracion/Gregorio Mondragón Mendoza.png" alt="Imagen de Gregorio Mondragón Mendoza" class="card-image">
             </div>
             <div class="text">
                 <h1>Secretaría de Participación Ciudadana
@@ -231,11 +284,11 @@
     <div class="col-md-4">
         <div class="container-normal">
             <div class="image">
-                <img src="images/declaracion/José Francisco Landeras Layseca.png" alt="Imagen de Silvia Meneses Ortiz" class="card-image">
+                <img src="images/declaracion/José Francisco Landeras Layseca.png" alt="Imagen de José Francisco Landeras Layseca" class="card-image">
             </div>
             <div class="text">
                 <h1>Secretaría de Desarrollo Económico, Empresarial y Turismo</h1>
-                <p>José Francisco Landeras Layseca                </p>
+                <p>José Francisco Landeras Layseca</p>
             </div>
             <a href="https://www.sanjuandelrio.gob.mx/files/2021_2024/DEC5D5/S_DESECO/JOSE%20FRANCISCO%20LANDERAS%20LAYSECA%20SECRETARIO.pdf" class="btn btn-download" download>Descargar PDF</a>
         </div>
@@ -243,13 +296,12 @@
     <div class="col-md-4">
         <div class="container-normal">
             <div class="image">
-                <img src="images/declaracion/Edith Álvarez Flores.png" alt="Imagen de Vania Camacho Galván" class="card-image">
+                <img src="images/declaracion/Edith Álvarez Flores.png" alt="Imagen de Edith Álvarez Flores" class="card-image">
             </div>
             <div class="text">
                 <h1>Secretaría de Obras Públicas Municipales
                 </h1>
-                <p>Edith Álvarez Flores
-                </p>
+                <p>Edith Álvarez Flores</p>
             </div>
             <a href="https://www.sanjuandelrio.gob.mx/files/2021_2024/DEC5D5/OBRAS/EDITH%20ALVAREZ%20FLORES%20OBRAS%20PUBLICAS.pdf" class="btn btn-download" download>Descargar PDF</a>
         </div>
@@ -260,14 +312,12 @@
     <div class="col-md-4">
         <div class="container-normal">
             <div class="image">
-                <img src="images/declaracion/Judith Ortiz Monroy.png" alt="Imagen de Óscar Sandoval García" class="card-image">
+                <img src="images/declaracion/Judith Ortiz Monroy.png" alt="Imagen de Judith Ortiz Monroy" class="card-image">
             </div>
             <div class="text">
                 <h1>Secretaría de Desarrollo Social
                 </h1>
-                <p>Judith Ortiz Monroy
-
-                </p>
+                <p>Judith Ortiz Monroy</p>
             </div>
             <a href="https://www.sanjuandelrio.gob.mx/files/2021_2024/DEC5D5/DES_SOCIAL/JUDITH%20ORTIZ%20MONROY%20SECRETARIA%20DE%20DESARROLLO%20SOCIAL.pdf" class="btn btn-download" download>Descargar PDF</a>
         </div>
@@ -275,11 +325,11 @@
     <div class="col-md-4">
         <div class="container-normal">
             <div class="image">
-                <img src="images/declaracion/Ernesto Mora Rico.png" alt="Imagen de Silvia Meneses Ortiz" class="card-image">
+                <img src="images/declaracion/Ernesto Mora Rico.png" alt="Imagen de Ernesto Mora Rico " class="card-image">
             </div>
             <div class="text">
                 <h1>Secretaría de Servicios Públicos Municipales</h1>
-                <p>Ernesto Mora Rico                </p>
+                <p>Ernesto Mora Rico</p>
             </div>
             <a href="https://www.sanjuandelrio.gob.mx/files/2021_2024/DEC5D5/SERVPUB/ERESTO%20MORA%20RICO%20SECRETARIO.pdf" class="btn btn-download" download>Descargar PDF</a>
         </div>
@@ -287,7 +337,7 @@
     <div class="col-md-4">
         <div class="container-normal">
             <div class="image">
-                <img src="images/declaracion/Lizbeth Navarrete Mares.png" alt="Imagen de Vania Camacho Galván" class="card-image">
+                <img src="images/declaracion/Lizbeth Navarrete Mares.png" alt="Imagen de Lizbeth Navarrete Mares" class="card-image">
             </div>
             <div class="text">
                 <h1>Dirección del Deporte
@@ -304,7 +354,7 @@
     <div class="col-md-4">
         <div class="container-normal">
             <div class="image">
-                <img src="images/declaracion/María Guadalupe Gómez Rodríguez.png" alt="Imagen de Óscar Sandoval García" class="card-image">
+                <img src="images/declaracion/María Guadalupe Gómez Rodríguez.png" alt="Imagen de María Guadalupe Gómez Rodríguez" class="card-image">
             </div>
             <div class="text">
                 <h1>Titular del Instituto Municipal de la Mujer
@@ -319,11 +369,11 @@
     <div class="col-md-4">
         <div class="container-normal">
             <div class="image">
-                <img src="images/declaracion/Luis Alberto Galván Hernández.png" alt="Imagen de Silvia Meneses Ortiz" class="card-image">
+                <img src="images/declaracion/Luis Alberto Galván Hernández.png" alt="Imagen de Luis Alberto Galván Hernández " class="card-image">
             </div>
             <div class="text">
                 <h1>Dirección de Juventud</h1>
-                <p>Luis Alberto Galván Hernández                </p>
+                <p>Luis Alberto Galván Hernández</p>
             </div>
             <a href="https://www.sanjuandelrio.gob.mx/files/2021_2024/DEC5D5/GABINETE/LUIS%20ALBERTO%20GALVAN%20%20DIRECCION%20MUNICIPAL%20DE%20LA%20JUVENTUD.pdf" class="btn btn-download" download>Descargar PDF</a>
         </div>
@@ -331,7 +381,7 @@
     <div class="col-md-4">
         <div class="container-normal">
             <div class="image">
-                <img src="images/declaracion/Nelly Martínez Trejo.png" alt="Imagen de Vania Camacho Galván" class="card-image">
+                <img src="images/declaracion/Nelly Martínez Trejo.png" alt="Imagen de Nelly Martínez Trejo" class="card-image">
             </div>
             <div class="text">
                 <h1>Titular del Órgano Interno de Control
@@ -348,7 +398,7 @@
     <div class="col-md-4">
         <div class="container-normal">
             <div class="image">
-                <img src="images/declaracion/Edgar Arteaga Chávez.png" alt="Imagen de Óscar Sandoval García" class="card-image">
+                <img src="images/declaracion/Edgar Arteaga Chávez.png" alt="Imagen de Edgar Arteaga Chávez" class="card-image">
             </div>
             <div class="text">
                 <h1>Dirección de Comunicación Social
@@ -363,7 +413,7 @@
     <div class="col-md-4">
         <div class="container-normal">
             <div class="image">
-                <img src="images/declaracion/Nahim Jumanji López Flores.png" alt="Imagen de Silvia Meneses Ortiz" class="card-image">
+                <img src="images/declaracion/Nahim Jumanji López Flores.png" alt="Imagen de Nahim Jumanji López Flores " class="card-image">
             </div>
             <div class="text">
                 <h1>Dirección del Sistema Municipal DIF</h1>
@@ -375,7 +425,7 @@
     <div class="col-md-4">
         <div class="container-normal">
             <div class="image">
-                <img src="images/declaracion/Gabriel Figueroa Uribe.png" alt="Imagen de Vania Camacho Galván" class="card-image">
+                <img src="images/declaracion/Gabriel Figueroa Uribe.png" alt="Imagen de Gabriel Figueroa Uribe" class="card-image">
             </div>
             <div class="text">
                 <h1>Titular de la JAPAM
@@ -392,7 +442,7 @@
     <div class="col-md-4">
         <div class="container-normal">
             <div class="image">
-                <img src="images/declaracion/Aleyda Andrés Ibarra.png" alt="Imagen de Óscar Sandoval García" class="card-image">
+                <img src="images/declaracion/Aleyda Andrés Ibarra.png" alt="Imagen de Aleyda Andrés Ibarra" class="card-image">
             </div>
             <div class="text">
                 <h1>Dirección de Cultura
@@ -407,7 +457,7 @@
     <div class="col-md-4">
         <div class="container-normal">
             <div class="image">
-                <img src="images/declaracion/Verónica Laguna Luján.png" alt="Imagen de Silvia Meneses Ortiz" class="card-image">
+                <img src="images/declaracion/Verónica Laguna Luján.png" alt="Imagen de Verónica Laguna Luján" class="card-image">
             </div>
             <div class="text">
                 <h1>Coordinación de Protección Civil</h1>
