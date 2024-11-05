@@ -7,119 +7,121 @@
     <title>Municipio San Juan del Río</title>
     <style>
         /* Estilo para la Declaración 5 de 5 */
-        .declaracion {
-            background-color: #f8f9fa;
-            border: 1px solid #ced4da;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 10px;
-        }
-        .declaracion h2 {
-            color: #0b3b59;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-        .declaracion p {
-            text-align: justify;
-            color: #212529;
-        }
-
-        /* Estilo para las imágenes y los textos */
-        .container-full, .container-normal {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            margin-top: 20px;
-        }
-        .container-full img, .container-normal img {
-            width: 100%;
-            max-width: 200px;
-            height: auto;
-            border-radius: 50%; /* Hacer que las imágenes sean circulares */
-            margin-bottom: 15px;
-        }
-        .container-full h1, .container-normal h1 {
-            font-size: 1.2rem;
-            color: #0b3b59;
-        }
-        .container-full p, .container-normal p {
-            font-size: 1rem;
-            color: #212529;
-        }
-
-        /* Estilo del botón para descargar PDF */
-        .btn-download {
-            margin-top: 15px;
-            background-color: #0b3b59;
-            color: white;
-        }
-
-        /* Ajustes de estilos para diferentes dispositivos */
-        @media (min-width: 768px) {
-            .row > .col-md-4 {
-                margin-bottom: 20px;
-            }
-            .container-full img, .container-normal img {
-                max-width: 180px;
-            }
-
-            .row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+.declaracion {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 10px;
 }
 
-/* Estilos para cada columna */
-.col-md-4 {
-    flex: 0 1 calc(33.333% - 20px); /* Ajusta el tamaño al 33% y agrega espacio entre columnas */
+.declaracion h2 {
+    color: #0b3b59;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.declaracion p {
+    text-align: justify;
+    color: #212529;
+    font-size: 0.9rem;
+}
+
+/* Estilo para las imágenes y los textos */
+.container-full, .container-normal {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-bottom: 20px;
+    margin-top: 15px;
 }
 
-/* Estilo para las imágenes */
-.col-md-4 img {
+.container-full img, .container-normal img {
     width: 100%;
-    max-width: 150px; /* Limita el tamaño máximo de las imágenes */
+    max-width: 150px; /* Tamaño más pequeño */
+    height: auto;
     border-radius: 50%; /* Imágenes circulares */
-    border: 3px solid #0b3b59; /* Borde alrededor de la imagen */
-    margin-bottom: 15px;
-}
-
-/* Estilo para el encabezado */
-.col-md-4 h1 {
-    font-size: 1.4rem;
-    color: #0b3b59;
     margin-bottom: 10px;
-    font-weight: bold;
 }
 
-/* Estilo para el párrafo */
-.col-md-4 p {
-    font-size: 1rem;
+.container-full h1, .container-normal h1 {
+    font-size: 1.2rem; /* Tamaño del texto más pequeño */
+    color: #0b3b59;
+}
+
+.container-full p, .container-normal p {
+    font-size: 0.9rem; /* Reducido */
     color: #212529;
-    margin-bottom: 20px;
 }
 
-/* Estilo para el botón de descarga */
-.btn {
+/* Estilo del botón para descargar PDF */
+.btn-download {
+    margin-top: 10px;
     background-color: #0b3b59;
     color: white;
-    padding: 10px 20px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
     border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-    background-color: #0b3b59;
+/* Ajustes de estilos para diferentes dispositivos */
+@media (min-width: 768px) {
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px; /* Espaciado más pequeño */
+        justify-content: center;
+    }
+
+    .col-md-4 {
+        flex: 0 1 calc(33.333% - 15px); /* Ajusta el tamaño al 33% con espacio reducido */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    /* Estilo para las imágenes */
+    .col-md-4 img {
+        width: 100%;
+        max-width: 120px; /* Limita el tamaño de las imágenes */
+        border-radius: 50%;
+        border: 2px solid #0b3b59;
+        margin-bottom: 10px;
+    }
+
+    /* Estilo para el encabezado */
+    .col-md-4 h1 {
+        font-size: 1.2rem;
+        color: #0b3b59;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+
+    /* Estilo para el párrafo */
+    .col-md-4 p {
+        font-size: 0.9rem;
+        color: #212529;
+        margin-bottom: 15px;
+    }
+
+    /* Estilo para el botón de descarga */
+    .btn {
+        background-color: #0b3b59;
+        color: white;
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #083a4f;
+    }
 }
-        }
 
     </style>
 </head>
@@ -470,10 +472,6 @@
 <!-- Aquí se cargará el footer -->
 <div id="footerContainer"></div>
 
-<!-- Botón "Back to Top" -->
-<button id="backToTop" class="btn" title="Volver arriba">
-    <i class="bi bi-arrow-up"></i>
-</button> 
 
 <script>
     fetch('partials/navbar.html')
