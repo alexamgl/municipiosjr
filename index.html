@@ -49,6 +49,8 @@
         }
     </style>
 </head>
+
+
 <body>
 
 <!-- Aquí se cargará el navbar -->
@@ -196,13 +198,6 @@
       <span class="visually-hidden">Siguiente</span>
     </button>
 </div>  
- <!-- Componente de fecha y hora 
- <div id="dateTime" style="z-index: 1000;">
-    <i class="bi bi-calendar"></i>
-    <span id="date"></span>
-    <i class="bi bi-clock"></i>
-    <span id="time"></span>
-</div>  -->
 
 <!-- Contenido principal de la página -->
 <div class="container mt-4" id="tramites">
@@ -314,7 +309,126 @@
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
     }
 </style>
+
+<style>
+    /* Estilos del botón de chatbot */
+    #backToTop {
+    margin-bottom: 60px;
+}
+
+#chatbotButton {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+#chatbotButton:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos de la ventana de chatbot */
+.chat-window {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    z-index: 1001;
+}
+
+.chat-header {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-chat-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.chat-content {
+    padding: 15px;
+    height: 200px;
+    overflow-y: auto;
+    font-size: 14px;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #eee;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.chat-input button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.chat-input button:hover {
+    background-color: #0056b3;
+}
+
+</style>
 <br>
+
+<!-- Botón de Chatbot -->
+<button id="chatbotButton" title="Abrir Chatbot">
+    <i class="bi bi-chat-dots-fill"></i>
+</button>
+
+<!-- Ventana de Chatbot -->
+<div id="chatbotWindow" class="chat-window">
+    <div class="chat-header">
+        <span>Chatbot</span>
+        <button onclick="closeChat()" class="close-chat-button">&times;</button>
+    </div>
+    <div class="chat-content">
+        <p>¡Hola!, Estamos trabajando en mejoras para el sitio</p>
+    </div>
+    <!-- <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Escribe un mensaje...">
+        <button onclick="sendMessage()">Enviar</button>
+    </div> -->
+</div>
+
 
 <div id="footerContainer"></div>
 <!-- Botón "Back to Top" -->
@@ -350,20 +464,33 @@
     document.getElementById('backToTop').onclick = function() {
         window.scrollTo({top: 0, behavior: 'smooth'});
     };
-    const dateElement = document.getElementById('date');
-        const timeElement = document.getElementById('time');
 
-        function updateDateTime() {
-            const now = new Date();
-            const date = now.toLocaleDateString();
-            const time = now.toLocaleTimeString();
+</script>
 
-            dateElement.textContent = date;
-            timeElement.textContent = time;
-        }
+<script>
+    // Función para abrir el chat
+document.getElementById('chatbotButton').onclick = function() {
+    document.getElementById('chatbotWindow').style.display = 'block';
+};
 
-        updateDateTime();
-        setInterval(updateDateTime, 1000); // Actualizar cada segundo
+// Función para cerrar el chat
+function closeChat() {
+    document.getElementById('chatbotWindow').style.display = 'none';
+}
+
+// Función para enviar mensajes
+function sendMessage() {
+    const userInput = document.getElementById('userInput').value;
+    if (userInput) {
+        const chatContent = document.querySelector('.chat-content');
+        const userMessage = document.createElement('p');
+        userMessage.textContent = userInput;
+        chatContent.appendChild(userMessage);
+        document.getElementById('userInput').value = '';
+        chatContent.scrollTop = chatContent.scrollHeight; // Auto-scroll al final
+    }
+}
+
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
