@@ -9,7 +9,7 @@
         </button>
         <div class="expediente-btn order-lg-2 order-1 ms-3 ms-lg-auto me-lg-0 me-3">
             <a href="#" class="btn btn-primary btn-sm ">
-                <i class="bi bi-person me-1"></i> EXPEDIENTE UNÍCO
+                <i class="bi bi-person me-1"></i> EXPEDIENTE ÚNICO
             </a>
         </div>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -241,6 +241,46 @@
             font-size: 0.85rem;
         }
     }
+    /* Estilos para el menú desplegable de "DEPENDENCIAS" */
+.dropdown-columns {
+    display: grid; /* Usar grid para las columnas en DEPENDENCIAS */
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .dropdown-columns {
+        display: block; /* Muestra el menú en una sola columna en pantallas pequeñas */
+        width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
+    }
+
+    .dropdown-item {
+        padding: 10px 15px; /* Reduce el padding en pantallas pequeñas */
+    }
+
+    /* Si deseas reducir el tamaño de fuente en pantallas pequeñas */
+    .dropdown-item h6, .dropdown-item h5 {
+        font-size: 14px; /* Ajusta el tamaño de la fuente según lo necesites */
+    }
+}
+
+/* Media query para pantallas muy pequeñas (como dispositivos móviles) */
+@media (max-width: 480px) {
+    .dropdown-columns {
+        display: block; /* Una sola columna */
+        width: 100%; /* Ancho completo */
+    }
+
+    /* Puedes ajustar los márgenes o el espaciado para hacerlo más compacto */
+    .navbar-nav .nav-item {
+        margin-left: 15px; /* Reduce el espacio entre los elementos */
+    }
+
+    .navbar-nav {
+        margin-top: 30px; /* Ajusta el margen superior */
+    }
+}
+
 </style>
 
 </style>
