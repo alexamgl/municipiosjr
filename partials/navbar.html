@@ -2,11 +2,16 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
-            <img src="images/LOGO SJR HORIZONTAL 2_sinborde.png" alt="Logotipo" width="215" height="auto" class="img-fluid">
+            <img src="images/LOGO SJR HORIZONTAL 2_sinborde.png" alt="Logotipo" class="img-fluid">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <div class="expediente-btn order-lg-2 order-1 ms-3 ms-lg-auto me-lg-0 me-3">
+            <a href="#" class="btn btn-primary btn-sm ">
+                <i class="bi bi-person me-1"></i> EXPEDIENTE UNÍCO
+            </a>
+        </div>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item dropdown">
@@ -53,6 +58,7 @@
                         <div class="dropdown-columns">
                             <li><a class="dropdown-item" href="historia.html" style="font-weight: normal;">Historia</a></li>
                             <li><a class="dropdown-item" href="/declaracion.html" style="font-weight: normal;">Declaración 5 de 5</a></li>
+
                         </div>
                     </ul>
                 </li>
@@ -62,80 +68,179 @@
 </nav>
 
 <style>
+
+
+    .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .navbar-nav .nav-item {
+        margin-left: 30px;
+    }
+
+    .navbar-nav {
+        margin-top: 55px;
+    }
+
+    .navbar-nav .nav-link {
+        position: relative;
+    }
+
+    .navbar-nav .nav-link::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: blue;
+        bottom: 100%;
+        left: 0;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover::before {
+        transform: scaleX(1);
+    }
+
+    .dropdown-menu {
+        min-width: 200px;
+        max-width: calc(100vw - 20px);
+        padding: 10px 0;
+        z-index: 1000;
+        position: absolute;
+        right: 0;
+        transform: translateY(2px);
+        overflow: hidden;
+        display: none;
+    }
+
+    .dropdown-columns {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dropdown-item {
+        padding: 10px 20px;
+        color: #333;
+    }
+
+    .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #000;
+    }
+
+    .dropdown-divider {
+        margin: 5px 0;
+    }
+
     /* CSS para mostrar el menú desplegable al pasar el mouse */
     .nav-item.dropdown:hover .dropdown-menu {
         display: block;
     }
 
-    /* CSS para aumentar el espacio entre las opciones del menú superior */
+    /* Espaciado para los elementos del navbar */
     .navbar-nav .nav-item {
-        margin-left: 30px; /* Ajusta el valor según sea necesario */
+        margin-left: 30px;
     }
 
-    /* Añadir margen superior a la lista de navegación */
     .navbar-nav {
-        margin-top: 55px; /* Ajusta este valor según sea necesario */
+        margin-top: 55px;
     }
+
     /* Efecto de línea azul al pasar el mouse sobre las opciones del navbar */
     .navbar-nav .nav-link {
-    position: relative; /* Asegúrate de que el elemento sea relativo para posicionar el pseudo-elemento */
-}
+        position: relative;
+    }
 
-.navbar-nav .nav-link::before {
-    content: ''; /* Necesario para el pseudo-elemento */
-    position: absolute; /* Posicionamiento absoluto */
-    width: 100%; /* Ancho completo */
-    height: 3px; /* Altura de la línea */
-    background-color: blue; /* Color de la línea */
-    bottom: 100%; /* Posicionar la línea encima del enlace */
-    left: 0; /* Alinear a la izquierda */
-    transform: scaleX(0); /* Inicialmente no visible */
-    transition: transform 0.3s ease; /* Transición suave */
-}
+    .navbar-nav .nav-link::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: blue;
+        bottom: 100%;
+        left: 0;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
 
-.navbar-nav .nav-link:hover::before {
-    transform: scaleX(1); /* Muestra la línea al pasar el mouse */
-}
+    .navbar-nav .nav-link:hover::before {
+        transform: scaleX(1);
+    }
 
-/* Estilos para el menú desplegable */
-.dropdown-menu {
-    min-width: 200px; /* Ancho mínimo del menú desplegable */
-    max-width: calc(100vw - 20px); /* Asegúrate de que no se desborde de la pantalla */
-    padding: 10px 0; /* Espacio vertical dentro del menú */
-    z-index: 1000; /* Asegurarse de que el menú se muestre por encima de otros elementos */
-    position: absolute; /* Cambiado a absolute para mejor posicionamiento */
-    right: 0; /* Alineado a la derecha */
-    transform: translateY(2px); /* Ajusta la posición vertical si es necesario */
-    overflow: hidden; /* Evitar scroll */
-    display: none; /* Ocultar inicialmente */
-}
+    /* Efecto de línea azul al pasar el mouse sobre las opciones del navbar */
+    .navbar-nav .nav-link {
+        position: relative;
+    }
 
-/* Cambiar a display: block para el menú de "GOBIERNO" */
-.dropdown-columns {
-    display: block; /* Cambiado a block para mostrar en una sola columna para GOBIERNO */
-    padding: 0; /* Sin padding adicional */
-    margin: 0; /* Sin margen adicional */
-    width: 100%; /* Asegúrate de que ocupe el 100% del ancho del menú */
-}
+    .navbar-nav .nav-link::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: blue;
+        bottom: 100%;
+        left: 0;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
 
-/* Estilos para el menú desplegable de "DEPENDENCIAS" */
-.dropdown-columns {
-    display: grid; /* Usar grid para las columnas en DEPENDENCIAS */
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
-}
+    .navbar-nav .nav-link:hover::before {
+        transform: scaleX(1);
+    }
 
-.dropdown-item {
-    padding: 10px 20px; /* Espacio interno para cada opción */
-    color: #333; /* Color del texto */
-}
+    .img-fluid {
+        max-width: 180px;
+        height: auto;
+    }
 
-.dropdown-item:hover {
-    background-color: #f8f9fa; /* Color de fondo al pasar el mouse */
-    color: #000; /* Color del texto al pasar el mouse */
-}
+    /* Ajustes para dispositivos móviles */
+    @media (max-width: 768px) {
+        .img-fluid {
+            max-width: 140px;
+        }
+    }
 
-/* Separador en el menú desplegable */
-.dropdown-divider {
-    margin: 5px 0; /* Espacio alrededor del separador */
-}
+    @media (max-width: 576px) {
+        .img-fluid {
+            max-width: 120px;
+        }
+    }
+
+    /* Estilos para el botón de "Expediente Único" */
+    .expediente-btn {
+        position: absolute;
+        top: 25px;
+        right: 15px;
+    }
+
+    .expediente-btn .btn {
+        padding: 0.4rem 1rem;
+        font-weight: bold;
+        border: 2px solid #0056b3;
+        border-radius: 0.5rem;
+        background-color: transparent;
+        color: #0056b3;
+        transition: all 0.3s ease;
+    }
+
+    .expediente-btn .btn:hover {
+        background-color: #0056b3;
+        color: #ffffff;
+    }
+
+    /* Ajustes para pantallas pequeñas */
+    @media (max-width: 767.98px) {
+        .expediente-btn {
+            top: 30px;
+            right: 60px;
+        }
+        
+        .expediente-btn .btn {
+            padding: 0.3rem 0.8rem;
+            font-size: 0.85rem;
+        }
+    }
+</style>
+
 </style>
