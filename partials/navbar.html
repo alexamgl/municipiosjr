@@ -8,10 +8,21 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="expediente-btn order-lg-2 order-1 ms-3 ms-lg-auto me-lg-0 me-3">
-            <a href="#" class="btn btn-primary btn-sm ">
-                <i class="bi bi-person me-1"></i> EXPEDIENTE UNÍCO
-            </a>
+                <a href="#">
+                    <img src="/images/keyazul.png" alt="Expediente Único" class="expediente-img">
+                </a>
         </div>
+        <style>
+            .expediente-img {
+                max-width: 180px; /* Ajusta el tamaño según sea necesario */
+                transition: all 0.3s ease;
+                top: 10px;
+            }
+        
+            .expediente-btn a:hover .expediente-img {
+                content: url("/images/keyrosa.png"); /* Cambia la imagen al hacer hover */
+            }
+        </style>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item dropdown">
@@ -68,8 +79,6 @@
 </nav>
 
 <style>
-
-
     .nav-item.dropdown:hover .dropdown-menu {
         display: block;
     }
@@ -241,6 +250,7 @@
             font-size: 0.85rem;
         }
     }
+    
 </style>
 
 </style>
