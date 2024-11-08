@@ -1,0 +1,20 @@
+#backToTop {
+    position: fixed;
+    bottom: 30px; /* Distancia desde el fondo */
+    right: 30px; /* Distancia desde la derecha */
+    display: none; /* Ocultar el botón por defecto */
+    background-color: #007BFF; /* Color de fondo azul */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 50%; /* Bordes redondeados */
+    width: 50px; /* Ancho del botón */
+    height: 50px; /* Altura del botón */
+    font-size: 24px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    transition: background-color 0.3s; /* Transición suave */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+#backToTop:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el ratón */
+}
