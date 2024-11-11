@@ -289,6 +289,40 @@
     </div>
 </div> 
 <br>
+<!-- Banner con efecto de despliegue en el contenedor -->
+<div class="container mt-5">
+    <a href="innovacion.html" target="_blank">
+    <div class="banner-container">
+        <img src="images/sliders/banner san juan.png" alt="Banner Promocional" class="banner-img">
+    </div>
+    </a>
+</div>
+
+<!-- Estilo para el banner con efecto de despliegue en el contenedor -->
+<style>
+    .banner-container {
+        width: 100%;
+        max-width: 1200px; /* Limita el tamaño máximo */
+        margin: 0 auto; /* Centra el contenedor */
+        overflow: hidden; /* Esconde cualquier parte que sobresalga */
+        border-radius: 10px; /* Bordes redondeados */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+        transition: transform 0.5s ease; /* Transición suave para el efecto */
+    }
+
+    .banner-img {
+        width: 100%; /* Hace que la imagen ocupe todo el ancho del contenedor */
+        display: block; /* Asegura que no haya espacio debajo de la imagen */
+        border-radius: 10px; /* Bordes redondeados en la imagen */
+    }
+
+    .banner-container:hover {
+        transform: scale(1.05); /* Aumenta el tamaño del contenedor completo al pasar el mouse */
+        cursor: pointer; /* Cambia el cursor para indicar interactividad */
+    }
+</style>
+
+<br>
 <h2 class="mt-5 text-center" style="font-weight: 900; color: #0b3b59;">PRESIDENCIA</h2>
 
 <div class="map-container my-5">

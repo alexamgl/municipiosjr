@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>San Juan Digital</title>
+    <style>
+        /* Estilos para el banner */
+        #banner {
+            display: flex;
+            justify-content: center; /* Centra horizontalmente el contenido */
+            align-items: center; /* Centra verticalmente el contenido */
+            min-height: 450px; /* Altura mínima del banner */
+            background-color: #f8f9fa; /* Color de fondo en caso de que la imagen no cargue */
+            overflow: hidden; /* Oculta cualquier desbordamiento */
+        }
+        #banner img {
+            width: 100%; /* La imagen ocupa el 100% del ancho del contenedor */
+            height: auto; /* Mantener la proporción de la imagen */
+            max-height: 100%; /* Limita la altura máxima de la imagen */
+            object-fit: cover; /* Mantiene la proporción de la imagen y cubre el contenedor */
+        }
+        /* Espaciado superior e inferior */
+        body {
+            margin: 0; /* Elimina el margen por defecto del body */
+        }
+        /* Estilo para las tarjetas */
+        .card {
+            width: 100%; /* Ancho completo */
+            height: 300px; /* Altura fija para que sean cuadradas */
+            display: flex;
+            flex-direction: column; /* Alinea el contenido verticalmente */
+            transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+            cursor: pointer; /* Cambia el cursor al pasar sobre la tarjeta */
+        }
+        .card img {
+            height: 150px; /* Altura de la imagen en la tarjeta */
+            object-fit: cover; /* Mantiene la proporción de la imagen */
+        }
+        /* Efecto hover */
+        .card:hover {
+            transform: translateY(-10px); /* Eleva la tarjeta al pasar el cursor */
+            box-shadow: 0 4px 20px rgba(255, 105, 180, 0.5); /* Sombra rosada */
+        }
+        /* Estilo para el enlace */
+        .card-link {
+            text-decoration: none; /* Elimina el subrayado del enlace */
+            color: inherit; /* Hereda el color del texto */
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Aquí se cargará el navbar -->
+<div id="navbarContainer"></div>
+
+<!-- Banner en la parte superior con una imagen -->
+<div id="banner">
+    <img src="images/iconos/SAN JUAN DIGITAL1 (1).png" alt="Banner de Innovación">
+</div>
+
+<!-- Título -->
+<div class="container my-4">
+    <h1 class="text-center" style="font-weight: 900; color: #0b3b59;">INNOVACIONES</h1><br>
+    <div class="row">
+        <!-- Tarjeta 1 -->
+        <div class="col-md-4 mb-4">
+            <a href="" class="card-link">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-weight: bold; color: #0b3b59;">ChatBot</h5>
+                        <p class="card-text" style="font-weight: normal;">Resuelve tus dudas en tiempo real de manera rápida y eficaz.</p>
+                    </div>
+                    <img src="images/sliders/ia.jpeg" class="card-img-bottom" alt="Imagen 1">
+                </div>
+            </a>
+        </div>
+        <!-- Tarjeta 2 -->
+        <div class="col-md-4 mb-4">
+ <a href="" class="card-link">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-weight: bold; color: #0b3b59;">Expediente Único</h5>
+                        <p class="card-text" style="font-weight: normal;">Una manera eficiente de almacenar tu información.</p>
+                    </div>
+                    <img src="images/sliders/expedienteunico.jpeg" class="card-img-bottom" alt="Imagen 2">
+                </div>
+            </a>
+        </div>
+        <!-- Tarjeta 3 -->
+        <div class="col-md-4 mb-4">
+            <a href="" class="card-link">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-weight: bold; color: #0b3b59;">Próximamente...</h5>
+                        <p class="card-text" style="font-weight: normal;"></p>
+                    </div>
+                    <!--<img src="images/iconos/imagen3.png" class="card-img-bottom" alt="Imagen 3"> -->
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div id="footerContainer"></div>
+
+<script>
+    fetch('partials/navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbarContainer').innerHTML = data;
+        })
+        .catch(error => console.error('Error al cargar el navbar:', error));
+    fetch('partials/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footerContainer').innerHTML = data;
+        })
+        .catch(error => console.error('Error al cargar el footer:', error));
+</script>
+<script>
+    // Mostrar u ocultar el botón "Back to Top"
+    window.onscroll = function() {
+        const backToTopButton = document.getElementById('backToTop');
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    };
+
+    // Función para desplazarse suavemente hacia arriba
+    document.getElementById('backToTop').onclick = function() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    };
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+</body>
+</html>
