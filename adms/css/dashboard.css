@@ -1,0 +1,78 @@
+.contenedor {
+    text-align: center;
+}
+.contenedor h1 {
+    color: #0b3b59;
+}
+.dashboard-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.dashboard-container h2 {
+    color: #0b3b59;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.btn-submit {
+    background-color: #0b3b59;
+    color: white;
+    border-radius: 5px;
+}
+.btn-submit:hover {
+    background-color: #007bff;
+}
+/* Estilo para el editor Quill */
+.quill-editor {
+    height: 300px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+
+
+.contenedor {
+    text-align: center;
+}
+.contenedor h1 {
+    color: #0b3b59;
+}
+.dashboard-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.dashboard-container h2 {
+    color: #0b3b59;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.btn-submit {
+    background-color: #0b3b59;
+    color: white;
+    border-radius: 5px;
+}
+.btn-submit:hover {
+    background-color: #007bff;
+}
+/* Estilo para el editor Quill */
+.quill-editor {
+    height: 300px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}

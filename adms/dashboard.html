@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Municipio San Juan del Río</title>
+    <link href="css/dashboard.css" rel="stylesheet">
+
+
+    <!-- Quill CSS -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<!-- Aquí se cargará el navbar -->
+<div id="navbarContainer"></div>
+
+<!-- Dashboard Formulario para Subir Noticias -->
+<div class="dashboard-container">
+    <h2>Subir Noticias</h2>
+    <form action="/upload-news" method="POST" enctype="multipart/form-data" onsubmit="return submitNews()">
+        <div class="form-group">
+            <label for="newsTitle">Título de la Noticia:</label>
+            <input type="text" id="newsTitle" name="newsTitle" class="form-control" placeholder="Escribe el título aquí" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="newsBody">Cuerpo de la Noticia:</label>
+            <div id="editor" class="quill-editor"></div>
+            <input type="hidden" name="newsBody" id="newsBody">
+        </div>
+
+        <div class="form-group">
+            <label for="newsImage">Imagen de la Noticia:</label>
+            <input type="file" id="newsImage" name="newsImage" class="form-control">
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-submit">Subir Noticia</button>
+        </div>
+    </form>
+</div>
+
+<!-- Aquí se cargará el footer -->
+<div id="footerContainer"></div>
+
+<!-- Enlace al archivo de scripts externo -->
+<script src="scripts.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+</body>
+</html>
