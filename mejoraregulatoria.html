@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Mejora Regulatoria</title>
+    <link href="css/mejorareg.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Aquí se cargará el navbar -->
+<div id="navbarContainer"></div>
+
+
+<div class="cards-container">
+    <div class="card">
+        <h4>Agenda Regulatoria.</h4>
+        <p>Es un ejercicio de transparencia y planeación regulatoria en el que las
+            Dependencias y Entidades del Municipio dan a conocer las propuestas de
+            regulaciones que pretenden emitir en dos periodos: junio-noviembre y
+            diciembre-mayo.</p>
+    </div>
+    <div class="card">
+        <h4>Las Regulaciones que emite el Municipio son entre otras las siguientes: </h4>
+        <p>Cualquier Normativa de carácter general cuya denominación puede ser:
+            Acuerdo, Circular, Criterio, Directiva, Disposición de carácter general,
+            Disposición Técnica, Estatuto, Formato, Instructivo, Lineamiento, Manual,
+            Metodología, Regla, Reglamento, o cualquier otra denominación de
+            naturaleza análoga que expida el Ayuntamiento.</p>
+        <p><strong>Periodo:</strong> Periodo diciembre 2024 a mayo 2025.</p>
+    </div>
+</div>
+
+  <div class="contenedor">
+  <!-- Tabla con opciones de descarga -->
+  <h5>Documentos disponibles para descargar</h5>
+  <table class="table table-striped table-hover">
+      <thead>
+          <tr>
+              <th>Nombre</th>
+              <th>Descarga</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>Instituto Municipal de la Mujer.</td>
+              <td><a href="pdf/Instituto Municipal de la Mujer.pdf" class="btn-download"><i class="bi bi-download"></i> Descargar</a></td>
+          </tr>
+          <tr>
+              <td>Jefatura de Gabinete</td>
+              <td><a href="pdf/Jefatura de Gabinete.pdf" class="btn-download"><i class="bi bi-download"></i> Descargar</a></td>
+          </tr>
+          <tr>
+              <td>Órgano Interno de Control</td>
+              <td><a href="pdf/Órgano Interno de Control.pdf" class="btn-download"><i class="bi bi-download"></i> Descargar</a></td>
+          </tr>
+          <tr>
+              <td>Secretaría de Desarrollo Agropecuario.</td>
+              <td><a href="pdf/Secretaría de Desarrollo Agropecuario.pdf" class="btn-download"><i class="bi bi-download"></i> Descargar</a></td>
+          </tr>
+          <tr>
+              <td>Secretaría de Desarrollo Agropecuario B.</td>
+              <td><a href="pdf/Secretaría de Desarrollo Agropecuario B.pdf" class="btn-download"><i class="bi bi-download"></i> Descargar</a></td>
+          </tr>
+          <tr>
+              <td>Secretaría de Obras Públicas y Desarrollo Urbano.</td>
+              <td><a href="pdf/Secretaría de Obras Públicas y Desarrollo Urbano.pdf" class="btn-download"><i class="bi bi-download"></i> Descargar</a></td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+
+<div id="footerContainer"></div>
+
+<script>
+    fetch('partials/navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbarContainer').innerHTML = data;
+        })
+        .catch(error => console.error('Error al cargar el navbar:', error));
+    fetch('partials/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footerContainer').innerHTML = data;
+        })
+        .catch(error => console.error('Error al cargar el footer:', error));
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+</body>
+</html>
