@@ -6,126 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Mejora Regulatoria</title>
     <link href="css/mejorareg.css" rel="stylesheet">
-    <style>
-        /* Cargar la fuente "Gilam" */
-        @font-face {
-            font-family: 'Gilam';
-            src: url('fonts/Gilam-Regular.woff2') format('woff2'),
-                 url('fonts/Gilam-Regular.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
 
-        /* Estilos generales */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f7fb;
-            color: #333;
-        }
-
-        /* Contenedor principal */
-        .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Estilo de los títulos */
-        .titles {
-            flex: 1;
-            text-align: left;
-            padding-right: 30px; /* Para que los títulos no estén pegados al borde */
-        }
-
-        .titles h2 {
-            font-family: 'Gilam', sans-serif; /* Aplicar la fuente "Gilam" */
-            font-weight: 900;
-            color: #0b3b59;
-            font-size: 2.5rem; /* Tamaño grande y moderno */
-            margin-bottom: 10px;
-            position: relative;
-        }
-
-        .titles h3 {
-            font-family: 'Gilam', sans-serif; /* Aplicar la fuente "Gilam" */
-            font-weight: 600;
-            color: #0b3b59;
-            font-size: 1.75rem;
-            margin-top: 0;
-            margin-bottom: 20px;
-        }
-
-        .titles h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 4px;
-            background-color: #0b3b59;
-        }
-
-        /* Estilo de la lista */
-        .list-container {
-            flex: 1;
-            text-align: left;
-            padding-left: 30px; /* Para que la lista no esté pegada al borde */
-        }
-
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
-            font-size: 1.2rem;
-        }
-
-        ul li {
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-
-        /* Estilo para las viñetas */
-        ul li::marker {
-            color: #0077cc; /* Color azul más brillante para las viñetas */
-        }
-
-        /* Botón de Presentar Queja */
-        #btnPresentarQueja {
-            margin-top: 20px; /* Agregar espacio arriba del botón */
-            padding: 10px 20px; /* Ajustar el tamaño del botón */
-            font-size: 1.2rem; /* Ajustar el tamaño de la fuente */
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                padding: 20px;
-            }
-
-            .titles, .list-container {
-                flex: none;
-                width: 100%;
-                padding: 0;
-            }
-
-            .titles h2 {
-                font-size: 2rem;
-            }
-
-            .titles h3 {
-                font-size: 1.5rem;
-            }
-
-            ul {
-                font-size: 1rem;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -190,30 +71,44 @@
           </tr>
       </tbody>
   </table>
-
- <br>
- <div class="container">
-    <!-- Títulos a la izquierda -->
-    <div class="titles">
-        <h2>PROTESTA CIUDADANA</h2>
-        <h3>¿En qué casos la puedo presentar?</h3>
-        
-        <!-- Botón "Presentar queja" -->
-        <button class="btn btn-primary btn-lg" style="background-color: #0b3b59;" id="btnPresentarQueja" onclick="window.location.href='formulario-queja.html';">Presentar en línea</button>
-    </div>
-    
-    <!-- Lista a la derecha -->
-    <div class="list-container">
-        <ul>
-            <li>Te negaron injustificadamente la gestión de un trámite o servicio.</li>
-            <li>Te solicitaron requisitos diferentes o adicionales.</li>
-            <li>Falta de respuesta a tu trámite en los plazos establecidos.</li>
-            <li>No se respetaron los costos de los Derechos o Aprovechamientos del Trámite o Servicio.</li>
-        </ul>
-    </div>
 </div>
-  
 
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <!-- Contenedor flex para el texto y el formulario -->
+            <div class="d-flex flex-column flex-md-row shadow-lg" style="border-radius: 8px; overflow: hidden;">
+                <!-- Columna izquierda: Texto -->
+                <div class="w-100 w-md-50 p-4 text-white" style="background-color: #0b3b59;">
+                    <h4 class="mb-4">Tu opinión es importante para la propuesta de Regulaciones. Realiza la consulta:</h4>
+                    <p>Ayúdanos a mejorar proporcionando tus comentarios sobre las regulaciones actuales.</p>
+                </div>
+                
+                <!-- Columna derecha: Formulario -->
+                <div class="w-100 w-md-50 bg-light p-4">
+                    <form action="submit_form.php" method="POST">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre Completo</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" required placeholder="Ingresa tu nombre completo">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email" name="email" required placeholder="Ingresa tu correo electrónico">
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefono" class="form-label">Nombre de Regulación</label>
+                            <input type="tel" class="form-control" id="telefono" name="telefono" required placeholder="Ingresa tu número de teléfono">
+                        </div>
+                        <div class="mb-3">
+                            <label for="descripcion" class="form-label">Comentarios</label>
+                            <textarea class="form-control" id="descripcion" name="descripcion" rows="4" required placeholder="Escribe tu comentario"></textarea>
+                        </div>
+                        <button type="submit" class="btn w-100 text-white" style="background-color: #0b3b59;">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div id="footerContainer"></div>
