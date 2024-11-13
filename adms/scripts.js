@@ -13,19 +13,76 @@ fetch('partials/footer.html')
     })
     .catch(error => console.error('Error al cargar el footer:', error));
 
-// Inicializar el editor Quill
-var quill = new Quill('#editor', {
-    theme: 'snow',
-    placeholder: 'Escribe aquí el cuerpo de la noticia...',
-    modules: {
-        toolbar: [
-            [{ header: [1, 2, false] }],
-            ['bold', 'italic', 'underline'],
-            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-            ['link', 'image']
-        ]
-    }
-});
+        // Inicializar Quill con la barra de herramientas
+        var quill = new Quill('#editor', {
+            theme: 'snow',
+            modules: {
+                toolbar: [
+                    [{ 'header': [1, 2, false] }],
+                    ['bold', 'italic', 'underline'],
+                    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                    ['link', 'image']
+                ]
+            }
+        });
+
+        // Interceptar la inserción de imágenes y subirlas al servidor
+        quill.getModule('toolbar').addHandler('image', () => {
+            const input = document.createElement('input');
+            input.setAttribute('type', 'file');
+            input.setAttribute('accept', 'image/*');
+            input.click();
+
+            input.onchange = () => {
+                const file = input.files[0];
+                if (file) {
+                    const formData = new FormData();
+                    formData.append('image', file);
+
+                    // Enviar la imagen al servidor
+                    fetch('upload_image.php', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        const range = quill.getSelection();
+                        quill.insertEmbed(range.index, 'image', data.url);
+                    })
+                    .catch(error => {
+                        console.error('Error al cargar la imagen:', error);
+                    });
+                }
+            };
+        });
+
+        // Función para obtener y enviar el contenido del editor
+        function guardarContenido() {
+			const titulo = document.getElementById('titulo').value;
+            const imagen = "Imagen.jpg";
+            const id_u = "1";
+			const id_d = "1";
+            const cuerpo = quill.root.innerHTML;
+            fetch('guardar_contenido.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ 
+				titulo : titulo,
+				cuerpo: cuerpo,
+				imagen: imagen,
+				id_usuario: id_u,
+				id_dependencia: id_d})
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+            })
+            .catch(error => {
+                console.error('Error al guardar el contenido:', error);
+            });
+        }
 
 // Función para manejar el envío del formulario
 function submitNews() {
@@ -44,10 +101,6 @@ window.onscroll = function() {
     }
 };
 
-// Función para desplazarse suavemente hacia arriba
-document.getElementById('backToTop').onclick = function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-};
 
 
     // Array de ejemplo con noticias (esto se reemplazaría con datos de la base de datos)
