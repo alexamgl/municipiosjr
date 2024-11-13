@@ -25,11 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn->query($sql) === TRUE) {
         // Mostrar el modal de éxito al cargar la página
-        echo "<script>
-                window.onload = function() {
-                    document.getElementById('successModal').style.display = 'block';
-                };
-              </script>";
+        header('Location: mejoraregulatoria.html'); // Cambia 'success.html' por la ruta de tu archivo HTML
+    exit(); // Asegúrate de que el script se detenga aquí
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
