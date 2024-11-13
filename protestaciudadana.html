@@ -18,26 +18,142 @@
             <div class="col-md-8 col-lg-6">
                 <div class="card shadow-lg">
                     <div class="card-header text-white text-center" style="background-color: #0b3b59;">
-                        <h4>Formulario</h4>
+                        <h4>Protesta Ciudadana</h4>
                     </div>                    
                     <div class="card-body">
-                        <form action="#" method="POST">
-                            <div class="mb-3">
-                                <label for="nombre" class="form-label">Nombre Completo*</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre" required placeholder="Ingresa tu nombre completo">
+                        <form action="protesta_form.php" method="POST">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="nombres" class="form-label">Nombre(s)*</label>
+                                    <input type="text" class="form-control" id="nombres" name="nombres" required placeholder="Ingresa tu nombre">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="apellidos" class="form-label">Apellidos*</label>
+                                    <input type="text" class="form-control" id="apellidos" name="apellidos" required placeholder="Ingresa tus apellidos">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="domicilio" class="form-label">Domicilio*</label>
+                                    <input type="text" class="form-control" id="domicilio" name="domicilio" required placeholder="Ingresa tu domicilio">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="telefono" class="form-label">Telefono*</label>
+                                    <input type="tel" class="form-control" id="telefono" name="telefono" required placeholder="Ingresa tu número de teléfono">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="correo" class="form-label">Correo Electrónico*</label>
+                                    <input type="email" class="form-control" id="correo" name="correo" required placeholder="Ingresa tu correo electrónico">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="nombre_tramite" class="form-label">Nombre del trámite o servicio que realiza*</label>
+                                    <input type="text" class="form-control" id="nombre_tramite" name="nombre_tramite" required placeholder="Ingresa el nombre del trámite">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="folio_tramite" class="form-label">Número de folio del trámite o servicio*</label>
+                                    <input type="text" class="form-control" id="folio_tramite" name="folio_tramite" required placeholder="Ingresa el número de folio">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="nombre_servidorpublico" class="form-label">Nombre del servidor público que atendió*</label>
+                                    <input type="text" class="form-control" id="nombre_servidorpublico" name="nombre_servidorpublico" required placeholder="Ingresa el nombre del servidor público">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="dependencia_tramite" class="form-label">Dependencia donde se realizó el trámite o servicio*</label>
+                                    <input type="text" class="form-control" id="dependencia_tramite" name="dependencia_tramite" required placeholder="Ingresa la dependencia">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="negacion" class="form-label">¿Se negó la gestión del trámite sin causa justificada?*</label>
+                                    <div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="negacionSi" name="negacion" value="Sí" required>
+                                            <label class="form-check-label" for="negacionSi">Sí</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" id="negacionNo" name="negacion" value="No" required>
+                                            <label class="form-check-label" for="negacionNo">No</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="dependencia_hechos" class="form-label">Dependencia o lugar donde ocurrieron los hechos*</label>
+                                    <input type="text" class="form-control" id="dependencia_hechos" name="dependencia_hechos" required placeholder="Ingresa la dependencia o lugar">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="fecha" class="form-label">Fecha en que ocurrieron los hechos*</label>
+                                    <input type="date" class="form-control" id="fecha" name="fecha" required>
+                                </div>
                             </div>
                             <div class="mb-3">
-                                <label for="email" class="form-label">Correo Electrónico*</label>
-                                <input type="email" class="form-control" id="email" name="email" required placeholder="Ingresa tu correo electrónico">
+                                <label for="descripcion_hechos" class="form-label">Describa los hechos de manera clara y concisa*</label>
+                                <textarea class="form-control" id="descripcion_hechos" name="descripcion_hechos" rows="4" required placeholder="Escribe una descripción clara de los hechos"></textarea>
                             </div>
                             <div class="mb-3">
-                                <label for="telefono" class="form-label">Nombre de Regulación*</label>
-                                <input type="tel" class="form-control" id="telefono" name="telefono" required placeholder="Ingresa tu nombre de regulación">
+                                <label for="evidencias" class="form-label">Evidencia de los hechos*</label>
+                                <input type="file" class="form-control" id="evidencias" name="evidencias" required>
                             </div>
+
                             <div class="mb-3">
-                                <label for="telefono" class="form-label">Comentario*</label>
-                                <input type="tel" class="form-control" id="telefono" name="telefono" required placeholder="Ingresa tu comentario">
+                                <label class="form-label">¿Se incumplió lo manifestado en el Registro Municipal de Trámites y Servicios en alguno de los siguientes puntos? (puede seleccionar más de uno)*</label>
+                                <div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="opcion1" name="opciones[]" value="Opción 1">
+                                        <label class="form-check-label" for="opcion1">No se respetaron los requisitos especificados para el trámite o servicio.</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="opcion2" name="opciones[]" value="Opción 2">
+                                        <label class="form-check-label" for="opcion2">No se respetó la forma especificada para presentar el trámite o servicio.</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="opcion3" name="opciones[]" value="Opción 3">
+                                        <label class="form-check-label" for="opcion3">Me requirieron una inspección que no estaba especificada.</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="opcion4" name="opciones[]" value="Opción 4">
+                                        <label class="form-check-label" for="opcion4">Los datos de contacto especificados son incorrectos.</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="opcion5" name="opciones[]" value="Opción 5">
+                                        <label class="form-check-label" for="opcion5">No se cumplieron los tiempos especificados para resolver el trámite o servicio.</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="opcion6" name="opciones[]" value="Opción 6">
+                                        <label class="form-check-label" for="opcion6">No se respetaron los costos del pago del trámite o servicio o las alternativas de pago especificadas.Opción 6</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="opcion7" name="opciones[]" value="Opción 7">
+                                        <label class="form-check-label" for="opcion7">No se respetó la vigencia especificada del documento emitido con el trámite o servicio</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="opcion8" name="opciones[]" value="Opción 8">
+                                        <label class="form-check-label" for="opcion8">No se respetaron los criterios de resolución del trámite o servicio.</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="opcion9" name="opciones[]" value="Opción 9">
+                                        <label class="form-check-label" for="opcion9">No se recibió el trámite en alguna de las unidadaes administrativas especificadas.</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="opcion10" name=" opciones[]" value="Opción 10">
+                                        <label class="form-check-label" for="opcion10">No se respetaron los horarios para la etnción del trámite o servicio.</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="opcion11" name="opciones[]" value="Opción 11">
+                                        <label class="form-check-label" for="opcion11">Los números de teléfono o medios electrónicos para el envío de consultas, documentos o quejas son incorrectos.</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="opcion12" name="opciones[]" value="Opción 12">
+                                        <label class="form-check-label" for="opcion12">No se respetó la información especificada que se debía conservar para fines de acreditación, inspección o cerifiación.</label>
+                                    </div>
+                                </div>
                             </div>
+
                             <button type="submit" class="btn btn-primary w-100" style="background-color: #0b3b59;">Enviar</button>
                         </form>
                     </div>
