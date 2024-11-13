@@ -24,7 +24,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO comentarios (nombre, correo, telefono, comentario) VALUES ('$nombre', '$email', '$telefono', '$descripcion')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Comentario enviado con éxito";
+        // Mostrar el modal de éxito al cargar la página
+        echo "<script>
+                window.onload = function() {
+                    document.getElementById('successModal').style.display = 'block';
+                };
+              </script>";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
