@@ -1,9 +1,9 @@
 <?php
 // Conexión a la base de datos
 $servername = "localhost";
-$username = "root"; // Cambiar por tu usuario de MySQL
-$password = ""; // Cambiar por tu contraseña de MySQL
-$dbname = "regulaciones_db";
+$username = "develop"; // Cambiar por tu usuario de MySQL
+$password = "develop1"; // Cambiar por tu contraseña de MySQL
+$dbname = "dashboard_municipio";
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $descripcion = $conn->real_escape_string($_POST['descripcion']);
 
     // Insertar datos en la base de datos
-    $sql = "INSERT INTO comentarios (nombre, email, telefono, descripcion) VALUES ('$nombre', '$email', '$telefono', '$descripcion')";
+    $sql = "INSERT INTO comentarios (nombre, correo, telefono, comentario) VALUES ('$nombre', '$email', '$telefono', '$descripcion')";
 
     if ($conn->query($sql) === TRUE) {
         echo "Comentario enviado con éxito";
@@ -32,24 +32,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // Cerrar la conexión
 $conn->close();
-
-
-
-/* 
-CREATE DATABASE regulaciones_db;
-
-USE regulaciones_db;
-
-CREATE TABLE comentarios (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
-    telefono VARCHAR(50) NOT NULL,
-    descripcion TEXT NOT NULL,
-    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
-
-
-*/
 ?>
