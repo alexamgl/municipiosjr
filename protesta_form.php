@@ -15,6 +15,30 @@ if ($conn->connect_error) {
 
 // Verificar si se han enviado los datos del formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	$status = "";
+	$url_archivo="";
+	if ($_POST["action"] == "upload") {
+		// obtenemos los datos del archivo
+		$tamano = $_FILES["evidencias"]['size'];
+		$tipo = $_FILES["evidencias"]['type'];
+		$archivo = $_FILES["evidencias"]['name'];
+		$prefijo = substr(md5(uniqid(rand())),0,6);
+
+		if ($archivo != "") {
+			// guardamos el archivo a la carpeta files
+			$destino =  "uploads/".$prefijo."_".$archivo;
+			$destino_final="uploads/".$prefijo."_".$archivo;
+			if (copy($_FILES['evidencias']['tmp_name'],$destino)) {
+				$status = "Archivo subido: <b>".$archivo."</b>";   
+				/*echo "el archivo llamado ".$archivo."de tamano".$tamano."de tipo ".$tipo." fue subido con exito";*/
+				$url_archivo = $destino_final;
+			} else {
+				$status = "Error al subir el archivo";
+			}
+		} else {
+			$status = "Error al subir archivo";
+		}
+	}
     $nombres = $conn->real_escape_string($_POST['nombres']);
     $apellidos = $conn->real_escape_string($_POST['apellidos']);
     $domicilio = $conn->real_escape_string($_POST['domicilio']);
@@ -28,8 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $dependencia_hechos = $conn->real_escape_string($_POST['dependencia_hechos']);
     $fecha = $conn->real_escape_string($_POST['fecha']);
     $descripcion_hechos = $conn->real_escape_string($_POST['descripcion_hechos']);
-    $evidencias = $conn->real_escape_string($_POST['evidencias']);
-
+    $evidencias = $conn->real_escape_string($url_archivo);
 
     // Insertar datos en la base de datos
     $sql = "INSERT INTO protesta_ciudadana (nombres, apellidos, domicilio, telefono, correo, nombre_tramite, 
@@ -46,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			</head>
 			<body>
 			<h1>Detalles</h1>
-			<p><strong>De:</strong> ' . $nombre . ' <strong>Correo:</strong> ' . $email . '</p>
+			<p><strong>De:</strong> ' . $nombres . ' <strong>Correo:</strong> ' . $correo . '</p>
 			<p><strong>Teléfono:</strong> ' . $telefono . '</p>
 			<p><strong>Nombre del trámite:</strong> ' . $nombre_tramite . '</p>
 			<p><strong>Folio del trámite o servicio:</strong> ' . $folio_tramite . '</p>
@@ -75,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			<body>
 			<h1>Gracias por tu comentario</h1>
 			<p>Gracias por ayudarnos a mejorar la Agenda Regulatoria. A continuación, los detalles de tu comentario:</p>
-			<p><strong>Nombre:</strong> ' . $nombre . '</p>
+			<p><strong>Nombre:</strong> ' . $nombres . '</p>
 			<p><strong>Correo:</strong> ' . $correo . '</p>
 			<p><strong>Teléfono:</strong> ' . $telefono . '</p>
 			<p><strong>Descipición de los hechos:</strong> ' . $descripcion_hechos . '</p>
@@ -85,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 		// Enviar correo al remitente
 		mail($correo, "Confirmación de Comentario Enviado", $cuerpo_remitente, $headers);
-		header('Location: mejoraregulatoria.html'); // Cambia 'success.html' por la ruta de tu archivo HTML
+		header('Location: protestaciudadana.html'); // Cambia 'success.html' por la ruta de tu archivo HTML
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
