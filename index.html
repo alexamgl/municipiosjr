@@ -8,8 +8,6 @@
 
     <title>Municipio San Juan del Río</title>
 </head>
-
-
 <body>
 
 <!-- Aquí se cargará el navbar -->
@@ -27,32 +25,11 @@
     
 </div>
 
-<script>
-    // Función para mostrar el mensaje emergente
-    function showPopup() {
-        document.getElementById('overlay').style.display = 'block';
-        document.getElementById('popup').style.display = 'block';
-    }
-
-    // Función para cerrar el mensaje emergente
-    function closePopup() {
-        document.getElementById('overlay').style.display = 'none';
-        document.getElementById('popup').style.display = 'none';
-    }
-
-    // Muestra el mensaje al cargar la página
-    window.onload = showPopup;
-</script>
-
-
-
 <!-- div para hacer que el contenido solo sea visible, no clickeable -->
 <div style="pointer-events: none;"> 
     <a class="weatherwidget-io" href="https://forecast7.com/es/20d40n99d99/san-juan-del-rio/" data-label_1="SAN JUAN DEL RÍO" data-label_2="Clima" data-font="Arial Rounded MT Bold" data-mode="Current" data-days="5" data-theme="pure" data-basecolor="#f8f9fa" data-textcolor="#0b3b59">SAN JUAN DEL RÍO Clima</a>
 </div>
-<script>
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=document.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-</script>
+
  
 <!-- Banner de imágenes con carrusel -->
 <div id="carouselBanner" class="carousel slide" data-bs-ride="carousel">
@@ -227,75 +204,10 @@
 <button id="backToTop" class="btn" title="Volver arriba">
     <i class="bi bi-arrow-up"></i>
 </button> 
-<script>
-    fetch('partials/navbar.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('navbarContainer').innerHTML = data;
-        })
-        .catch(error => console.error('Error al cargar el navbar:', error));
-    fetch('partials/footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footerContainer').innerHTML = data;
-        })
-        .catch(error => console.error('Error al cargar el footer:', error));
-</script>
-<script>
-    // Mostrar u ocultar el botón "Back to Top"
-    window.onscroll = function() {
-        const backToTopButton = document.getElementById('backToTop');
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            backToTopButton.style.display = "block";
-        } else {
-            backToTopButton.style.display = "none";
-        }
-    };
 
-    // Función para desplazarse suavemente hacia arriba
-    document.getElementById('backToTop').onclick = function() {
-        window.scrollTo({top: 0, behavior: 'smooth'});
-    };
-
-</script>
-
-<script>
-    // Función para abrir el chat
-document.getElementById('chatbotButton').onclick = function() {
-    document.getElementById('chatbotWindow').style.display = 'block';
-};
-
-// Función para cerrar el chat
-function closeChat() {
-    document.getElementById('chatbotWindow').style.display = 'none';
-}
-
-// Función para enviar mensajes
-function sendMessage() {
-    const userInput = document.getElementById('userInput').value;
-    if (userInput) {
-        const chatContent = document.querySelector('.chat-content');
-        const userMessage = document.createElement('p');
-        userMessage.textContent = userInput;
-        chatContent.appendChild(userMessage);
-        document.getElementById('userInput').value = '';
-        chatContent.scrollTop = chatContent.scrollHeight; // Auto-scroll al final
-    }
-}
-
-setTimeout(() => {
-    const chatbotIndicator = document.getElementById('chatbotIndicator');
-    if (chatbotIndicator) {
-        chatbotIndicator.style.opacity = '0'; // Hacer que el texto desaparezca suavemente
-    }
-}, 7000);
-
-
-
-</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
+<script src="js/ini.js"></script>
 </body>
 </html>
