@@ -69,17 +69,13 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="negacion" class="form-label">¿Se negó la gestión del trámite sin causa justificada?*</label>
-                                    <div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" id="negacionSi" name="negacion" value="Sí" required>
-                                            <label class="form-check-label" for="negacionSi">Sí</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" id="negacionNo" name="negacion" value="No" required>
-                                            <label class="form-check-label" for="negacionNo">No</label>
-                                        </div>
-                                    </div>
+                                    <select class="form-select" id="negacion" name="negacion" required>
+                                        <option value="" disabled selected>Seleccione una opción</option>
+                                        <option value="si">Si</option>
+                                        <option value="no">No</option>
+                                    </select>
                                 </div>
+                                
                             </div>
                             <div class="row mb-3">
                                 <div class="col-md-6">
@@ -98,6 +94,7 @@
                             <div class="mb-3">
                                 <label for="evidencias" class="form-label">Evidencia de los hechos*</label>
                                 <input type="file" class="form-control" id="evidencias" name="evidencias" required>
+								<input name="action" type="hidden" value="upload" />
                             </div>
 
                             <div class="mb-3">
