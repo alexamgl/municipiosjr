@@ -224,51 +224,51 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <label class="form-label">¿Se incumplió lo manifestado en el Registro Municipal de Trámites y Servicios en alguno de los siguientes puntos? (puede seleccionar más de uno)*</label>
                                 <div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="opcion1" name="opciones[]" value="Opción 1">
+                                        <input class="form-check-input" type="checkbox" id="opcion1" name="opciones[]" value="No se respetaron los requisitos especificados para el trámite o servicio.">
                                         <label class="form-check-label" for="opcion1">No se respetaron los requisitos especificados para el trámite o servicio.</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="opcion2" name="opciones[]" value="Opción 2">
+                                        <input class="form-check-input" type="checkbox" id="opcion2" name="opciones[]" value="No se respetó la forma especificada para presentar el trámite o servicio.">
                                         <label class="form-check-label" for="opcion2">No se respetó la forma especificada para presentar el trámite o servicio.</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="opcion3" name="opciones[]" value="Opción 3">
+                                        <input class="form-check-input" type="checkbox" id="opcion3" name="opciones[]" value="Me requirieron una inspección que no estaba especificada.">
                                         <label class="form-check-label" for="opcion3">Me requirieron una inspección que no estaba especificada.</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="opcion4" name="opciones[]" value="Opción 4">
+                                        <input class="form-check-input" type="checkbox" id="opcion4" name="opciones[]" value="Los datos de contacto especificados son incorrectos.">
                                         <label class="form-check-label" for="opcion4">Los datos de contacto especificados son incorrectos.</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="opcion5" name="opciones[]" value="Opción 5">
+                                        <input class="form-check-input" type="checkbox" id="opcion5" name="opciones[]" value="No se cumplieron los tiempos especificados para resolver el trámite o servicio.">
                                         <label class="form-check-label" for="opcion5">No se cumplieron los tiempos especificados para resolver el trámite o servicio.</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="opcion6" name="opciones[]" value="Opción 6">
-                                        <label class="form-check-label" for="opcion6">No se respetaron los costos del pago del trámite o servicio o las alternativas de pago especificadas.Opción 6</label>
+                                        <input class="form-check-input" type="checkbox" id="opcion6" name="opciones[]" value="No se respetaron los costos del pago del trámite o servicio o las alternativas de pago especificadas.">
+                                        <label class="form-check-label" for="opcion6">No se respetaron los costos del pago del trámite o servicio o las alternativas de pago especificadas.</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="opcion7" name="opciones[]" value="Opción 7">
-                                        <label class="form-check-label" for="opcion7">No se respetó la vigencia especificada del documento emitido con el trámite o servicio</label>
+                                        <input class="form-check-input" type="checkbox" id="opcion7" name="opciones[]" value="No se respetó la vigencia especificada del documento emitido con el trámite o servicio.">
+                                        <label class="form-check-label" for="opcion7">No se respetó la vigencia especificada del documento emitido con el trámite o servicio.</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="opcion8" name="opciones[]" value="Opción 8">
+                                        <input class="form-check-input" type="checkbox" id="opcion8" name="opciones[]" value="No se respetaron los criterios de resolución del trámite o servicio.">
                                         <label class="form-check-label" for="opcion8">No se respetaron los criterios de resolución del trámite o servicio.</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="opcion9" name="opciones[]" value="Opción 9">
+                                        <input class="form-check-input" type="checkbox" id="opcion9" name="opciones[]" value="No se recibió el trámite en alguna de las unidadaes administrativas especificadas.">
                                         <label class="form-check-label" for="opcion9">No se recibió el trámite en alguna de las unidadaes administrativas especificadas.</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="opcion10" name=" opciones[]" value="Opción 10">
-                                        <label class="form-check-label" for="opcion10">No se respetaron los horarios para la etnción del trámite o servicio.</label>
+                                        <input class="form-check-input" type="checkbox" id="opcion10" name=" opciones[]" value="No se respetaron los horarios para la atención del trámite o servicio.">
+                                        <label class="form-check-label" for="opcion10">No se respetaron los horarios para la atención del trámite o servicio.</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="opcion11" name="opciones[]" value="Opción 11">
+                                        <input class="form-check-input" type="checkbox" id="opcion11" name="opciones[]" value=">Los números de teléfono o medios electrónicos para el envío de consultas, documentos o quejas son incorrectos">
                                         <label class="form-check-label" for="opcion11">Los números de teléfono o medios electrónicos para el envío de consultas, documentos o quejas son incorrectos.</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="opcion12" name="opciones[]" value="Opción 12">
+                                        <input class="form-check-input" type="checkbox" id="opcion12" name="opciones[]" value="No se respetó la información especificada que se debía conservar para fines de acreditación, inspección o cerifiación.">
                                         <label class="form-check-label" for="opcion12">No se respetó la información especificada que se debía conservar para fines de acreditación, inspección o cerifiación.</label>
                                     </div>
                                 </div>
