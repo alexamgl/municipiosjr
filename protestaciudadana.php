@@ -32,6 +32,85 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				$status = "Archivo subido: <b>".$archivo."</b>";   
 				//echo "el archivo llamado ".$archivo."de tamano".$tamano."de tipo ".$tipo." fue subido con exito";*/
 				$url_archivo = $destino_final;
+				
+				$nombres = $conn->real_escape_string($_POST['nombres']);
+				$apellidos = $conn->real_escape_string($_POST['apellidos']);
+				$domicilio = $conn->real_escape_string($_POST['domicilio']);
+				$telefono = $conn->real_escape_string($_POST['telefono']);
+				$correo = $conn->real_escape_string($_POST['correo']);
+				$nombre_tramite = $conn->real_escape_string($_POST['nombre_tramite']);
+				$folio_tramite = $conn->real_escape_string($_POST['folio_tramite']);
+				$nombre_servidorpublico = $conn->real_escape_string($_POST['nombre_servidorpublico']);
+				$dependencia_tramite = $conn->real_escape_string($_POST['dependencia_tramite']);
+				$negacion = $conn->real_escape_string($_POST['negacion']);
+				$dependencia_hechos = $conn->real_escape_string($_POST['dependencia_hechos']);
+				$fecha = $conn->real_escape_string($_POST['fecha']);
+				$descripcion_hechos = $conn->real_escape_string($_POST['descripcion_hechos']);
+				$evidencias = $conn->real_escape_string($url_archivo);
+				// Recoger las respuestas de los checkboxes
+				$opciones = isset($_POST['opciones']) ? implode(", ", $_POST['opciones']) : '';
+				
+				// Insertar datos en la base de datos
+				$sql = "INSERT INTO protesta_ciudadana (nombres, apellidos, domicilio, telefono, correo, nombre_tramite, 
+						folio_tramite, nombre_servidorpublico, dependencia_tramite, negacion, dependencia_hechos, 
+						descripcion_hechos, fecha, evidencias, opciones) VALUES ('$nombres', '$apellidos', '$domicilio', '$telefono', '$correo', '$nombre_tramite', '$folio_tramite', '$nombre_servidorpublico', '$dependencia_tramite', '$negacion', '$dependencia_hechos', '$descripcion_hechos', '$fecha', '$evidencias', '$opciones')";
+
+				if ($conn->query($sql) === TRUE) {
+					// Preparar el contenido del correo
+					$asunto = "Protesta Ciudadana";
+					$cuerpo = '
+						<html>
+						<head>
+						<title>Protesta ciudadana</title>
+						</head>
+						<body>
+						<h1>Detalles</h1>
+						<p><strong>De:</strong> ' . $nombres . ' <strong>Correo:</strong> ' . $correo . '</p>
+						<p><strong>Teléfono:</strong> ' . $telefono . '</p>
+						<p><strong>Nombre del trámite:</strong> ' . $nombre_tramite . '</p>
+						<p><strong>Folio del trámite o servicio:</strong> ' . $folio_tramite . '</p>
+						<p><strong>Nombre del servidor público que atendió:</strong> ' . $nombre_servidorpublico . '</p>
+						<p><strong>Dependencia donde se realizó el trámite o servicio:</strong> ' . $dependencia_tramite . '</p>
+						<p><strong>¿Se negó la gestión del trámite sin causa justificada? :</strong> ' . $negacion . '</p>
+						<p><strong>Descripcion de los hechos:</strong> ' . $descripcion_hechos . '</p>
+						<p><strong>Opciones seleccionadas:</strong> ' . $opciones . '</p>
+						</body>
+						</html>';
+
+					// Cabeceras del correo
+					$headers = "MIME-Version: 1.0\r\n";
+					$headers .= "Content-type: text/html; charset=UTF-8\r\n";
+					$headers .= "From: Municipio SJR <websjr@sanjuandelrio.gob.mx>\r\n";
+
+					// Enviar correo al destinatario
+					$destinatario = "mejora.regulatoria@sanjuandelrio.gob.mx";
+					mail($destinatario, $asunto, $cuerpo, $headers);
+
+					// Enviar correo al remitente (usuario que llena el formulario)
+					$cuerpo_remitente = '
+						<html>
+						<head>
+						<title>Confirmación de Envío de Comentario</title>
+						</head>
+						<body>
+						<h1>Gracias por tu comentario</h1>
+						<p>Gracias por ayudarnos a mejorar la Agenda Regulatoria. A continuación, los detalles de tu comentario:</p>
+						<p><strong>Nombre:</strong> ' . $nombres . '</p>
+						<p><strong>Correo:</strong> ' . $correo . '</p>
+						<p><strong>Teléfono:</strong> ' . $telefono . '</p>
+						<p><strong>Descipición de los hechos:</strong> ' . $descripcion_hechos . '</p>
+						<p><strong>Opciones seleccionadas:</strong> ' . $opciones . '</p>
+						<p>Este es un correo de confirmación de tu envío.</p>
+						</body>
+						</html>';
+
+					// Enviar correo al remitente
+					mail($correo, "Confirmación de Comentario Enviado", $cuerpo_remitente, $headers);
+					echo $status;
+					//header('Location: protestaciudadana.html'); // Cambia 'success.html' por la ruta de tu archivo HTML
+				} else {
+					echo "Error: " . $sql . "<br>" . $conn->error;
+				}
 			} else {
 				$status = "Error al subir el archivo";
 			}
@@ -39,80 +118,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$status = "Error al subir archivo";
 		}
 	}
-    $nombres = $conn->real_escape_string($_POST['nombres']);
-    $apellidos = $conn->real_escape_string($_POST['apellidos']);
-    $domicilio = $conn->real_escape_string($_POST['domicilio']);
-    $telefono = $conn->real_escape_string($_POST['telefono']);
-    $correo = $conn->real_escape_string($_POST['correo']);
-    $nombre_tramite = $conn->real_escape_string($_POST['nombre_tramite']);
-    $folio_tramite = $conn->real_escape_string($_POST['folio_tramite']);
-    $nombre_servidorpublico = $conn->real_escape_string($_POST['nombre_servidorpublico']);
-    $dependencia_tramite = $conn->real_escape_string($_POST['dependencia_tramite']);
-    $negacion = $conn->real_escape_string($_POST['negacion']);
-    $dependencia_hechos = $conn->real_escape_string($_POST['dependencia_hechos']);
-    $fecha = $conn->real_escape_string($_POST['fecha']);
-    $descripcion_hechos = $conn->real_escape_string($_POST['descripcion_hechos']);
-    $evidencias = $conn->real_escape_string($url_archivo);
-
-    // Insertar datos en la base de datos
-    $sql = "INSERT INTO protesta_ciudadana (nombres, apellidos, domicilio, telefono, correo, nombre_tramite, 
-            folio_tramite, nombre_servidorpublico, dependencia_tramite, negacion, dependencia_hechos, 
-            descripcion_hechos, fecha, evidencias) VALUES ('$nombres', '$apellidos', '$domicilio', '$telefono', '$correo', '$nombre_tramite', '$folio_tramite', '$nombre_servidorpublico', '$dependencia_tramite', '$negacion', '$dependencia_hechos', '$descripcion_hechos', '$fecha', '$evidencias')";
-
-    if ($conn->query($sql) === TRUE) {
-        // Preparar el contenido del correo
-		$asunto = "Protesta Ciudadana";
-		$cuerpo = '
-			<html>
-			<head>
-			<title>Protesta ciudadana</title>
-			</head>
-			<body>
-			<h1>Detalles</h1>
-			<p><strong>De:</strong> ' . $nombres . ' <strong>Correo:</strong> ' . $correo . '</p>
-			<p><strong>Teléfono:</strong> ' . $telefono . '</p>
-			<p><strong>Nombre del trámite:</strong> ' . $nombre_tramite . '</p>
-			<p><strong>Folio del trámite o servicio:</strong> ' . $folio_tramite . '</p>
-			<p><strong>Nombre del servidor público que atendió:</strong> ' . $nombre_servidorpublico . '</p>
-			<p><strong>Dependencia donde se realizó el trámite o servicio:</strong> ' . $dependencia_tramite . '</p>
-			<p><strong>¿Se negó la gestión del trámite sin causa justificada? :</strong> ' . $negacion . '</p>
-			<p><strong>Descripcion de los hechos:</strong> ' . $descripcion_hechos . '</p>
-			</body>
-			</html>';
-
-		// Cabeceras del correo
-		$headers = "MIME-Version: 1.0\r\n";
-		$headers .= "Content-type: text/html; charset=UTF-8\r\n";
-		$headers .= "From: Municipio SJR <websjr@sanjuandelrio.gob.mx>\r\n";
-
-		// Enviar correo al destinatario
-		$destinatario = "mejora.regulatoria@sanjuandelrio.gob.mx";
-		mail($destinatario, $asunto, $cuerpo, $headers);
-
-		// Enviar correo al remitente (usuario que llena el formulario)
-		$cuerpo_remitente = '
-			<html>
-			<head>
-			<title>Confirmación de Envío de Comentario</title>
-			</head>
-			<body>
-			<h1>Gracias por tu comentario</h1>
-			<p>Gracias por ayudarnos a mejorar la Agenda Regulatoria. A continuación, los detalles de tu comentario:</p>
-			<p><strong>Nombre:</strong> ' . $nombres . '</p>
-			<p><strong>Correo:</strong> ' . $correo . '</p>
-			<p><strong>Teléfono:</strong> ' . $telefono . '</p>
-			<p><strong>Descipición de los hechos:</strong> ' . $descripcion_hechos . '</p>
-			<p>Este es un correo de confirmación de tu envío.</p>
-			</body>
-			</html>';
-
-		// Enviar correo al remitente
-		mail($correo, "Confirmación de Comentario Enviado", $cuerpo_remitente, $headers);
-		echo $status;
-		//header('Location: protestaciudadana.html'); // Cambia 'success.html' por la ruta de tu archivo HTML
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
 	// Cerrar la conexión
 	$conn->close();
 }
@@ -219,51 +224,51 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <label class="form-label">¿Se incumplió lo manifestado en el Registro Municipal de Trámites y Servicios en alguno de los siguientes puntos? (puede seleccionar más de uno)*</label>
                                 <div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="opcion1" name="opciones[]" value="No se respetaron los requisitos especificados para el trámite o servicio.">
+                                        <input class="form-check-input" type="checkbox" id="opcion1" name="opciones[]" value="Opción 1">
                                         <label class="form-check-label" for="opcion1">No se respetaron los requisitos especificados para el trámite o servicio.</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="opcion2" name="opciones[]" value="No se respetó la forma especificada para presentar el trámite o servicio.">
+                                        <input class="form-check-input" type="checkbox" id="opcion2" name="opciones[]" value="Opción 2">
                                         <label class="form-check-label" for="opcion2">No se respetó la forma especificada para presentar el trámite o servicio.</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="opcion3" name="opciones[]" value="Me requirieron una inspección que no estaba especificada.">
+                                        <input class="form-check-input" type="checkbox" id="opcion3" name="opciones[]" value="Opción 3">
                                         <label class="form-check-label" for="opcion3">Me requirieron una inspección que no estaba especificada.</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="opcion4" name="opciones[]" value="Los datos de contacto especificados son incorrectos.">
+                                        <input class="form-check-input" type="checkbox" id="opcion4" name="opciones[]" value="Opción 4">
                                         <label class="form-check-label" for="opcion4">Los datos de contacto especificados son incorrectos.</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="opcion5" name="opciones[]" value="No se cumplieron los tiempos especificados para resolver el trámite o servicio.">
+                                        <input class="form-check-input" type="checkbox" id="opcion5" name="opciones[]" value="Opción 5">
                                         <label class="form-check-label" for="opcion5">No se cumplieron los tiempos especificados para resolver el trámite o servicio.</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="opcion6" name="opciones[]" value="No se respetaron los costos del pago del trámite o servicio o las alternativas de pago especificadas.">
-                                        <label class="form-check-label" for="opcion6">No se respetaron los costos del pago del trámite o servicio o las alternativas de pago especificadas.</label>
+                                        <input class="form-check-input" type="checkbox" id="opcion6" name="opciones[]" value="Opción 6">
+                                        <label class="form-check-label" for="opcion6">No se respetaron los costos del pago del trámite o servicio o las alternativas de pago especificadas.Opción 6</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="opcion7" name="opciones[]" value="No se respetó la vigencia especificada del documento emitido con el trámite o servicio">
+                                        <input class="form-check-input" type="checkbox" id="opcion7" name="opciones[]" value="Opción 7">
                                         <label class="form-check-label" for="opcion7">No se respetó la vigencia especificada del documento emitido con el trámite o servicio</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="opcion8" name="opciones[]" value="No se respetaron los criterios de resolución del trámite o servicio.">
+                                        <input class="form-check-input" type="checkbox" id="opcion8" name="opciones[]" value="Opción 8">
                                         <label class="form-check-label" for="opcion8">No se respetaron los criterios de resolución del trámite o servicio.</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="opcion9" name="opciones[]" value="No se recibió el trámite en alguna de las unidadades administrativas especificadas.">
-                                        <label class="form-check-label" for="opcion9">No se recibió el trámite en alguna de las unidadades administrativas especificadas.</label>
+                                        <input class="form-check-input" type="checkbox" id="opcion9" name="opciones[]" value="Opción 9">
+                                        <label class="form-check-label" for="opcion9">No se recibió el trámite en alguna de las unidadaes administrativas especificadas.</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="opcion10" name=" opciones[]" value="No se respetaron los horarios para la atención del trámite o servicio.">
-                                        <label class="form-check-label" for="opcion10">No se respetaron los horarios para la atención del trámite o servicio.</label>
+                                        <input class="form-check-input" type="checkbox" id="opcion10" name=" opciones[]" value="Opción 10">
+                                        <label class="form-check-label" for="opcion10">No se respetaron los horarios para la etnción del trámite o servicio.</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="opcion11" name="opciones[]" value="Los números de teléfono o medios electrónicos para el envío de consultas, documentos o quejas son incorrectos.">
+                                        <input class="form-check-input" type="checkbox" id="opcion11" name="opciones[]" value="Opción 11">
                                         <label class="form-check-label" for="opcion11">Los números de teléfono o medios electrónicos para el envío de consultas, documentos o quejas son incorrectos.</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="opcion12" name="opciones[]" value="No se respetó la información especificada que se debía conservar para fines de acreditación, inspección o cerifiación.">
+                                        <input class="form-check-input" type="checkbox" id="opcion12" name="opciones[]" value="Opción 12">
                                         <label class="form-check-label" for="opcion12">No se respetó la información especificada que se debía conservar para fines de acreditación, inspección o cerifiación.</label>
                                     </div>
                                 </div>
