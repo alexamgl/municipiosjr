@@ -6,7 +6,102 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Mejora Regulatoria</title>
     <link href="css/mejorareg.css" rel="stylesheet">
+    <style>
+        /* Diseño del contenedor principal */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 30px;
+  
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
+/* Estilos para las columnas */
+.column {
+    flex: 1;
+}
+
+/* Estilos para la columna izquierda (títulos y botón) */
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0b3b59;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.btn {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: #0b3b59;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: max-content;
+}
+
+.btn:hover {
+    background-color: #08324b;
+}
+
+/* Estilos para la columna derecha (lista de puntos) */
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.list {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.list li {
+    margin-bottom: 10px;
+}
+
+.list li::before {
+    content: "•";
+    color: #0b3b59;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* Responsividad para dispositivos pequeños */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .left-column, .right-column {
+        flex: 1 1 100%;
+    }
+}
+
+    </style>
 </head>
 
 <body>
@@ -127,6 +222,58 @@
     </div>
 </div>
 
+<div class="container">
+    <!-- Títulos a la izquierda -->
+    <div class="column left-column">
+        <h2 class="title" style="font-weight: 900; color: #0b3b59;">PROTESTA CIUDADANA</h2>
+        <h3 class="subtitle" style="font-weight: bold;">¿En qué casos la puedo presentar?</h3>
+        
+        <!-- Contenedor de los botones -->
+<div class="button-container">
+    <!-- Botón "Presentar queja" -->
+    <button class="btn btn-primary" id="btnPresentarQueja" onclick="window.location.href='protestaciudadana.php';">
+        Presentar en línea
+    </button>
+    
+    <!-- Segundo botón al lado derecho -->
+    <button class="btn btn-secondary" id="btnOtroBoton" data-bs-toggle="modal" data-bs-target="#modalAtencion">
+        Módulo de atención
+    </button>
+</div>
+
+    </div>
+    
+    <!-- Lista a la derecha -->
+    <div class="column right-column">
+        <ul class="list">
+            <li style="font-weight: normal;">Te negaron injustificadamente la gestión de un trámite o servicio.</li>
+            <li style="font-weight: normal;">Te solicitaron requisitos diferentes o adicionales.</li>
+            <li style="font-weight: normal;">Falta de respuesta a tu trámite en los plazos establecidos.</li>
+            <li style="font-weight: normal;">No se respetaron los costos de los Derechos o Aprovechamientos del Trámite o Servicio.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="modal fade" id="modalAtencion" tabindex="-1" aria-labelledby="modalAtencionLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Cabecera del Modal -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalAtencionLabel">Módulo de Atención</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- Cuerpo del Modal -->
+            <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3739.91278172683!2d-100.00208702476077!3d20.386485681106965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d30b1bf1d83c0b%3A0x18724ede5e589778!2sPresidencia %20Municipal%20de%20San%20Juan%20del%20R%C3%ADo.!5e0!3m2!1ses-419!2smx!4v1730826131890!5m2!1ses-419!2smx" 
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            <!-- Pie del Modal -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <script>
