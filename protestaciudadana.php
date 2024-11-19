@@ -95,7 +95,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 						<body>
 						<h1>Gracias por tu comentario</h1>
 						<p>Gracias por ayudarnos a mejorar la Agenda Regulatoria. A continuación, los detalles de tu comentario:</p>
-						<p><strong>Nombre:</strong> ' . $nombres . '</p>
+						<p><strong>Nombre(s):</strong> ' . $nombres . '</p>
+                        <p><strong>Apellidos:</strong> ' . $apellidos . '</p>
 						<p><strong>Correo:</strong> ' . $correo . '</p>
 						<p><strong>Teléfono:</strong> ' . $telefono . '</p>
 						<p><strong>Descipición de los hechos:</strong> ' . $descripcion_hechos . '</p>
