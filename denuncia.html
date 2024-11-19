@@ -119,7 +119,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="apellidos" class="form-label">Apellidos</label>
-                            <input type="text" class="form-control" id="apellidos" placeholder="Apellidos">
+                            <input type="text" class="form-control" id="apellido" placeholder="Apellidos">
                         </div>
                         <div class="mb-3">
                             <label for="calle" class="form-label">Calle</label>
@@ -213,11 +213,11 @@
             </div>
             <div class="mb-3">
                 <label for="apellidoServidor" class="form-label">Apellido Paterno del Servidor</label>
-                <input type="text" class="form-control" id="apellidoServidor" placeholder="Apellidos del Servidor" required>
+                <input type="text" class="form-control" id="apellidoServidorP" placeholder="Apellidos del Servidor" required>
             </div>
             <div class="mb-3">
                 <label for="apellidoServidor" class="form-label">Apellido Materno del Servidor</label>
-                <input type="text" class="form-control" id="apellidoServidor" placeholder="Apellidos del Servidor" required>
+                <input type="text" class="form-control" id="apellidoServidorM" placeholder="Apellidos del Servidor" required>
             </div>
             <div class="mb-3">
                 <label for="cargo" class="form-label">Cargo del Servidor Público</label>
@@ -268,6 +268,17 @@
         <!-- Paso 5 -->
         <div class="form-step" id="step5">
             <h4 class="step-title">Paso 5: Confirmación</h4>
+
+            <button class="g-recaptcha" 
+        data-sitekey="6LfA_IMqAAAAACqsjZRjjPqwZe4ubnRpnOtMZ8o-" 
+        data-callback='onSubmit' 
+        data-action='submit'>Submit</button>
+
+        <script>
+            function onSubmit(token) {
+              document.getElementById("demo-form").submit();
+            }
+          </script>
         
             <!-- Checkbox para el aviso de privacidad -->
             <div class="form-check mb-3">
@@ -281,6 +292,25 @@
             <button type="button" class="btn btn-secondary" onclick="previousStep()">Anterior</button>
             <button type="submit" class="btn btn-primary float-end">Enviar</button>
         </div>
+
+        <script>
+            function onClick(e) {
+              e.preventDefault();
+              
+              const termsCheckbox = document.getElementById('termsCheckbox');
+              
+              if (termsCheckbox.checked) {
+                grecaptcha.ready(function() {
+                  grecaptcha.execute('6LfA_IMqAAAAACqsjZRjjPqwZe4ubnRpnOtMZ8o-', { action: 'submit' }).then(function(token) {
+                    // Aquí añades la lógica para enviar el formulario a tu servidor con el token.
+                    document.getElementById("myForm").submit();
+                  });
+                });
+              } else {
+                alert("Debes aceptar los términos y condiciones antes de continuar.");
+              }
+            }
+        </script>
         
         <!-- Modal del Aviso de Privacidad -->
         <div class="modal fade" id="modalAvisoPrivacidad" tabindex="-1" aria-labelledby="modalAvisoPrivacidadLabel" aria-hidden="true">
@@ -402,6 +432,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LfA_IMqAAAAACqsjZRjjPqwZe4ubnRpnOtMZ8o-"></script>
 </body>
 </html>
