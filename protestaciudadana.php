@@ -289,6 +289,54 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <button id="backToTop" class="btn" title="Volver arriba">
         <i class="bi bi-arrow-up"></i>
     </button>
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="successModalLabel">Envío exitoso</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Tu formulario ha sido enviado con éxito.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('protestaciudadana').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evitar que se recargue la página
+
+        const formData = new FormData(this); // Obtener los datos del formulario
+        formData.append('action', 'upload'); // Asegúrate de agregar la acción
+
+        fetch('protestaciudadana.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log(data); // Para depuración, puedes ver la respuesta en la consola
+
+            if (data.trim() === "success") {
+                // Vaciar los campos del formulario
+                this.reset();
+
+                // Mostrar el modal de éxito
+                const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+                successModal.show();
+            } else {
+                alert("Ocurrió un error: " + data); // Mostrar error si no fue exitoso
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+</script>
 
     <script>
         fetch('partials/navbar.html')
