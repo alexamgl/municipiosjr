@@ -257,8 +257,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <label class="form-check-label" for="opcion8">No se respetaron los criterios de resolución del trámite o servicio.</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="opcion9" name="opciones[]" value="No se recibió el trámite en alguna de las unidadaes administrativas especificadas.">
-                                        <label class="form-check-label" for="opcion9">No se recibió el trámite en alguna de las unidadaes administrativas especificadas.</label>
+                                        <input class="form-check-input" type="checkbox" id="opcion9" name="opciones[]" value="No se recibió el trámite en alguna de las unidades administrativas especificadas.">
+                                        <label class="form-check-label" for="opcion9">No se recibió el trámite en alguna de las unidades administrativas especificadas.</label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="opcion10" name=" opciones[]" value="No se respetaron los horarios para la atención del trámite o servicio.">
@@ -269,8 +269,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <label class="form-check-label" for="opcion11">Los números de teléfono o medios electrónicos para el envío de consultas, documentos o quejas son incorrectos.</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="opcion12" name="opciones[]" value="No se respetó la información especificada que se debía conservar para fines de acreditación, inspección o cerifiación.">
-                                        <label class="form-check-label" for="opcion12">No se respetó la información especificada que se debía conservar para fines de acreditación, inspección o cerifiación.</label>
+                                        <input class="form-check-input" type="checkbox" id="opcion12" name="opciones[]" value="No se respetó la información especificada que se debía conservar para fines de acreditación, inspección o verifiación.">
+                                        <label class="form-check-label" for="opcion12">No se respetó la información especificada que se debía conservar para fines de acreditación, inspección o verifiación.</label>
                                     </div>
                                 </div>
                             </div>
