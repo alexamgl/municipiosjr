@@ -55,18 +55,44 @@ setTimeout(() => {
     }
 }, 7000);
 
+
+
 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=document.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
 
     // Función para mostrar el mensaje emergente
     function showPopup() {
         document.getElementById('overlay').style.display = 'block';
         document.getElementById('popup').style.display = 'block';
+        
+        // Asegurarse de que el overlay y popup sean visibles de inmediato
+        setTimeout(() => {
+            document.getElementById('overlay').style.opacity = '1';
+            document.getElementById('popup').style.opacity = '1';
+        }, 10); // Un pequeño retraso para aplicar la transición
+
+        // Desvanecer después de 5 segundos
+        setTimeout(() => {
+            document.getElementById('overlay').style.opacity = '0';
+            document.getElementById('popup').style.opacity = '0';
+
+            // Esperar a que termine la transición (1 segundo) y luego ocultar
+            setTimeout(() => {
+                document.getElementById('overlay').style.display = 'none';
+                document.getElementById('popup').style.display = 'none';
+            }, 1000);
+        }, 5000);
     }
 
     // Función para cerrar el mensaje emergente
     function closePopup() {
-        document.getElementById('overlay').style.display = 'none';
-        document.getElementById('popup').style.display = 'none';
+        document.getElementById('overlay').style.opacity = '0';
+        document.getElementById('popup').style.opacity = '0';
+
+        // Esperar a que termine la transición (1 segundo) y luego ocultar
+        setTimeout(() => {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('popup').style.display = 'none';
+        }, 1000);
     }
 
     // Muestra el mensaje al cargar la página
