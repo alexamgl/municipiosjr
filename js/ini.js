@@ -101,3 +101,4 @@ setTimeout(() => {
         this.textContent = isVisible ? 'Ver más' : 'Ver menos';
     });
 
+

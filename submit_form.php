@@ -69,13 +69,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 		// Enviar correo al remitente
 		mail($email, "Confirmación de Comentario Enviado", $cuerpo_remitente, $headers);
-		header('Location: '.$_SERVER['HTTP_REFERER']);
-die();
+		header('Location: enviado.html');
+        exit(); 
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
+
+        // Redireccionar a página de error
+        header('Location: noenviado.html');
+        exit(); 
     }
 }
 
-// Cerrar la conexión
+
 $conn->close();
 ?>

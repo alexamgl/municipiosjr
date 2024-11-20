@@ -110,3 +110,97 @@ body {
     }
 }
 
+
+.container {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+gap: 20px;
+max-width: 1100px;
+margin: 0 auto;
+padding: 30px;
+
+background-color: #f9f9f9;
+border-radius: 8px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para las columnas */
+.column {
+flex: 1;
+}
+
+/* Estilos para la columna izquierda (títulos y botón) */
+.left-column {
+display: flex;
+flex-direction: column;
+gap: 15px;
+}
+
+.title {
+font-size: 2rem;
+font-weight: 700;
+color: #0b3b59;
+margin-bottom: 10px;
+}
+
+.subtitle {
+font-size: 1.5rem;
+font-weight: 600;
+color: #555;
+}
+
+.btn {
+padding: 12px 25px;
+font-size: 1.1rem;
+color: #fff;
+background-color: #0b3b59;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+width: max-content;
+}
+
+.btn:hover {
+background-color: #08324b;
+}
+
+/* Estilos para la columna derecha (lista de puntos) */
+.right-column {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.list {
+list-style-type: none;
+padding-left: 0;
+font-size: 1.1rem;
+line-height: 1.6;
+color: #333;
+}
+
+.list li {
+margin-bottom: 10px;
+}
+
+.list li::before {
+content: "•";
+color: #0b3b59;
+font-weight: bold;
+margin-right: 8px;
+}
+
+/* Responsividad para dispositivos pequeños */
+@media (max-width: 768px) {
+.container {
+flex-direction: column;
+gap: 30px;
+}
+
+.left-column, .right-column {
+flex: 1 1 100%;
+}
+}
+
