@@ -80,7 +80,7 @@ setTimeout(() => {
                 document.getElementById('overlay').style.display = 'none';
                 document.getElementById('popup').style.display = 'none';
             }, 1000);
-        }, 5000);
+        }, 3000);
     }
 
     // Función para cerrar el mensaje emergente
