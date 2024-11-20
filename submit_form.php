@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		// Cabeceras del correo
 		$headers = "MIME-Version: 1.0\r\n";
 		$headers .= "Content-type: text/html; charset=UTF-8\r\n";
-		$headers .= "From: $nombre <$email>\r\n";
+		$headers .= "From: Municipio San Juan del Río <websjr@sanjuandelrio.gob.mx >\r\n";
 
 		// Enviar correo al destinatario
 		$destinatario = "mejora.regulatoria@sanjuandelrio.gob.mx";
