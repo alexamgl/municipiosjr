@@ -1,9 +1,9 @@
 <?php
 // Conexión a la base de datos
 $servername = "localhost";
-$username = "develop"; // Cambiar por tu usuario de MySQL
-$password = "develop1"; // Cambiar por tu contraseña de MySQL
-$dbname = "dashboard_municipio";
+$username = "pmsjrcom_joom573"; // Cambiar por tu usuario de MySQL
+$password = "]]S1W45nP7"; // Cambiar por tu contraseña de MySQL
+$dbname = "pmsjrcom_dashboard_municipio";
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -69,6 +69,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 		// Enviar correo al remitente
 		mail($email, "Confirmación de Comentario Enviado", $cuerpo_remitente, $headers);
+		header('Location: '.$_SERVER['HTTP_REFERER']);
+die();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
