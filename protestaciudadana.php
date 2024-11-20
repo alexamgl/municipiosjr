@@ -269,8 +269,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <label class="form-check-label" for="opcion11">Los números de teléfono o medios electrónicos para el envío de consultas, documentos o quejas son incorrectos.</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="opcion12" name="opciones[]" value="No se respetó la información especificada que se debía conservar para fines de acreditación, inspección o verifiación.">
-                                        <label class="form-check-label" for="opcion12">No se respetó la información especificada que se debía conservar para fines de acreditación, inspección o verifiación.</label>
+                                        <input class="form-check-input" type="checkbox" id="opcion12" name="opciones[]" value="No se respetó la información especificada que se debía conservar para fines de acreditación, inspección o verificación.">
+                                        <label class="form-check-label" for="opcion12">No se respetó la información especificada que se debía conservar para fines de acreditación, inspección o verificación.</label>
                                     </div>
                                 </div>
                             </div>
