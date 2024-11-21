@@ -67,7 +67,7 @@
     </div>
 
     <!-- Formulario -->
-    <form id="denunciaForm">
+    <form id="denunciaForm" name="denunciaForm" enctype="multipart/form-data">
 
         <!-- Paso 1 -->
         <div class="form-step active" id="step1">
@@ -159,7 +159,6 @@
                     </div>
                 </div>
             </div>
-        
             <button type="button" class="btn btn-secondary" onclick="previousStep()">Anterior</button>
             <button type="button" class="btn btn-primary float-end" onclick="nextStep()">Siguiente</button>
         </div>
@@ -176,24 +175,23 @@
             }
 
             function validatePhone(input) {
-    // Elimina cualquier carácter que no sea un número
-    input.value = input.value.replace(/\D/g, '');
+				// Elimina cualquier carácter que no sea un número
+				input.value = input.value.replace(/\D/g, '');
 
-    // Verifica si la longitud es mayor a 10 y la corta si es necesario
-    if (input.value.length > 10) {
-        input.value = input.value.slice(0, 10);
-    }
+				// Verifica si la longitud es mayor a 10 y la corta si es necesario
+				if (input.value.length > 10) {
+					input.value = input.value.slice(0, 10);
+				}
 
-    // Verifica si es válido (10 dígitos)
-    if (input.value.length === 10) {
-        input.classList.remove("is-invalid");
-        input.classList.add("is-valid");
-    } else {
-        input.classList.remove("is-valid");
-        input.classList.add("is-invalid");
-    }
-}
-
+				// Verifica si es válido (10 dígitos)
+				if (input.value.length === 10) {
+					input.classList.remove("is-invalid");
+					input.classList.add("is-valid");
+				} else {
+					input.classList.remove("is-valid");
+					input.classList.add("is-invalid");
+				}
+			}
         </script>
         
         <!-- Paso 3 -->
@@ -270,15 +268,15 @@
             <h4 class="step-title">Paso 5: Confirmación</h4>
 
             <button class="g-recaptcha" 
-        data-sitekey="6LfA_IMqAAAAACqsjZRjjPqwZe4ubnRpnOtMZ8o-" 
-        data-callback='onSubmit' 
-        data-action='submit'>Submit</button>
+				data-sitekey="6LfA_IMqAAAAACqsjZRjjPqwZe4ubnRpnOtMZ8o-" 
+				data-callback='onSubmit' 
+				data-action='submit'>Submit</button>
 
-        <script>
-            function onSubmit(token) {
-              document.getElementById("demo-form").submit();
-            }
-          </script>
+			<script>
+				function onSubmit(token) {
+					document.getElementById("denunciaForm").submit();
+				}
+			</script>
         
             <!-- Checkbox para el aviso de privacidad -->
             <div class="form-check mb-3">
@@ -297,13 +295,13 @@
             function onClick(e) {
               e.preventDefault();
               
-              const termsCheckbox = document.getElementById('termsCheckbox');
+              const termsCheckbox = document.getElementById('avisoPrivacidad');
               
               if (termsCheckbox.checked) {
                 grecaptcha.ready(function() {
-                  grecaptcha.execute('6LfA_IMqAAAAACqsjZRjjPqwZe4ubnRpnOtMZ8o-', { action: 'submit' }).then(function(token) {
+					grecaptcha.execute('6LfA_IMqAAAAACqsjZRjjPqwZe4ubnRpnOtMZ8o-', { action: 'submit' }).then(function(token) {
                     // Aquí añades la lógica para enviar el formulario a tu servidor con el token.
-                    document.getElementById("myForm").submit();
+                    document.getElementById("denunciaForm").submit();
                   });
                 });
               } else {
@@ -334,7 +332,8 @@
                 </div>
             </div>
         </div>
-        
+        <!-- Mensajes de Validación -->
+		<div class="msg mt-3 mb-3"></div>
     </form>
 </div>
 
@@ -382,12 +381,59 @@
         showStep(currentStep);
     }
 
-    document.getElementById("denunciaForm").addEventListener("submit", (e) => {
+    /*document.getElementById("denunciaForm").addEventListener("submit", (e) => {
         e.preventDefault();
         alert("Formulario enviado. ¡Gracias!");
         currentStep = 0;
         showStep(currentStep);
-    });
+    });*/
+	
+	$(function(){
+		$("#denunciaForm").on("submit", function(e){
+				  
+			// Cancelamos el evento si se requiere 
+			e.preventDefault();
+	 
+			// Obtenemos los datos del formulario 
+			var f = $(this);
+			var formData = new FormData(document.getElementById("denunciaForm"));
+			formData.append("dato", "valor");
+				   
+			// Enviamos los datos al archivo PHP que procesará el envio de los datos a un determinado correo 
+			$.ajax({
+				url: "submit_denuncia.php",
+				type: "post",
+				dataType: "json",
+				data: formData,
+				cache: false,
+				contentType: false,
+				processData: false,
+				beforeSend: function() {
+				  $('.msg').html("<img src='images/load.gif' />");
+				},
+			})
+	 
+			// Cuando el formulario es enviado, mostramos un mensaje en la vista HTML 
+			// En el archivo enviarcorreo.php devuelvo el valor '1' el cual es procesado con jQuery Ajax 
+			// y significa que el mensaje se envio satisfactoriamente. 
+			.done(function (res) {
+				if(res.a == "1"){
+					// Mostramos el mensaje 'Tu Mensaje ha sido enviado Correctamente !' 
+					$(".msg").html(res.b);
+					$("#denunciaForm").trigger("reset");
+					currentStep = 0;
+					showStep(currentStep);
+				} else {
+					$(".msg").html(res.b); 
+				}
+			})
+	 
+			// Mensaje de error al enviar el formulario 
+			.fail(function (res) {                    
+				$(".msg").html(res.b);
+			});	 
+		});
+	});
 
     showStep(currentStep);
 </script>
