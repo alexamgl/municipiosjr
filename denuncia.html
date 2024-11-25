@@ -283,25 +283,6 @@
             <button type="button" class="btn btn-secondary" onclick="previousStep()">Anterior</button>
             <button type="submit" class="btn btn-primary float-end">Enviar</button>
         </div>
-
-        <script>
-            function onClick(e) {
-              e.preventDefault();
-              
-              const termsCheckbox = document.getElementById('avisoPrivacidad');
-              
-              if (termsCheckbox.checked) {
-                grecaptcha.ready(function() {
-					grecaptcha.execute('6LfA_IMqAAAAACqsjZRjjPqwZe4ubnRpnOtMZ8o-', { action: 'submit' }).then(function(token) {
-                    // Aquí añades la lógica para enviar el formulario a tu servidor con el token.
-                    document.getElementById("denunciaForm").submit();
-                  });
-                });
-              } else {
-                alert("Debes aceptar los términos y condiciones antes de continuar.");
-              }
-            }
-        </script>
         
         <!-- Modal del Aviso de Privacidad -->
         <div class="modal fade" id="modalAvisoPrivacidad" tabindex="-1" aria-labelledby="modalAvisoPrivacidadLabel" aria-hidden="true">
@@ -381,50 +362,49 @@
         showStep(currentStep);
     });*/
 	
-	$(function(){
-		$("#denunciaForm").on("submit", function(e){
-				  
-			// Cancelamos el evento si se requiere 
-			e.preventDefault();
-	 
-			// Obtenemos los datos del formulario 
-			var f = $(this);
-			var formData = new FormData(document.getElementById("denunciaForm"));
-			formData.append("dato", "valor");
-				   
-			// Enviamos los datos al archivo PHP que procesará el envio de los datos a un determinado correo 
-			$.ajax({
-				url: "submit_denuncia.php",
-				type: "post",
-				dataType: "json",
-				data: formData,
-				cache: false,
-				contentType: false,
-				processData: false,
-				beforeSend: function() {
-				  $('.msg').html("<img src='images/load.gif' />");
-				},
-			})
-	 
-			// Cuando el formulario es enviado, mostramos un mensaje en la vista HTML 
-			// En el archivo enviarcorreo.php devuelvo el valor '1' el cual es procesado con jQuery Ajax 
-			// y significa que el mensaje se envio satisfactoriamente. 
-			.done(function (res) {
-				if(res.a == "1"){
-					// Mostramos el mensaje 'Tu Mensaje ha sido enviado Correctamente !' 
-					$(".msg").html(res.b);
-					$("#denunciaForm").trigger("reset");
-					currentStep = 0;
-					showStep(currentStep);
-				} else {
-					$(".msg").html(res.b); 
-				}
-			})
-	 
-			// Mensaje de error al enviar el formulario 
-			.fail(function (res) {                    
+	/*$(function(){
+		$("#denunciaForm").on("submit", function(e){*/
+	document.getElementById("denunciaForm").addEventListener("submit", (e) => {
+		// Cancelamos el evento si se requiere 
+		e.preventDefault();
+ 
+		// Obtenemos los datos del formulario 
+		var f = $(this);
+		var formData = new FormData(document.getElementById("denunciaForm"));
+		formData.append("dato", "valor");
+			   
+		// Enviamos los datos al archivo PHP que procesará el envio de los datos a un determinado correo 
+		$.ajax({
+			url: "submit_denuncia.php",
+			type: "post",
+			dataType: "json",
+			data: formData,
+			cache: false,
+			contentType: false,
+			processData: false,
+			beforeSend: function() {
+			  $('.msg').html("<img src='images/load.gif' />");
+			},
+		})
+ 
+		// Cuando el formulario es enviado, mostramos un mensaje en la vista HTML 
+		// En el archivo enviarcorreo.php devuelvo el valor '1' el cual es procesado con jQuery Ajax 
+		// y significa que el mensaje se envio satisfactoriamente. 
+		.done(function (res) {
+			if(res.a == "1"){
+				// Mostramos el mensaje 'Tu Mensaje ha sido enviado Correctamente !' 
 				$(".msg").html(res.b);
-			});	 
+				$("#denunciaForm").trigger("reset");
+				currentStep = 0;
+				showStep(currentStep);
+			} else {
+				$(".msg").html(res.b); 
+			}
+		})
+ 
+		// Mensaje de error al enviar el formulario 
+		.fail(function (res) {                    
+			$(".msg").html(res.b);
 		});
 	});
 
@@ -450,28 +430,8 @@
         })
         .catch(error => console.error('Error al cargar el footer:', error));
 </script>
-<script>
-    // Mostrar u ocultar el botón "Back to Top"
-    window.onscroll = function() {
-        const backToTopButton = document.getElementById('backToTop');
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            backToTopButton.style.display = "block";
-        } else {
-            backToTopButton.style.display = "none";
-        }
-    };
-
-    // Función para desplazarse suavemente hacia arriba
-    document.getElementById('backToTop').onclick = function() {
-        window.scrollTo({top: 0, behavior: 'smooth'});
-    };
-
-</script>
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-<script src="https://www.google.com/recaptcha/api.js"></script>
-<script src="https://www.google.com/recaptcha/api.js?render=6LfA_IMqAAAAACqsjZRjjPqwZe4ubnRpnOtMZ8o-"></script>
 </body>
 </html>

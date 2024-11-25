@@ -146,8 +146,3 @@ window.onscroll = function() {
         document.getElementById('newsModalImage').src = newsData[index].image;
         document.getElementById('newsModalBody').innerText = newsData[index].body;
     }
-
-
-    //Pagina de administrar noticiaas
-
-    // Función para cargar noticias desde la base de datos
