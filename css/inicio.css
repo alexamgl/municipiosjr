@@ -297,5 +297,163 @@
 }
 
 
+.contenedor-banner {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #0b3b59;
+    color: white;
+    border-radius: 10px;
+    width: 82%; /* Ocupar 80% del ancho de la página */
+    margin: 0 auto; /* Centramos el contenedor */
+    position: relative; /* Necesario para el icono */
+}
 
+.contenido-banner {
+    flex: 1;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Ajuste para que el texto no se estire demasiado */
+    text-align: left; /* Alineamos el texto a la izquierda para pantallas pequeñas */
+    letter-spacing: 1px; /* Espacio entre las letras */
+}
 
+.contenido-banner h1 {
+    margin: 0;
+    font-size: 1.8rem; /* Ajustamos el tamaño de la fuente */
+}
+
+.contenido-banner p {
+    margin: 5px 0; /* Reducimos el margen */
+    font-size: 1rem; /* Reducimos el tamaño del texto para hacerlo más comprimido */
+}
+
+.contenedor-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px; /* Reducimos el tamaño del contenedor al de la imagen */
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative; /* Necesario para posicionar los botones dentro del contenedor */
+}
+
+.slider {
+    display: flex;
+    overflow: hidden;
+    width: 100%; /* Ajustamos para que ocupe solo el ancho de la imagen */
+}
+
+.slider img {
+    width: 100%; /* La imagen ahora ocupa todo el ancho del contenedor */
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.anterior, .siguiente {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10; /* Asegura que los botones estén por encima de la imagen */
+}
+
+.anterior {
+    left: 10px; /* Ajusta la posición del botón anterior */
+}
+
+.siguiente {
+    right: 10px; /* Ajusta la posición del botón siguiente */
+}
+
+/* Modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000; /* Asegúrate de que se superponga sobre otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Permite el scroll si el contenido es muy grande */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente oscuro */
+}
+
+.imagen-modal {
+    margin: auto;
+    display: block;
+    max-width: 90%; /* Ajusta el tamaño de la imagen en proporción a la pantalla */
+    max-height: 90%; /* Ajusta la altura máxima de la imagen */
+}
+
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cerrar:hover,
+.cerrar:focus {
+    color: #ccc;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Icono en la esquina inferior izquierda */
+.icono {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 30px;
+    color: white; /* Color del icono */
+    cursor: pointer;
+    z-index: 20;
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .contenedor-banner {
+        flex-direction: column; /* Apilamos los elementos */
+        width: 95%; /* Hacemos que el contenedor ocupe más ancho en pantallas pequeñas */
+        padding: 10px;
+    }
+
+    .contenedor-slider {
+        width: 100%; /* La imagen ocupará el 100% de la pantalla en pantallas pequeñas */
+    }
+
+    .contenido-banner h1 {
+        font-size: 1.5rem; /* Reducimos el tamaño del título */
+    }
+
+    .contenido-banner p {
+        font-size: 0.9rem; /* Reducimos el tamaño del texto del párrafo */
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-banner {
+        width: 100%; /* Aseguramos que ocupe el 100% en pantallas muy pequeñas */
+    }
+
+    .contenido-banner h1 {
+        font-size: 1.2rem; /* Reducimos aún más el tamaño del título */
+    }
+
+    .contenido-banner p {
+        font-size: 0.8rem; /* Reducimos aún más el tamaño del párrafo */
+    }
+}

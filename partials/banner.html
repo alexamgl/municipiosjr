@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider con Modal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .contenedor-banner {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: #0066cc;
+        color: white;
+        border-radius: 10px;
+    }
+
+    .contenido-banner h1 {
+        margin: 0;
+        font-size: 2rem;
+    }
+
+    .contenido-banner p {
+        margin: 10px 0;
+    }
+
+    .contenedor-slider {
+        position: relative;
+        max-width: 900px; /* Aumentamos el tamaño del contenedor */
+        background-color: white;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .slider {
+        display: flex;
+        overflow: hidden;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+    }
+
+    .slider img {
+        width: 33.33%; /* Hacemos que cada imagen ocupe una tercera parte del contenedor */
+        cursor: pointer;
+        border-radius: 10px;
+        margin: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .anterior, .siguiente {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+
+    .anterior {
+        left: 0;
+    }
+
+    .siguiente {
+        right: 0;
+    }
+
+    /* Modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 60px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .imagen-modal {
+        display: block;
+        margin: auto;
+        max-width: 80%;
+        border-radius: 10px;
+    }
+
+    .cerrar {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div class="contenedor-banner">
+        <div class="contenido-banner">
+            <h1>Seguridad Ciudadana</h1>
+            <p>Para permisos para circular sin placas o documentos.</p>
+            <button>CONOCE MÁS</button>
+        </div>
+
+        <!-- Slider -->
+        <div class="contenedor-slider">
+            <div class="slider">
+                <img src="/images/banner/Ambiental1.jpeg" alt="Diapositiva 1" class="diapositiva" onclick="abrirModal('/images/banner/Ambiental1.jpeg')">
+                <img src="/images/banner/Ambiental2.jpeg" alt="Diapositiva 2" class="diapositiva" onclick="abrirModal('/images/banner/Ambiental2.jpeg')">
+                <img src="/images/banner/Ambiental3.jpeg" alt="Diapositiva 3" class="diapositiva" onclick="abrirModal('/images/banner/Ambiental3.jpeg')">
+                <img src="/images/banner/Ambiental4.jpeg" alt="Diapositiva 4" class="diapositiva" onclick="abrirModal('/images/banner/Ambiental4.jpeg')">
+            </div>
+            <button class="anterior" onclick="moverDiapositiva(-1)">&#10094;</button>
+            <button class="siguiente" onclick="moverDiapositiva(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="miModal" class="modal">
+        <span class="cerrar" onclick="cerrarModal()">&times;</span>
+        <img class="imagen-modal" id="imgModal">
+    </div>
+
+    <script>
+        let diapositivaActual = 0;
+        const diapositivas = document.querySelectorAll('.diapositiva');
+
+        function mostrarDiapositiva(indice) {
+            if (indice >= diapositivas.length) diapositivaActual = 0;
+            if (indice < 0) diapositivaActual = diapositivas.length - 1;
+            
+            diapositivas.forEach((diapositiva, i) => {
+                diapositiva.style.display = i === diapositivaActual ? 'block' : 'none';
+            });
+        }
+
+        function moverDiapositiva(n) {
+            mostrarDiapositiva(diapositivaActual += n);
+        }
+
+        function abrirModal(srcImagen) {
+            const modal = document.getElementById('miModal');
+            const imagenModal = document.getElementById('imgModal');
+            modal.style.display = 'block';
+            imagenModal.src = srcImagen;
+        }
+
+        function cerrarModal() {
+            document.getElementById('miModal').style.display = 'none';
+        }
+
+        // Inicializar el slider
+        mostrarDiapositiva(diapositivaActual);
+
+    </script>
+</body>
+</html>
