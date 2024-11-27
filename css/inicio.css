@@ -309,6 +309,7 @@
     position: relative; /* Necesario para el icono */
 }
 
+
 .contenido-banner {
     flex: 1;
     margin-right: 20px;
