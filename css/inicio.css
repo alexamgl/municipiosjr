@@ -460,6 +460,32 @@ body {
     color: #666; /* Color del texto del párrafo */
 }
 
+@media (max-width: 768px) {
+    .banner-container {
+        flex-direction: column; /* Cambia a columna en pantallas más pequeñas */
+        align-items: flex-start; /* Alinea el contenido a la izquierda */
+    }
+
+    .banner-image {
+        width: 100%; /* La imagen ocupa el 100% del ancho del contenedor */
+        max-width: none; /* Elimina el ancho máximo para que se ajuste */
+        margin-right: 0; /* Elimina el margen derecho */
+        margin-bottom: 20px; /* Agrega margen inferior para separación */
+    }
+
+    .banner-text {
+        max-width: 100%; /* Permite que el texto ocupe el 100% del ancho */
+    }
+
+    .banner-text h2 {
+        font-size: 1.25em; /* Tamaño de la fuente del título más pequeño */
+    }
+
+    .banner-text p {
+        font-size: 0.9em; /* Tamaño de la fuente del párrafo más pequeño */
+    }
+}
+
 /* Media Queries para pantallas más pequeñas */
 @media (max-width: 768px) {
     .contenedor-banner {
