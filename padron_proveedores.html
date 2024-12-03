@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Padron de Proveedores</title>
+    <link href="css/mejorareg.css" rel="stylesheet">
+    <style>
+        .contenedor {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px;
+        }
+        .table-container {
+            max-width: 600px; /* Ajusta el ancho de la tabla según sea necesario */
+            margin-left: auto; /* Para alinear la tabla a la derecha */
+        }
+        h5 {
+            font-weight: bold;
+            color: #0b3b59; /* Cambia el color según tu preferencia */
+            margin: 0; /* Quitar margen para mejor alineación */
+        }
+        .table {
+            border-radius: 10px; /* Esquinas redondeadas */
+            overflow: hidden; /* Para que las esquinas redondeadas funcionen */
+        }
+        .table th, .table td {
+            text-align: center; /* Centrar texto en la tabla */
+        }
+        .btn-download {
+            background-color: #0b3b59; /* Color del botón */
+            color: white; /* Color del texto del botón */
+            padding: 5px 10px; /* Espaciado del botón */
+            border-radius: 5px; /* Esquinas redondeadas para el botón */
+            text-decoration: none; /* Sin subrayado */
+        }
+        .btn-download:hover {
+            background-color: #0056b3; /* Color al pasar el mouse */
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="navbarContainer"></div>
+<br>
+<br>
+
+<div class="contenedor">
+    <div>
+        <h1 style="font-weight: 900; color: #0b3b59;">REVALIDACIÓN DE REGISTRO <br>AL PADRÓN DE PROVEEDORES</h1>
+        <h3 style="font-weight: bold; color: #0056b3;">Descarga los archivos.</h3>
+    </div>
+    <div class="table-container">
+        <!-- Tabla con opciones de descarga -->
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th style="font-weight: 900;">Archivo</th>
+                    <th style="font-weight: 900;">Descarga</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="font-weight: 600;">CONVOCATORIA DE REVALIDACIÓN.</td>
+                    <td><a href="pdf/proveedores/CONVOCATORIA DE REVALIDACION.pdf" class="btn-download"><i class="bi bi-download"></i> Descargar</a></td>
+                </tr>
+                <tr>
+                    <td style="font-weight: 600;">SOLICITUD DE REVALIDACIÓN.</td>
+                    <td><a href="pdf/proveedores/SOLICITUD REVALIDACION.pdf" class="btn-download"><i class="bi bi-download"></i> Descargar</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<br><br><br><br><br>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var successModal = new bootstrap.Modal(document.getElementById('successModal'));
+        if (document.getElementById('successModal').style.display === 'block') {
+            successModal.show();
+        }
+    });
+</script>
+
+<div id="footerContainer"></div>
+
+<script>
+    fetch('partials/navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbarContainer').innerHTML = data;
+        })
+        .catch(error => console.error('Error al cargar el navbar:', error));
+    fetch('partials/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footerContainer').innerHTML = data;
+        })
+        .catch(error => console.error('Error al cargar el footer:', error));
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+</body>
+</ html>
+</html>
