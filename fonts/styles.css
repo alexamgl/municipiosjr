@@ -23,3 +23,69 @@
 body {
     font-family: 'Gilam', sans-serif;
 }
+
+/* Estilos para el contenedor de los botones */
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    align-items: center;
+    align-content: center;
+    width: 80%;
+}
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    align-items: center;
+    align-content: center;
+    width: 80%;
+}
+
+/* Estilos de los botones */
+.btndin {
+    width: 140px;
+    height: 50px;
+    background: linear-gradient(to top, #00154c, #12376e, #23487f);
+    color: #fff;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.btndin span {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: top 0.5s;
+}
+
+.btn-text-one {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.btn-text-two {
+    position: absolute;
+    width: 100%;
+    top: 150%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.btndin:hover .btn-text-one {
+    top: -100%;
+}
+
+.btndin:hover .btn-text-two {
+    top: 50%;
+}
