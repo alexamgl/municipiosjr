@@ -1,3 +1,13 @@
+<?php
+session_start(); // Iniciar sesión
+
+// Comprobar si la variable de sesión que indica que el usuario está logueado existe
+if (!isset($_SESSION['user_id'])) {
+    // Si no está logueado, redirigir al login
+    header("Location: login.html");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -23,9 +33,8 @@
         
         <div class="form-group">
             <label for="newsBody">Contenido:</label>
-			<div id="editor" style="height: 300px; margin-bottom: 20px;">
+			<div id="editor" style="height: 300px; margin-bottom: 20px;" aria-placeholder="Escribre aqui">
 				<!-- Texto inicial opcional -->
-				<p>Escribe aquí...</p>
 			</div>
             <input type="hidden" name="newsBody" id="newsBody">
         </div>

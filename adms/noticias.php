@@ -1,17 +1,5 @@
 <?php
-// Iniciar sesión solo si no está iniciada
-if (session_status() == PHP_SESSION_NONE) {
-    session_start(); // Iniciar sesión
-}
 
-// Comprobar si la variable de sesión que indica que el usuario está logueado existe
-if (!isset($_SESSION['user_id'])) {
-    // Si no está logueado, redirigir al login
-    header("Location: login.html");
-    exit();
-}
-
-$id_dependencia_usuario = $_SESSION['dependencia_id'];
 // Conexión a la base de datos
 $servername = "localhost";
 $username = "pmsjrcom_joom573"; // Cambiar por tu usuario de MySQL
@@ -27,12 +15,8 @@ if ($conn->connect_error) {
 }
 
 // Mostrar todas las noticias
-// Mostrar las noticias solo de la dependencia del usuario
-$sql = "SELECT id, titulo, cuerpo, imagen FROM noticias WHERE id_dependencia = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $id_dependencia_usuario);
-$stmt->execute();
-$result = $stmt->get_result();
+$sql = "SELECT id, titulo, cuerpo, imagen, fecha_publicacion FROM noticias ORDER BY fecha_publicacion DESC LIMIT 10";
+$result = $conn->query($sql);
 
 // Verificar si hay noticias disponibles
 if ($result->num_rows > 0) {
@@ -42,6 +26,7 @@ if ($result->num_rows > 0) {
         $id = $row['id'];
         $titulo = $row['titulo'];
         $cuerpo = $row['cuerpo']; // Obtener todo el contenido del cuerpo
+        $fecha = date("d/m/Y", strtotime($row['fecha_publicacion']));
         
         $cuerpo=str_replace('\\','',$cuerpo);
         // Truncar el cuerpo a 150 caracteres para mostrar solo un fragmento
@@ -52,6 +37,7 @@ if ($result->num_rows > 0) {
                 <div class='card mb-4'>
                     <div class='card-body'>
                         <h5 class='card-title'>$titulo</h5>
+                        <p class='card-subtitle mb-2 text-muted'>Fecha: $fecha</p>
                         <div class='card-text'>
                             $cuerpo_truncado
                             <span id='dots-$id'>...</span>
@@ -62,11 +48,7 @@ if ($result->num_rows > 0) {
                                 data-title='$titulo' data-content='$cuerpo'>
                             Leer más
                         </button>
-                        <a href='editar_noticias.php?id=$id&titulo=$titulo&cuerpo=$cuerpo' class='btn btn-warning ml-2'>Editar</a>
-                        <button class='btn btn-danger ml-2' onclick='eliminarNoticia($id)'>
-    Eliminar
-</button>
-</div>
+                        </div>
                 </div>
             </div>
         ";
@@ -80,15 +62,6 @@ if ($result->num_rows > 0) {
 $conn->close();
 ?>
 
-<style>
-    /* Limitar las imágenes dentro del modal al 75% del ancho del modal */
-  #newsModal img {
-    max-width: 75%;
-    height: auto; /* Mantener la proporción de la imagen */
-    display: block;
-    margin: 0 auto; /* Centrar la imagen horizontalmente */
-  }
-</style>
 <div class="modal fade" id="newsModal" tabindex="-1" aria-labelledby="newsModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -124,21 +97,4 @@ $conn->close();
         modalBody.innerHTML = content; // Usar innerHTML para que se interprete el HTML
     });
 
-    function eliminarNoticia(id) {
-        if (confirm('¿Estás seguro de que deseas eliminar esta noticia?')) {
-            // Enviar una solicitud AJAX para eliminar la noticia
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'eliminar_noticia.php', true);
-            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-            xhr.onload = function() {
-                if (xhr.status == 200) {
-                    alert('Noticia eliminada exitosamente');
-                    location.reload(); // Recargar la página después de eliminar
-                } else {
-                    alert('Error al eliminar la noticia');
-                }
-            };
-            xhr.send('id=' + id);
-        }
-    }
 </script>

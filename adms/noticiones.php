@@ -12,6 +12,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $id_dependencia_usuario = $_SESSION['dependencia_id'];
+
 // Conexión a la base de datos
 $servername = "localhost";
 $username = "pmsjrcom_joom573"; // Cambiar por tu usuario de MySQL
@@ -28,9 +29,8 @@ if ($conn->connect_error) {
 
 // Mostrar todas las noticias
 // Mostrar las noticias solo de la dependencia del usuario
-$sql = "SELECT id, titulo, cuerpo, imagen FROM noticias WHERE id_dependencia = ?";
+$sql = "SELECT id, titulo, cuerpo, imagen FROM noticias";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $id_dependencia_usuario);
 $stmt->execute();
 $result = $stmt->get_result();
 

@@ -1,20 +1,20 @@
 @font-face {
     font-family: 'Gilam';
-    src: url('fonts/GilamHeavy.otf') format('truetype');
+    src: url('GilamHeavy.otf') format('truetype');
     font-weight: 900; /* Heavy */
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Gilam';
-    src: url('fonts/GilamBold.otf') format('truetype');
+    src: url('GilamBold.otf') format('truetype');
     font-weight: bold; /* Bold */
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Gilam';
-    src: url('fonts/GilamBook.otf') format('truetype');
+    src: url('GilamBook.otf') format('truetype');
     font-weight: normal; /* Book */
     font-style: normal;
 }

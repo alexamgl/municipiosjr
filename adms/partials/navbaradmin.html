@@ -2,83 +2,62 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
-            <img src="images/LOGO SJR HORIZONTAL 2_sinborde.png" alt="Logotipo" class="img-fluid">
+            <img src="../images/LOGO SJR HORIZONTAL 2_sinborde.png" alt="Logotipo" class="img-fluid">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="expediente-btn order-lg-2 order-1 ms-3 ms-lg-auto me-lg-0 me-3">
-                <a href="#">
-                    <img src="/images/keyazul.png" alt="Expediente Único" class="expediente-img">
-                </a>
+        </button>   
 
-        </div>
-        <style>
-            .expediente-img {
-                max-width: 180px; /* Ajusta el tamaño según sea necesario */
-                transition: all 0.3s ease;
-                top: 10px;
-            }
-        
-            .expediente-btn a:hover .expediente-img {
-                content: url("/images/keyrosa.png");
-                scale: 1.1;
-            }
-        </style>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown" href="#" role="button" aria-expanded="false"><h5 style="font-weight: bold;">
-                        GOBIERNO </h5>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="gabinete.html" style="font-weight: normal;">Gabinete</a></li>
-                        <li><a class="dropdown-item" href="gobierno.html" style="font-weight: normal;">H. Ayuntamiento</a></li>
-                    </ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="dashboard.php" target="blank"><h5 style="font-weight: bold;">Subir Noticia</h5></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://municipio.azurewebsites.net/login.aspx?ReturnUrl=%2fdefault.aspx" target="blank"><h5 style="font-weight: bold;">TRÁMITES</h5></a>
+                    <a class="nav-link" href="admin_noticias.php" target="blank"><h5 style="font-weight: bold;">Administrar Noticias</h5></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://www.uig.sanjuandelrio.gob.mx/" target="blank"><h5 style="font-weight: bold;">TRANSPARENCIA</h5></a>
+                    <a class="nav-link" href="insertar_usuario.php" target="blank"><h5 style="font-weight: bold;">Insertar Usuario</h5></a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown" href="#" role="button" aria-expanded="false"><h5 style="font-weight: bold;">
-                        DEPENDENCIAS </h5>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <div class="dropdown-columns">
-                            <li><a class="dropdown-item" href="secretaria-particular.html" style="font-weight: normal;">Secretaría Particular</a></li>
-                            <li><a class="dropdown-item" href="secretaria-del-ayuntamiento.html" style="font-weight: normal;">Secretaría del Ayuntamiento</a></li>
-                            <li><a class="dropdown-item" href="secretaria-de-gobierno.html" style="font-weight: normal;">Secretaría de Gobierno</a></li>
-                            <li><a class="dropdown-item" href="secretaria-de-finanzas.html" style="font-weight: normal;">Secretaría de Finanzas</a></li>
-                            <li><a class="dropdown-item" href="secretaria-de-administracion.html" style="font-weight: normal;">Secretaría de Administración</a></li>
-                            <li><a class="dropdown-item" href="secretaria-desarrollo-integral.html" style="font-weight: normal;">Secretaría de Desarrollo Integral y Económico</a></li>
-                            <li><a class="dropdown-item" href="secretaria-de-seguridad.html" style="font-weight: normal;">Secretaría de Seguridad Pública</a></li>
-                            <li><a class="dropdown-item" href="secretaria-desarrollo-agro.html" style="font-weight: normal;">Secretaría de Desarrollo Agropecuario</a></li>
-                            <li><a class="dropdown-item" href="secretaria-obras-publicas.html" style="font-weight: normal;">Secretaría de Obras Públicas y Desarrollo Urbano</a></li>
-                            <li><a class="dropdown-item" href="secretaria-organo-interno.html" style="font-weight: normal;">Secretaría de Organo Interno de Control</a></li>
-                            <li><a class="dropdown-item" href="secretaria-desarrollo-social.html" style="font-weight: normal;">Secretaría de Desarrollo Social</a></li>
-                            <li><a class="dropdown-item" href="secretaria-servicios-publicos.html" style="font-weight: normal;">Secretaría de Servicios Públicos Municipales</a></li>
-                        </div>
-                    </ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="ver_usuarios.php" target="blank"><h5 style="font-weight: bold;">Ver Usuarios</h5></a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown" href="#" role="button" aria-expanded="false"><h5 style="font-weight: bold;">
-                        VER MÁS </h5>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <div class="dropdown-columns">
-                            <li><a class="dropdown-item" href="historia.html" style="font-weight: normal;">Historia</a></li>
-                            <li><a class="dropdown-item" href="/declaracion.html" style="font-weight: normal;">Declaración 5 de 5</a></li>
-                            <li><a class="dropdown-item" href="/mejoraregulatoria.html" style="font-weight: normal;">Mejora Regulatoria</a></li>
-                        </div>
-                    </ul>
+                <li class="nav-item">
+                    <a class="nav-link logout-link" href="logout.php"><h5 style="font-weight: bold;">Cerrar Sesion</h5></a>
                 </li>
+               
             </ul>
         </div>
     </div>
 </nav>
+
+<style>
+    /* Estilos para el Logout */
+    .logout-link {
+        color: #0056b3; /* Color similar a los otros links */
+        position: relative;
+    }
+
+    .logout-link::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: blue; /* Línea de hover azul, igual que el resto */
+        bottom: 100%;
+        left: 0;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+
+    .logout-link:hover::before {
+        transform: scaleX(1);
+    }
+
+    .logout-link:hover {
+        color: #00264d; /* Cambio de color al hacer hover */
+    }
+</style>
 
 <style>
     .nav-item.dropdown:hover .dropdown-menu {
@@ -295,4 +274,6 @@
 
 </style>
 
-</style>
+<script>
+
+</script>
