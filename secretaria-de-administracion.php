@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/botoncircular.css">
     <link rel="stylesheet" href="css/backtotop.css">
     <link rel="stylesheet" href="fonts/styles.css">
+    
     <title>Secretaría de Administración</title>
     <style>
         /* Estilo para tarjetas */
