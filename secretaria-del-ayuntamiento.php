@@ -215,7 +215,7 @@
 </div>
 
 
-<div class="contenedor" style="padding-left: 120px; padding-right: 120px;">
+<div class="contenedor" >
     <h5>Documentos disponibles para descargar</h5>
     <table class="table table-striped table-hover">
         <thead>
@@ -288,11 +288,31 @@
         </tbody>
     </table>
   </div>
-   <style>
 
+  <style>
+/* Estilos generales */
+.contenedor {
+  max-width: 1200px; /* Limita el ancho máximo del contenedor */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  padding: 20px; /* Añade un poco de espacio interno */
+}
+
+/* Estilo para la tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Botón de descarga */
 .btn-download {
   display: inline-flex; /* Usamos inline-flex para alinear el icono con el texto */
-  align-items: center; /* Alineamos el icono con el texto */
+  align-items: center;
   padding: 10px 20px;
   background-color: #0b3b59;
   color: white;
@@ -315,34 +335,22 @@
   transform: scale(1); /* Restablecer tamaño cuando se hace clic */
 }
 
-    /* Estilo para la tabla */
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
+/* Estilo para pantallas más pequeñas (dispositivos móviles) */
+@media (max-width: 768px) {
+  .contenedor {
+    padding-left: 10px; /* Menor espacio lateral en móviles */
+    padding-right: 10px;
+  }
 
-th, td {
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
+  table, th, td {
+    font-size: 14px; /* Ajuste de tamaño de fuente para pantallas pequeñas */
+  }
+  
+  .btn-download {
+    padding: 8px 16px; /* Botones más pequeños en móviles */
+  }
 }
-
-/* Estilo para el enlace como botón */
-.btn-descargar {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #007BFF;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.btn-descargar:hover {
-  background-color: #0056b3;
-}
-   </style>
+</style>
   
   
 
@@ -517,6 +525,7 @@ th, td {
     </script>
     
     </div>
+
     <br>
 <div id="footerContainer"></div>
 <!-- Botón "Back to Top" -->

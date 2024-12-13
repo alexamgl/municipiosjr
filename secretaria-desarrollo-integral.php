@@ -131,7 +131,7 @@
                     <button class="btn btn-primary btn-circle" onclick="toggleContent(this)">+</button>
                 <div class="card-text" style="display: none;"><strong>Objetivo:</strong> Procurar el desarrollo armónico e integral de las juventudes en un marco de inclusión y equidad de oportunidades políticas, sociales, económicas y culturales.
                     <br><br>
-                    <strong>Dirección: </strong>Ciudad Vive Orinete, Av. de las Garzas 57, Indeco, San Juan del Río, Qro.
+                    <strong>Dirección: </strong>Ciudad Vive Oriente, Av. de las Garzas 57, Indeco, San Juan del Río, Qro.
                 </div>
                 </div>
             </div>
