@@ -74,7 +74,7 @@
             <div class="card text-center">
                 <div class="card-body">
                     <h5 class="card-title">Secretaría de Desarrollo Integral y Económico</h5>
-                    <p class="card-text"><strong>Dirección:</strong> Carretera Panamericana a Querétaro No. 232, La Venta, Plaza Punta Victoria</p>
+                    <p class="card-text"><strong>Dirección:</strong> Portal de Diezmo, Av. Benito Juárez No.15 Ote., Col. Centro, San Juan del Río, Qro.</p>
                     <p class="card-text"><strong>Contacto:</strong> (427) 186 2882</p>
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalMap1">Ver en Google Maps</button>
                 </div>
@@ -89,21 +89,26 @@
                 <div class="card-body">
                     <h5 class="card-title">Sub-Secretaría de Desarrollo Integral</h5>
                     <button class="btn btn-primary btn-circle" onclick="toggleContent(this)">+</button>
-                <div class="card-text" style="display: none;"><strong>Objetivo:</strong> Desarrollar actividades relacionadas con el deporte y cultura que fortalezcan las capacidades
-                        humanas de los habitantes del municipio.
-                </div>
-                </div>
+                <div class="card-text" style="display: none;"><strong>Objetivo:</strong> Desarrollar actividades relacionadas con el deporte y cultura que fortalezcan las capacidades humanas de los habitantes del municipio.
+                <br><br>
+                <strong>Dirección: </strong>Portal de Diezmo, Av. Benito Juárez No.15 Ote., Col. Centro, San Juan del Río, Qro. San Juan del Río, Qro.</div>
+
+            </div>
             </div>
         </div>
         <div class="col-md-6">
             <div class="card text-center">
                 <div class="card-body">
-                    <h5 class="card-title">Sub-Secretaría Deasrrollo Económico, Negocios, Empresarial y Turismo</h5>
+                    <h5 class="card-title">Sub-Secretaría Desarrollo Económico, Negocios, Empresarial y Turismo</h5>
                     <button class="btn btn-primary btn-circle" onclick="toggleContent(this)">+</button>
                 <div class="card-text" style="display: none;"><strong>Objetivo:</strong> Ejecutar los programas institucionales en materia de desarrollo económico y turístico que fortalezcan
                         las capacidades y vocaciones productivas del municipio, consolidando así una política con los
                         sectores industrial, comercial, turístico y de servicios.
+                        <br><br>
+                        <strong>Dirección: </strong>Carretera Panamericana a Querétaro No.232, La Venta, Plaza Punta Victoria, San Juan del Río, Qro.
                 </div>
+
+
                 </div>
             </div>
         </div>
@@ -112,8 +117,9 @@
                 <div class="card-body">
                     <h5 class="card-title">Dirección del Deporte</h5>
                     <button class="btn btn-primary btn-circle" onclick="toggleContent(this)">+</button>
-                <div class="card-text" style="display: none;"><strong>Objetivo:</strong> Propiciar la práctica deportiva, para detonar el impulso y fomento de una cultura física, en el Municipio
-                        de San Juan del Río, Querétaro.
+                <div class="card-text" style="display: none;"><strong>Objetivo:</strong> Propiciar la práctica deportiva, para detonar el impulso y fomento de una cultura física, en el Municipio de San Juan del Río, Querétaro.
+                    <br><br>
+                    <strong>Dirección: </strong>Acuática Gómez Morin, Alfonso Pasiño s/n, Centro, 76807 San Juan del Río, Qro.
                 </div>
                 </div>
             </div>
@@ -123,8 +129,9 @@
                 <div class="card-body">
                     <h5 class="card-title">Dirección de la Juventud</h5>
                     <button class="btn btn-primary btn-circle" onclick="toggleContent(this)">+</button>
-                <div class="card-text" style="display: none;"><strong>Objetivo:</strong> Procurar el desarrollo armónico e integral de las juventudes en un marco de inclusión y equidad de
-                        oportunidades políticas, sociales, económicas y culturales.
+                <div class="card-text" style="display: none;"><strong>Objetivo:</strong> Procurar el desarrollo armónico e integral de las juventudes en un marco de inclusión y equidad de oportunidades políticas, sociales, económicas y culturales.
+                    <br><br>
+                    <strong>Dirección: </strong>Ciudad Vive Orinete, Av. de las Garzas 57, Indeco, San Juan del Río, Qro.
                 </div>
                 </div>
             </div>
@@ -134,9 +141,9 @@
                 <div class="card-body">
                     <h5 class="card-title">Dirección de Bellas Artes</h5>
                     <button class="btn btn-primary btn-circle" onclick="toggleContent(this)">+</button>
-                <div class="card-text" style="display: none;"><strong>Objetivo:</strong> Promover y dar seguimiento a las acciones para la ejecución de las actividades Artísticas y Culturales
-                        de nuestro Municipio.
-                </div>
+                <div class="card-text" style="display: none;"><strong>Objetivo:</strong> Promover y dar seguimiento a las acciones para la ejecución de las actividades Artísticas y Culturales de nuestro Municipio.
+                    <br><br>
+                    <strong>Dirección: </strong>Portal de Diezmo, Av. Benito Juárez No.15 Ote., Col. Centro, San Juan del Río, Qro. San Juan del Río, Qro.</div>    
                 </div>
             </div>
         </div>
@@ -150,10 +157,12 @@
                         sector económico y empresarial, con la Administración Pública Municipal priorizando la generación de
                         empleos de calidad y con visión a largo plazo, así como gestionar el establecimiento de comercios
                         bajo la política de mejora regulatoria.
+                        <br><br>
+                <strong>Dirección: </strong>Carretera Panamericana a Querétaro No.232, La Venta, Plaza Punta Victoria, San Juan del Río, Qro.</div>
+
                 </div>
                 </div>
-            </div>
-        </div>
+        </div> 
         <div class="col-md-6">
             <div class="card text-center">
                 <div class="card-body">
@@ -161,9 +170,11 @@
                     <button class="btn btn-primary btn-circle" onclick="toggleContent(this)">+</button>
                 <div class="card-text" style="display: none;"><strong>Objetivo:</strong> Beneficiar mediante la gestión, asesoría y ejecución de programas a las micro, pequeñas y medianas
                         empresas del municipio para su operación, capacitación y regulación.
+                        <br><br>
+                <strong>Dirección: </strong>Carretera Panamericana a Querétaro No.232, La Venta, Plaza Punta Victoria, San Juan del Río, Qro.</div>
+                        
                 </div>
                 </div>
-            </div>
         </div>
         <div class="col-md-6">
             <div class="card text-center">
@@ -174,10 +185,12 @@
                         política pública que contribuyan al crecimiento del sector turístico; así como la capacitación, promoción
                         de eventos, congresos y convenciones para difundir la riqueza histórica, cultural, natural y turística del
                         municipio.
+                        <br><br>
+                    <strong>Dirección: </strong>Portal de Diezmo, Av. Benito Juárez No.15 Ote., Col. Centro, San Juan del Río, Qro. San Juan del Río, Qro.</div>    
                 </div>
                 </div>
-            </div>
         </div>
+ 
     </div>
 </div>
 
@@ -191,7 +204,7 @@
             </div>
             <div class="modal-body">
                 <iframe 
-                    src="" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3121.4610363532847!2d-99.99883442571239!3d20.38661540952582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d30c836456e7fb%3A0x87c2b13c57c714ec!2sPortal%20del%20Diezmo!5e1!3m2!1ses-419!2smx!4v1734103040436!5m2!1ses-419!2smx" 
                     width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
                 <div class="row mt-4">
@@ -207,7 +220,13 @@
             </div>
         </div>
     </div>
-</div><br>
+</div>
+
+<br>
+
+
+
+<!-- Seccion de Noticias -->
 <div style="padding: 80px;">
     <h2 class="mt-5 text-center" style="font-weight: 900; color: #0b3b59;">NOTICIAS.</h2>
     <br>
@@ -348,6 +367,8 @@
     </script>
     
     </div>
+
+
     <br>
 <div id="footerContainer"></div>
 <!-- Botón "Back to Top" -->

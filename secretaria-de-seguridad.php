@@ -6,6 +6,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/botoncircular.css">
     <link rel="stylesheet" href="css/backtotop.css">
+    <link rel="stylesheet" href="fonts/styles.css">
+
     <title>Secretaría de Seguridad Pública</title>
     <style>
         /* Estilo para tarjetas */
@@ -74,8 +76,8 @@
             <div class="card text-center">
                 <div class="card-body">
                     <h5 class="card-title">Secretaría de Seguridad Pública</h5>
-                    <p class="card-text"><strong>Dirección:</strong> Calle Río Moctezuma No. 199, San Juan del Río, Qro.</p>
-                    <p class="card-text"><strong>Contacto:</strong> (427) 274 7664</p>
+                    <p class="card-text"><strong>Dirección:</strong> Calle Río Moctezuma No. 199, Col. Nuevo San Juan, San Juan del Río, Qro.</p>
+                    <p class="card-text"><strong>Contacto:</strong> (427) 274 7964</p>
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalMap1">Ver en Google Maps</button>
                 </div>
             </div>
@@ -89,8 +91,9 @@
                 <div class="card-body">
                     <h5 class="card-title">Sub-Secretaría de Seguridad Pública</h5>
                     <button class="btn btn-primary btn-circle" onclick="toggleContent(this)">+</button>
-                <div class="card-text" style="display: none;"><strong>Objetivo:</strong> Disminuir la incidencia delictiva, así como las zonas de riesgo en favor de los habitantes del municipio,
-                        mediante la atención oportuna a reportes hechos por la ciudadanía y acciones de prevención del delito.
+                <div class="card-text" style="display: none;"><strong>Objetivo:</strong> Disminuir la incidencia delictiva, así como las zonas de riesgo en favor de los habitantes del municipio, mediante la atención oportuna a reportes hechos por la ciudadanía y acciones de prevención del delito.
+                    <br><br>
+                    <strong>Dirección:</strong> Calle Río Moctezuma No. 199, Col. Nuevo San Juan, San Juan del Río, Qro.
                 </div>
                 </div>
             </div>
@@ -114,6 +117,18 @@
                     <button class="btn btn-primary btn-circle" onclick="toggleContent(this)">+</button>
                 <div class="card-text" style="display: none;"><strong>Objetivo:</strong> Diseñar, implementar y evaluar los programas para la prevención del delito en el Municipio de San Juan
                         del Río, fomentando la participación ciudadana y la atención a víctimas del delito.
+                        <br><br>
+                        <strong>Dirección:</strong> Av. de las Garzas #35, Col. Centro, San Juan del Río, Qro.
+                        <br>
+                        <strong>Contacto:</strong>427 274 4724
+
+                        <br>
+                        <br>
+                        <strong>Subestaciónes:</strong>
+                        <br>- Águilas: C. Águila Azteca Esquina C. Águila Europea, Col Las Águilas./ Tel: 427 274 5291
+                        <br>- Vista Hermosa: C. La Palma esquina C. Higuera, Col. Vista Hermosa.
+                        <br>- Arrayanes: C. Hda. Piedras Negras, Col Arrayanes./Tel: 427 688 0536
+                        <br>- Nogales: C. Guanabana, Col. Los Nogales
                 </div>
                 </div>
             </div>
@@ -137,6 +152,18 @@
                 <div class="card-text" style="display: none;"><strong>Objetivo:</strong> Garantizar el cumplimiento en la Secretaría de Seguridad Pública Municipal de las políticas y
                         procedimientos establecidos en materia de administración interna. Además de la correcta gestión, uso,
                         destino y comprobación de recursos y servicios en la misma.
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Servicio Profesional de Carrera Policial</h5>
+                    <button class="btn btn-primary btn-circle" onclick="toggleContent(this)">+</button>
+                <div class="card-text" style="display: none;"><strong>Dirección: </strong> Carretera San Juan del Río Xilitla Km 5, Unidad Deportiva Norte.
+                    <br><strong>Contacto:</strong>427 274 4724
+
                 </div>
                 </div>
             </div>
@@ -171,6 +198,9 @@
         </div>
     </div>
 </div>
+
+<br>
+<!-- Barra de Noticias -->
 <div style="padding: 80px;">
     <h2 class="mt-5 text-center" style="font-weight: 900; color: #0b3b59;">NOTICIAS.</h2>
     <br>
@@ -310,7 +340,10 @@
         });
     </script>
     
-    </div><br>
+    </div>
+
+
+    <br>
 <div id="footerContainer"></div>
 <!-- Botón "Back to Top" -->
 <button id="backToTop" class="btn" title="Volver arriba">
