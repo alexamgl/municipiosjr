@@ -1,0 +1,6 @@
+[12-Dec-2024 16:18:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/pmsjrcom/public_html/sanjuandelrio.gob.mx/adms/usuario/editar_usuario.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/pmsjrcom/public_html/sanjuandelrio.gob.mx/adms/usuario/editar_usuario.php on line 36
+[12-Dec-2024 16:21:00 UTC] PHP Warning:  Undefined variable $result_dependencias in /home/pmsjrcom/public_html/sanjuandelrio.gob.mx/adms/usuario/editar_usuario.php on line 99
+[12-Dec-2024 16:21:00 UTC] PHP Warning:  Attempt to read property "num_rows" on null in /home/pmsjrcom/public_html/sanjuandelrio.gob.mx/adms/usuario/editar_usuario.php on line 99

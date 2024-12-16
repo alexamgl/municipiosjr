@@ -27,19 +27,22 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION['dependencia_id'])) {
 $id = $_GET['id'];
 
 // Obtener la noticia relacionada con el ID proporcionado
-$sql = "SELECT titulo, cuerpo, imagen FROM noticias WHERE id = ?";
-$stmt = $conn->prepare($sql);
+$sql = "SELECT titulo, cuerpo, imagen FROM noticias WHERE id = $id";
+/*$stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $id);
 $stmt->execute();
-$result = $stmt->get_result();
+$result = $stmt->get_result();*/
 
+$result = $conn->query($sql);
 // Verificar si se encontró la noticia
-if ($row = $result->fetch_assoc()) {
+if ($result && $result->num_rows > 0) {
+    //obtener datos noticia
+    $row = $result->fetch_assoc();
     echo json_encode(['success' => true, 'noticia' => $row]);
 } else {
     echo json_encode(['success' => false, 'message' => 'No se encontró la noticia con ese ID']);
 }
 
-$stmt->close();
+//$stmt->close();
 $conn->close();
 ?>

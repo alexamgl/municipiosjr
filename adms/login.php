@@ -1,9 +1,9 @@
 <?php
 // Conexión a la base de datos
 $servername = "localhost";
-$username = "pmsjrcom_joom573"; // Cambiar por tu usuario de MySQL
-$password = "]]S1W45nP7"; // Cambiar por tu contraseña de MySQL
-$dbname = "pmsjrcom_dashboard_municipio";
+$db_user = "pmsjrcom_joom573"; // Cambiar por tu usuario de MySQL
+$db_password = "]]S1W45nP7"; // Cambiar por tu contraseña de MySQL
+$db_name = "pmsjrcom_dashboard_municipio";
 
 $conn = new mysqli($servername, $db_user, $db_password, $db_name);
 if ($conn->connect_error) {
@@ -20,19 +20,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Consulta preparada para obtener al usuario
     $sql = "SELECT id_usuario, nombre_usuario, password_usuario, id_tipo_usuario, id_dependencia 
-            FROM usuario WHERE nombre_usuario = ?";
+            FROM usuario WHERE nombre_usuario = '$input_username'";
 
-    $stmt = $conn->prepare($sql);
+    /*$stmt = $conn->prepare($sql);
     if (!$stmt) {
         die("Error en la consulta SQL: " . $conn->error);
     }
 
     $stmt->bind_param("s", $input_username);
     $stmt->execute();
-    $result = $stmt->get_result();
+    $result = $stmt->get_result();*/
 
+    $result = $conn->query($sql);
     // Verificar si el usuario existe
-    if ($result->num_rows > 0) {
+    if ($result && $result->num_rows > 0) {
+        //obtener datos usuario
         $user = $result->fetch_assoc();
 
         // Verificar la contraseña usando password_verify()
@@ -56,8 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "<script>alert('Usuario no encontrado.'); window.location.href = 'login.html';</script>";
     }
-
-    $stmt->close();
+    //$stmt->close();
 }
 
 $conn->close();

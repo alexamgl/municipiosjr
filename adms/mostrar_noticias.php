@@ -28,14 +28,15 @@ if ($conn->connect_error) {
 
 // Mostrar todas las noticias
 // Mostrar las noticias solo de la dependencia del usuario
-$sql = "SELECT id, titulo, cuerpo, imagen FROM noticias WHERE id_dependencia = ?";
-$stmt = $conn->prepare($sql);
+$sql = "SELECT id, titulo, cuerpo, imagen FROM noticias WHERE id_dependencia = $id_dependencia_usuario";
+/*$stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $id_dependencia_usuario);
 $stmt->execute();
-$result = $stmt->get_result();
+$result = $stmt->get_result();*/
+$result = $conn->query($sql);
 
 // Verificar si hay noticias disponibles
-if ($result->num_rows > 0) {
+if ($result && $result->num_rows > 0) {
     echo "<div class='container mt-5'>";
     echo "<div class='row'>"; // Inicia el grid de Bootstrap para las cards
     while ($row = $result->fetch_assoc()) {

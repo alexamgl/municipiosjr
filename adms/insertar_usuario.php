@@ -10,9 +10,9 @@ if (!isset($_SESSION['user_id'])) {
 
 // Conexión a la base de datos
 $servername = "localhost";
-$username = "pmsjrcom_joom573"; // Cambiar por tu usuario de MySQL
-$password = "]]S1W45nP7"; // Cambiar por tu contraseña de MySQL
-$dbname = "pmsjrcom_dashboard_municipio";
+$db_user = "pmsjrcom_joom573"; // Cambiar por tu usuario de MySQL
+$db_password = "]]S1W45nP7"; // Cambiar por tu contraseña de MySQL
+$db_name = "pmsjrcom_dashboard_municipio";
 
 // Crear conexión
 $conn = new mysqli($servername, $db_user, $db_password, $db_name);
@@ -36,18 +36,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Insertar los datos en la base de datos
     $sql = "INSERT INTO usuario (nombre_usuario, password_usuario, correo_usuario, id_dependencia, id_tipo_usuario)
-            VALUES (?, ?, ?, ?, ?)";
+            VALUES ('$nombre_usuario', '$password_hashed', '$correo_usuario', $id_dependencia, $id_tipo_usuario)";
 
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssii", $nombre_usuario, $password_hashed, $correo_usuario, $id_dependencia, $id_tipo_usuario);
+    /*$stmt = $conn->prepare($sql);
+    $stmt->bind_param("sssii", $nombre_usuario, $password_hashed, $correo_usuario, $id_dependencia, $id_tipo_usuario);*/
 
-    if ($stmt->execute()) {
+    if ($conn->query($sql) === TRUE) {
         echo "<script>alert('Usuario insertado exitosamente.'); window.location.href = 'ver_usuarios.php';</script>";
     } else {
         echo "<script>alert('Error al insertar el usuario.'); window.location.href = 'ver_usuarios.php';</script>";
     }
 
-    $stmt->close();
+    //$stmt->close();
 }
 
 // Obtener las dependencias para el formulario

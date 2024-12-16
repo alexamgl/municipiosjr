@@ -29,13 +29,14 @@ $sql = "SELECT u.id_usuario, u.nombre_usuario, u.correo_usuario, u.id_dependenci
         FROM usuario u
         JOIN dependencia d ON u.id_dependencia = d.id_dependencia
         JOIN tipo_usuario t ON u.id_tipo_usuario = t.id_tipo_usuario
-        WHERE u.id_usuario = ?";
-$stmt = $conn->prepare($sql);
+        WHERE u.id_usuario = $id_usuario";
+/*$stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $id_usuario);
 $stmt->execute();
-$result = $stmt->get_result();
+$result = $stmt->get_result();*/
 
-if ($result->num_rows > 0) {
+$result = $conn->query($sql);
+if ($result && $result->num_rows > 0) {
     $row = $result->fetch_assoc();
 } else {
     die("Usuario no encontrado");
