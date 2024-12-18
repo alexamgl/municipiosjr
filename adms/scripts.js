@@ -257,3 +257,4 @@ function eliminarNoticia(id) {
     xhr.send("id=" + id);
   }
 }
+

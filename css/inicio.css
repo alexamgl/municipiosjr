@@ -1,5 +1,16 @@
         
 /* Estilo para tarjetas verticales */
+#overlay {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
 .card {
     height: 220px; /* Altura estándar para todas las tarjetas */
     transition: transform 0.2s, box-shadow 0.2s; /* Transición suave para el efecto hover */
@@ -304,6 +315,7 @@
     background-color: #0b3b59;
     color: white;
     border-radius: 10px;
+
     width: 82%; /* Ocupar 80% del ancho de la página */
     margin: 0 auto; /* Centramos el contenedor */
     position: relative; /* Necesario para el icono */

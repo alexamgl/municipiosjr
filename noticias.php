@@ -129,15 +129,8 @@
 
 <!-- Aquí se cargará el navbar -->
 <div id="navbarContainer"></div>
-
-<br>
-
-<div class="container mt-5">
-    <h1 class="text-center mb-4">Noticias</h1>
-    
         <!-- Aquí se insertarán las noticias desde PHP -->
         <?php include 'ver_noticias.php'; ?>
-    </div>
 </div>
 
 <br><br>

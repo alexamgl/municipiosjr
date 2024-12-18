@@ -179,6 +179,26 @@
     document.getElementById('backToTop').onclick = function() {
         window.scrollTo({top: 0, behavior: 'smooth'});
     };
+
+    // Tiempo de inactividad en milisegundos (5 minutos = 300000 ms)
+var inactiveTime = 300000;
+var timer;
+
+function resetTimer() {
+    clearTimeout(timer);
+    timer = setTimeout(logoutUser, inactiveTime);
+}
+
+function logoutUser() {
+    // Redirigir al logout o cerrar sesión automáticamente
+    window.location.href = "logout.php"; // Asegúrate de tener un script que cierre la sesión
+}
+
+// Resetear el temporizador en eventos de actividad
+window.onload = resetTimer;
+document.onmousemove = resetTimer;
+document.onkeypress = resetTimer;
+
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

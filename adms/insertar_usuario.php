@@ -10,12 +10,12 @@ if (!isset($_SESSION['user_id'])) {
 
 // Conexión a la base de datos
 $servername = "localhost";
-$db_user = "pmsjrcom_joom573"; // Cambiar por tu usuario de MySQL
-$db_password = "]]S1W45nP7"; // Cambiar por tu contraseña de MySQL
-$db_name = "pmsjrcom_dashboard_municipio";
+$username = "pmsjrcom_joom573"; // Cambiar por tu usuario de MySQL
+$password = "]]S1W45nP7"; // Cambiar por tu contraseña de MySQL
+$dbname = "pmsjrcom_dashboard_municipio";
 
 // Crear conexión
-$conn = new mysqli($servername, $db_user, $db_password, $db_name);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Verificar conexión
 if ($conn->connect_error) {
@@ -26,6 +26,7 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recoger los datos del formulario
     $nombre_usuario = $_POST['nombre_usuario'];
+    $nickname = $_POST['usuario'];
     $correo_usuario = $_POST['correo_usuario'];
     $password_usuario = $_POST['password_usuario']; // Considera cifrar la contraseña
     $id_dependencia = $_POST['id_dependencia'];
@@ -35,8 +36,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password_hashed = password_hash($password_usuario, PASSWORD_DEFAULT);
 
     // Insertar los datos en la base de datos
-    $sql = "INSERT INTO usuario (nombre_usuario, password_usuario, correo_usuario, id_dependencia, id_tipo_usuario)
-            VALUES ('$nombre_usuario', '$password_hashed', '$correo_usuario', $id_dependencia, $id_tipo_usuario)";
+    $sql = "INSERT INTO usuario (nombre_usuario,usuario, password_usuario, correo_usuario, id_dependencia, id_tipo_usuario)
+            VALUES ('$nombre_usuario','$nickname', '$password_hashed', '$correo_usuario', $id_dependencia, $id_tipo_usuario)";
 
     /*$stmt = $conn->prepare($sql);
     $stmt->bind_param("sssii", $nombre_usuario, $password_hashed, $correo_usuario, $id_dependencia, $id_tipo_usuario);*/
@@ -77,8 +78,12 @@ $conn->close();
     <h2>Registrar Nuevo Usuario</h2>
     <form method="POST" action="">
         <div class="form-group">
-            <label for="nombre_usuario">Nombre de Usuario:</label>
+            <label for="nombre_usuario">Nombre y Apellido:</label>
             <input type="text" class="form-control" id="nombre_usuario" name="nombre_usuario" required>
+        </div>
+        <div class="form-group">
+            <label for="nombre_usuario">Usuario:</label>
+            <input type="text" class="form-control" id="usuario" name="usuario" required>
         </div>
         <div class="form-group">
             <label for="correo_usuario">Correo de Usuario:</label>
@@ -86,7 +91,7 @@ $conn->close();
         </div>
         <div class="form-group">
             <label for="password_usuario">Contraseña:</label>
-            <input type="password" class="form-control" id="password_usuario" name="password_usuario" required>
+            <input type="text" class="form-control" id="password_usuario" name="password_usuario" required>
         </div>
         <div class="form-group">
             <label for="id_dependencia">Dependencia:</label>
@@ -127,6 +132,26 @@ $conn->close();
             document.getElementById('footerContainer').innerHTML = data;
         })
         .catch(error => console.error('Error al cargar el footer:', error));
+
+
+        // Tiempo de inactividad en milisegundos (5 minutos = 300000 ms)
+var inactiveTime = 300000;
+var timer;
+
+function resetTimer() {
+    clearTimeout(timer);
+    timer = setTimeout(logoutUser, inactiveTime);
+}
+
+function logoutUser() {
+    // Redirigir al logout o cerrar sesión automáticamente
+    window.location.href = "logout.php"; // Asegúrate de tener un script que cierre la sesión
+}
+
+// Resetear el temporizador en eventos de actividad
+window.onload = resetTimer;
+document.onmousemove = resetTimer;
+document.onkeypress = resetTimer;
 
         </script>
 </body>

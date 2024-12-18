@@ -8,6 +8,21 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: login.html");
     exit();
 }
+
+// Configurar el tiempo máximo de inactividad en segundos (por ejemplo, 900 segundos = 15 minutos)
+$inactive = 60;
+
+// Comprobar si existe la última actividad
+if (isset($_SESSION['last_activity'])) {
+    $session_life = time() - $_SESSION['last_activity'];
+    if ($session_life > $inactive) {
+        // Si el tiempo de inactividad supera el límite, cerrar la sesión y redirigir al login
+        session_unset(); // Eliminar todas las variables de sesión
+        session_destroy(); // Destruir la sesión
+        header("Location: login.html");
+        exit();
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -16,7 +31,7 @@ if (!isset($_SESSION['user_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Municipio San Juan del Río</title>
-    <style>
+    <script src="scripts.js"></script>
     <style>
         /* Estilo para tarjetas (verticales) */
         .card {

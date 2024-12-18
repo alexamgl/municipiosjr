@@ -25,7 +25,7 @@ if ($conn->connect_error) {
 }
 
 // Obtener los datos del usuario
-$sql = "SELECT u.id_usuario, u.nombre_usuario, u.correo_usuario, u.id_dependencia, u.id_tipo_usuario, d.nombre_dependencia, t.nombre_tipo
+$sql = "SELECT u.id_usuario, u.nombre_usuario,  u.correo_usuario,u.password_usuario, u.id_dependencia, u.id_tipo_usuario, d.nombre_dependencia, t.nombre_tipo
         FROM usuario u
         JOIN dependencia d ON u.id_dependencia = d.id_dependencia
         JOIN tipo_usuario t ON u.id_tipo_usuario = t.id_tipo_usuario
@@ -85,6 +85,12 @@ $conn->close();
                             </label>
                             <input type="email" class="form-control" id="correo_usuario" name="correo_usuario" 
                                    value="<?php echo $row['correo_usuario']; ?>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password_usuario" class="form-label">
+                                <i class="bi bi-lock"></i> Contraseña
+                            </label>
+                            <input type="text" class="form-control" id="password_usuario" name="password_usuario" placeholder="Dejar en blanco para mantener la actual">
                         </div>
 
                         <div class="mb-3">

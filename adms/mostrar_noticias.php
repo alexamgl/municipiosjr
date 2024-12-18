@@ -17,7 +17,6 @@ $servername = "localhost";
 $username = "pmsjrcom_joom573"; // Cambiar por tu usuario de MySQL
 $password = "]]S1W45nP7"; // Cambiar por tu contraseña de MySQL
 $dbname = "pmsjrcom_dashboard_municipio";
-
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -142,4 +141,24 @@ $conn->close();
             xhr.send('id=' + id);
         }
     }
+
+    // Tiempo de inactividad en milisegundos (5 minutos = 300000 ms)
+var inactiveTime = 300000;
+var timer;
+
+function resetTimer() {
+    clearTimeout(timer);
+    timer = setTimeout(logoutUser, inactiveTime);
+}
+
+function logoutUser() {
+    // Redirigir al logout o cerrar sesión automáticamente
+    window.location.href = "logout.php"; // Asegúrate de tener un script que cierre la sesión
+}
+
+// Resetear el temporizador en eventos de actividad
+window.onload = resetTimer;
+document.onmousemove = resetTimer;
+document.onkeypress = resetTimer;
+
 </script>

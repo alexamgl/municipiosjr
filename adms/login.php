@@ -1,9 +1,6 @@
 <?php
 // Conexión a la base de datos
-$servername = "localhost";
-$db_user = "pmsjrcom_joom573"; // Cambiar por tu usuario de MySQL
-$db_password = "]]S1W45nP7"; // Cambiar por tu contraseña de MySQL
-$db_name = "pmsjrcom_dashboard_municipio";
+include 'conexion.php';
 
 $conn = new mysqli($servername, $db_user, $db_password, $db_name);
 if ($conn->connect_error) {
@@ -18,30 +15,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $input_username = $conn->real_escape_string(trim($_POST['username']));
     $input_password = $conn->real_escape_string(trim($_POST['password']));
 
-    // Consulta preparada para obtener al usuario
-    $sql = "SELECT id_usuario, nombre_usuario, password_usuario, id_tipo_usuario, id_dependencia 
-            FROM usuario WHERE nombre_usuario = '$input_username'";
-
-    /*$stmt = $conn->prepare($sql);
-    if (!$stmt) {
-        die("Error en la consulta SQL: " . $conn->error);
-    }
-
-    $stmt->bind_param("s", $input_username);
-    $stmt->execute();
-    $result = $stmt->get_result();*/
+    // Consulta preparada para obtener al usuario usando el campo 'usuario' en lugar de 'nombre_usuario'
+    $sql = "SELECT id_usuario, nombre_usuario, usuario, password_usuario, id_tipo_usuario, id_dependencia 
+            FROM usuario WHERE usuario = '$input_username'";
 
     $result = $conn->query($sql);
+
     // Verificar si el usuario existe
     if ($result && $result->num_rows > 0) {
-        //obtener datos usuario
+        // Obtener datos del usuario
         $user = $result->fetch_assoc();
 
         // Verificar la contraseña usando password_verify()
         if (password_verify($input_password, $user['password_usuario'])) {
             // La contraseña es correcta
             $_SESSION['user_id'] = $user['id_usuario'];
-            $_SESSION['username'] = $user['nombre_usuario'];
+            $_SESSION['username'] = $user['usuario'];
             $_SESSION['user_type'] = $user['id_tipo_usuario'];
             $_SESSION['dependencia_id'] = $user['id_dependencia'];
 
@@ -58,7 +47,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "<script>alert('Usuario no encontrado.'); window.location.href = 'login.html';</script>";
     }
-    //$stmt->close();
 }
 
 $conn->close();

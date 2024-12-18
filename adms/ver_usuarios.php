@@ -131,14 +131,15 @@ if (!isset($_SESSION['user_id'])) {
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nombre</th>
+                <th scope="col">Usuario</th>
                 <th scope="col">Email</th>
-                <th scope="col">Contraseña</th>
                 <th scope="col">Nombre de dependencia</th>
                 <th scope="col">Tipo de usuario</th>
                 <th scope="col">Acciones</th>
             </tr>
         </thead>
         <tbody>
+            
         <?php
 // Conexión a la base de datos
 $servername = "localhost";
@@ -155,7 +156,7 @@ if ($conn->connect_error) {
 }
 
 // Consulta con JOIN para obtener nombres de dependencia y tipo de usuario
-$sql = "SELECT u.id_usuario, u.nombre_usuario, u.correo_usuario,u.password_usuario, d.nombre_dependencia, t.nombre_tipo
+$sql = "SELECT u.id_usuario, u.nombre_usuario, u.usuario, u.correo_usuario,u.password_usuario, d.nombre_dependencia, t.nombre_tipo
         FROM usuario u
         JOIN dependencia d ON u.id_dependencia = d.id_dependencia
         JOIN tipo_usuario t ON u.id_tipo_usuario = t.id_tipo_usuario";
@@ -172,8 +173,8 @@ if ($result->num_rows > 0) {
         echo "<tr>
                 <th scope='row'>" . $row['id_usuario'] . "</th>
                 <td>" . $row['nombre_usuario'] . "</td>
+                <td>" . $row['usuario'] . "</td>
                 <td>" . $row['correo_usuario'] . "</td>
-                <td>" . $row['password_usuario'] . "</td>
                 <td>" . $row['nombre_dependencia'] . "</td>
                 <td>" . $row['nombre_tipo'] . "</td>
                 <td>
@@ -256,6 +257,26 @@ function eliminarUsuario(id) {
     document.getElementById('backToTop').onclick = function() {
         window.scrollTo({top: 0, behavior: 'smooth'});
     };
+
+    // Tiempo de inactividad en milisegundos (5 minutos = 300000 ms)
+var inactiveTime = 300000;
+var timer;
+
+function resetTimer() {
+    clearTimeout(timer);
+    timer = setTimeout(logoutUser, inactiveTime);
+}
+
+function logoutUser() {
+    // Redirigir al logout o cerrar sesión automáticamente
+    window.location.href = "logout.php"; // Asegúrate de tener un script que cierre la sesión
+}
+
+// Resetear el temporizador en eventos de actividad
+window.onload = resetTimer;
+document.onmousemove = resetTimer;
+document.onkeypress = resetTimer;
+
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

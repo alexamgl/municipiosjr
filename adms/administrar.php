@@ -8,6 +8,7 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: login.html");
     exit();
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -154,7 +155,28 @@ if (!isset($_SESSION['user_id'])) {
 <!-- Botón Back to Top -->
 <button id="backToTop">↑ Volver arriba</button>
 
+
 <script>
+// Tiempo de inactividad en milisegundos (5 minutos = 300000 ms)
+var inactiveTime = 300000;
+var timer;
+
+function resetTimer() {
+    clearTimeout(timer);
+    timer = setTimeout(logoutUser, inactiveTime);
+}
+
+function logoutUser() {
+    // Redirigir al logout o cerrar sesión automáticamente
+    window.location.href = "logout.php"; // Asegúrate de tener un script que cierre la sesión
+}
+
+// Resetear el temporizador en eventos de actividad
+window.onload = resetTimer;
+document.onmousemove = resetTimer;
+document.onkeypress = resetTimer;
+
+
     // Cargar navbar
     fetch('partials/navbar.html')
         .then(response => response.text())
