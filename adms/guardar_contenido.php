@@ -1,65 +1,45 @@
 <?php
+header('Content-Type: application/json'); // Indicar que la respuesta es JSON
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 // Conexión a la base de datos
 $servername = "localhost";
 $username = "pmsjrcom_joom573"; // Cambiar por tu usuario de MySQL
 $password = "]]S1W45nP7"; // Cambiar por tu contraseña de MySQL
 $dbname = "pmsjrcom_dashboard_municipio";
 
-// Iniciar sesión
-session_start();
-
-// Verificar si el usuario está autenticado
-if (!isset($_SESSION['user_id'])) {
-    echo json_encode(['success' => false, 'message' => 'Usuario no autenticado']);
-    exit();
-}
-
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Verificar conexión
 if ($conn->connect_error) {
-    echo json_encode(['success' => false, 'message' => 'Error de conexión a la base de datos']);
+    echo json_encode(['error' => 'Error de conexión a la base de datos']);
     exit();
 }
 
-function limpiarContenido($cuerpo) {
-    // Eliminar barras invertidas de todas las rutas de imagen
-    return stripslashes($cuerpo);  // Elimina todas las barras invertidas
-}
+// Leer el cuerpo de la solicitud
+$data = json_decode(file_get_contents('php://input'), true);
 
-
-// Obtener los datos enviados por POST
-$data = json_decode(file_get_contents("php://input"), true);
-
-// Validar que los datos obligatorios estén presentes
-if (!isset($data['titulo']) || !isset($data['cuerpo']) || !isset($data['imagen'])) {
-    echo json_encode(['success' => false, 'message' => 'Datos incompletos']);
+// Verificar que los datos sean válidos
+if (!isset($data['id'], $data['titulo'], $data['cuerpo'])) {
+    echo json_encode(['error' => 'Datos inválidos.']);
     exit();
 }
 
+// Extraer datos
+$id = $data['id'];
+$titulo = $data['titulo'];
+$cuerpo = $data['cuerpo'];
 
-$titulo = $conn->real_escape_string($data['titulo']);
-$cuerpo = $conn->real_escape_string($data['cuerpo']);
-$cuerpo = str_replace('"', '', $cuerpo);  // Elimina las comillas dobles
-$imagen = $conn->real_escape_string($data['imagen']);
-$id_usuario = $_SESSION['user_id'];  // Obtener el ID del usuario autenticado
-$id_dependencia = $_SESSION['dependencia_id']; // Obtener dependencia de la sesión
-
-// Inserción en la base de datos
-$sql = "INSERT INTO noticias (titulo, cuerpo, imagen, id_usuario, id_dependencia) VALUES (?, ?, ?, ?, ?)";
-
+// Actualizar la noticia en la base de datos
+$sql = "UPDATE noticias SET titulo = ?, cuerpo = ? WHERE id = ?";
 $stmt = $conn->prepare($sql);
-if ($stmt === false) {
-    echo json_encode(['success' => false, 'message' => 'Error en la consulta SQL: ' . $conn->error]);
-    exit();
-}
-
-$stmt->bind_param("sssii", $titulo, $cuerpo, $imagen, $id_usuario, $id_dependencia);
+$stmt->bind_param("ssi", $titulo, $cuerpo, $id);
 
 if ($stmt->execute()) {
-    echo json_encode(['success' => true, 'message' => 'Noticia guardada exitosamente']);
+    echo json_encode(['success' => true, 'message' => 'Noticia actualizada correctamente.']);
 } else {
-    echo json_encode(['success' => false, 'message' => 'Error al guardar la noticia']);
+    echo json_encode(['success' => false, 'error' => 'Error al actualizar la noticia.']);
 }
 
 $stmt->close();

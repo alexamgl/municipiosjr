@@ -392,7 +392,7 @@
 .modal {
     display: none; /* Oculto por defecto */
     position: fixed;
-    z-index: 1000; /* Asegúrate de que se superponga sobre otros elementos */
+    z-index: 1100; /* Asegúrate de que se superponga sobre otros elementos */
     left: 0;
     top: 0;
     width: 100%;
